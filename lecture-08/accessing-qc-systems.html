@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Lecture 8: Accessing Quantum Computing Systems &#8212; Lecture Notes for CT4106</title>
+    <title>Lecture 8a: Accessing Quantum Computing Systems &#8212; Lecture Notes for CT4106</title>
   
   
   
@@ -63,11 +63,11 @@
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'lecture-08/accessing-quantum-computing-systems';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lecture-08/accessing-qc-systems';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Lecture 6: Landscape of Quantum SDK’s and Tools" href="landscape-of-sdks-tools.html" />
-    <link rel="prev" title="Lecture 7: Hardwares for Quantum Computing" href="../lecture-07/quantum-computing-hardwares.html" />
+    <link rel="next" title="Lecture 8b: Landscape of Quantum SDK’s and Tools" href="landscape-of-sdks-tools.html" />
+    <link rel="prev" title="Lecture 7: Hardwares for Quantum Computing" href="../lecture-07/qc-hardwares.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -183,16 +183,16 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../lecture-01/demystifying-quantum-computing.html">Lecture 1: Demystifying Quantum Computing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lecture-02/integrating-classical-and-quantum-computing.html">Lecture 2: Integrating Classical and Quantum Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lecture-01/demystifying-qc.html">Lecture 1: Demystifying Quantum Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lecture-02/integrating-cc-and-qc.html">Lecture 2: Integrating Classical and Quantum Computing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lecture-03/from-bits-to-qubits.html">Lecture 3: From Bits to Qubits</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lecture-04/mathematical-framework-for-qc.html">Lecture 4: Mathematical framework for Quantum Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lecture-04/math-for-qc.html">Lecture 4: Mathematical framework for Quantum Computing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lecture-05/intro-to-quantum-info.html">Lecture 5: Introduction to Quantum Information</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lecture-06/realizing-quantum-computing-systems.html">Lecture 6: Realizing Quantum Computing Systems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lecture-07/quantum-computing-hardwares.html">Lecture 7: Hardwares for Quantum Computing</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lecture 8: Accessing Quantum Computing Systems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="landscape-of-sdks-tools.html">Lecture 6: Landscape of Quantum SDK’s and Tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lecture-09/heterogeneous-quantum-computing.html">Lecture 9: Heterogeneous Quantum Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lecture-06/realizing-qc-systems.html">Lecture 6: Realizing Quantum Computing Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lecture-07/qc-hardwares.html">Lecture 7: Hardwares for Quantum Computing</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lecture 8a: Accessing Quantum Computing Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="landscape-of-sdks-tools.html">Lecture 8b: Landscape of Quantum SDK’s and Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lecture-09/cloud-qc.html">Lecture 9: Heterogeneous Quantum Computing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lecture-10/quantum-algorithms-1.html">Lecture 10: Quantum Algorithms - I</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lecture-11/quantum-algorithms-2.html">Lecture 11: Quantum Algorithms - II</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lecture-12/quantum-activity-in-ichec.html">Lecture 12: Quantum Activities in ICHEC</a></li>
@@ -250,7 +250,7 @@
       
       
       
-      <li><a href="../_sources/lecture-08/accessing-quantum-computing-systems.md" target="_blank"
+      <li><a href="../_sources/lecture-08/accessing-qc-systems.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -334,7 +334,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Lecture 8: Accessing Quantum Computing Systems</h1>
+    <h1>Lecture 8a: Accessing Quantum Computing Systems</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -383,8 +383,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="lecture-8-accessing-quantum-computing-systems">
-<span id="lecture-8"></span><h1>Lecture 8: Accessing Quantum Computing Systems<a class="headerlink" href="#lecture-8-accessing-quantum-computing-systems" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="lecture-8a-accessing-quantum-computing-systems">
+<span id="lecture-8a"></span><h1>Lecture 8a: Accessing Quantum Computing Systems<a class="headerlink" href="#lecture-8a-accessing-quantum-computing-systems" title="Link to this heading">#</a></h1>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>These lecture notes are a work in progress and are not a replacement for watching the lecture video, it’s intended to be a supplementary reading after watching the lecture</p>
@@ -419,7 +419,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/51f5421b1a058c910981bdf3f778081483dfe2dde6ba605f30665ddb1ed58adc.png" src="../_images/51f5421b1a058c910981bdf3f778081483dfe2dde6ba605f30665ddb1ed58adc.png" />
+<img alt="../_images/39e520e7ad559cc0044df73936581fd38e037d06e541e0ca2815fe61923de933.png" src="../_images/39e520e7ad559cc0044df73936581fd38e037d06e541e0ca2815fe61923de933.png" />
 </div>
 </div>
 <p>The small piece of code above is a <code class="docutils literal notranslate"><span class="pre">program</span></code> written in Python programming language and uses the popular scientific library <code class="docutils literal notranslate"><span class="pre">Numpy</span></code>. The first line imports the module<a class="footnote-reference brackets" href="#lib" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>/library, and the second line imports the famous plotting library <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>.
@@ -483,7 +483,7 @@ Next we add measurement instruction for each qubit <span class="math notranslate
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5a12c4530107eb2daae43e3331aa77041151ee18269844fb15409a9c63e09851.png" src="../_images/5a12c4530107eb2daae43e3331aa77041151ee18269844fb15409a9c63e09851.png" />
+<img alt="../_images/cba7078940e34ea545d57251a41d1b7c5a80697c97be8d0f1b06c04f1ed7921e.png" src="../_images/cba7078940e34ea545d57251a41d1b7c5a80697c97be8d0f1b06c04f1ed7921e.png" />
 </div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">Aer</span></code> module is part of qiskit software ecosystem, and provides us with a few backend software simulators for quantum computing. The line <code class="docutils literal notranslate"><span class="pre">sim</span> <span class="pre">=</span> <span class="pre">Aer.get_backend('aer_simulator')</span></code> defines a simulator object based on Aer’s ‘aer_simulator backend’.
@@ -1019,7 +1019,7 @@ root(&quot;European HPC Quantum Systems&quot;)
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../lecture-07/quantum-computing-hardwares.html"
+       href="../lecture-07/qc-hardwares.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
@@ -1032,7 +1032,7 @@ root(&quot;European HPC Quantum Systems&quot;)
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Lecture 6: Landscape of Quantum SDK’s and Tools</p>
+        <p class="prev-next-title">Lecture 8b: Landscape of Quantum SDK’s and Tools</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
