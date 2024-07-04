@@ -18,12 +18,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
@@ -39,9 +39,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/style.css?v=fb429c44" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -59,6 +59,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'lecture-04/math-for-qc';</script>
@@ -143,6 +145,8 @@
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="../index.html">
   
@@ -164,7 +168,7 @@
 
  <script>
  document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
     <span class="search-button__default-text">Search</span>
     <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
@@ -304,10 +308,10 @@
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -315,7 +319,7 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
@@ -343,9 +347,23 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#postulates-of-quantum-physics">Postulates of Quantum Physics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#postulates-of-quantum-physics">Postulates of Quantum Physics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uncertainty-principle">Uncertainty Principle</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#state-as-an-abstract-vector">State as an abstract vector</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#superposition-principle">Superposition principle</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#role-of-interference">Role of interference</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#principles-of-measurement">Principles of measurement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#no-cloning">No-cloning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#entanglement">Entanglement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tunnelling">Tunnelling</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematica-structure">Mathematica Structure</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-space-hilbert-space">Vector Space, Hilbert Space</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-space-hilbert-space">Vector Space, Hilbert Space</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scalar-vs-vector">Scalar vs Vector</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#states-as-vector-bra-and-ket">States as Vector (Bra and Ket)</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-combination">Linear combination</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inner-product">Inner Product</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-operators">Linear Operators</a></li>
@@ -375,15 +393,73 @@ document.write(`
 </div>
 <section id="postulates-of-quantum-physics">
 <h2>Postulates of Quantum Physics<a class="headerlink" href="#postulates-of-quantum-physics" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>State as an abstract vector</p></li>
-<li><p>Superposition principle</p></li>
-<li><p>Role of interference</p></li>
-<li><p>Principles of measurement</p></li>
-<li><p>No-cloning</p></li>
-<li><p>Entanglement</p></li>
-<li><p>Tunnelling</p></li>
-</ul>
+<p>Let us go through some of the building blocks of quantum mechanics, and see how the required mathematical framework emerges.</p>
+<section id="uncertainty-principle">
+<h3>Uncertainty Principle<a class="headerlink" href="#uncertainty-principle" title="Link to this heading">#</a></h3>
+<p>It is a fundamental principle of quantum mechanics, which states that certain pairs of physical properties can’t be measured simultaneously with arbitrary precision, for example a particle’s position and momentum. The properties which can form such pairs are called conjugate properties to each other. In the coming sections we will discuss more about them. In fact the product of uncertainties of the conjugate properties is bounded below. If the conjugate properties are <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, and the standard deviation or uncertainties in their simulaneous measurement in a given experiment are <span class="math notranslate nohighlight">\(\sigma_A\)</span> and <span class="math notranslate nohighlight">\(\sigma_B\)</span>, then</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma_A \sigma_B \ge \frac{h}{4\pi}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(h\)</span> is Plank’s constant.</p>
+</section>
+<section id="state-as-an-abstract-vector">
+<h3>State as an abstract vector<a class="headerlink" href="#state-as-an-abstract-vector" title="Link to this heading">#</a></h3>
+<p>In everyday life we use the term <code class="docutils literal notranslate"><span class="pre">state</span></code> when we refer to the situation/condition somebody or something is in. We make it more comprehensive by adding adjectives to it, such as <em>in state of weakness</em>, <em>in state of pain</em>, etc. In case of a physical system, the same idea extends to a comprehensive definition, with quantifiability. The state of a physical system refers to something that can provide complete physically accessible information about the system at a given instant of time. This is quantified with first determining the number of independent quantities required for complete information, and then assigning a variable for each of those.
+A numerical value of each of those variable defines the state of the system. Formally -</p>
+<blockquote>
+<div><p>A <strong>state</strong> is a <strong>set of variables</strong> describing a system which does not include anything about its history.</p>
+</div></blockquote>
+<p>This set of variable is assumed to be <em>minimal</em> so that removing any component results in only partial information about the system. Take for example the case of a single isolated particle.
+Then it’s position and velocity are two independent minimal properties.  If the motion of this particle is constrained along a line, then a variable <span class="math notranslate nohighlight">\(x\)</span> denoting it’s distance from a chosen origin on the line completely determines it’s position, and it’s time derivative <span class="math notranslate nohighlight">\(v = \frac{dx}{dt}\)</span> determines the velocity. Thus together, <span class="math notranslate nohighlight">\((x, v)\)</span> define the state of the particle.
+If the motion was not constrained, one would need three coordinates <span class="math notranslate nohighlight">\((x, y, z)\)</span> for position, and three components of velocity <span class="math notranslate nohighlight">\((v_x, v_y, v_z)\)</span> with respect to a given reference frame. Thus collectively a set of six variables <span class="math notranslate nohighlight">\((x, y, z, v_x, v_y, v_z)\)</span> defines the state of a particle. For a system of many particles, the variables are concatenated, and the set becomes bigger. For <span class="math notranslate nohighlight">\(N\)</span> particle system, the set contains <span class="math notranslate nohighlight">\(6N\)</span> variables.</p>
+<p>Note that this set has to be ordered so there is no confusion in the meaning of each of its elements. Such ordered sets are essentially what one calls vectors. We discuss vectors in more details in the coming sections.</p>
+<blockquote>
+<div><blockquote>
+<div><p>Add Figure</p>
+</div></blockquote>
+</div></blockquote>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>A reference frame refers to a chosen point of origin, and a given orientation of coordinate axes in which a position is measured.</p>
+</aside>
+<div class="tip admonition">
+<p class="admonition-title">Degrees of Freedom</p>
+<p>The degrees of freedom of a system is a number associated with it. It is the number of independent ways one
+can change the system’s state. Alternatively, it’s also the minimum number of individual quantities required to specify the state.</p>
+</div>
+<p>In case of single particle, it’s degrees of freedom is 6. For a system of <span class="math notranslate nohighlight">\(N\)</span> particles, it’s <span class="math notranslate nohighlight">\(6N\)</span>.</p>
+<p>Now consider a quantum particle, and think whether we can use the above mentioned set of positions and velocities/momenta <span class="math notranslate nohighlight">\((x, y, z, v_x, v_y, v_z)\)</span> can describe the state of quantum particle. Due to uncertainty principle, we immediately run into a problem, because the position <span class="math notranslate nohighlight">\(x\)</span>, and velocity <span class="math notranslate nohighlight">\(v_x\)</span> can not be accurately determined simultaneously. Thus the set of position and velocity variables can not provide complete information about particle’s state.</p>
+<p>So how do we define state of a quantum system? Here one postulates, that it is possible to define a <code class="docutils literal notranslate"><span class="pre">state</span></code> of a quantum system, represented as some type of abstract object. This object will likely have multiple components associated with it, one for each degree of freedom. It will thus be a vector
+of some kind. For the moment we call it an abstract vector, as we don’t know it’s structure. As we go throught the sections, we will explore how this structure emerges, and how it works.</p>
+<p>So, for the moment, we say that the state of a quantum system is represented by an abstract vector. In due course we will learn several synonyms for this abstract vector defining the state of a quantum system.</p>
+</section>
+<section id="superposition-principle">
+<h3>Superposition principle<a class="headerlink" href="#superposition-principle" title="Link to this heading">#</a></h3>
+<p>Superposition, issentially means applying multiple effect/stimuli/attributes on a system/object.</p>
+<p>In general, the superposition principle applies to anywhere more than one attributes can be imposed on a single object.
+Formally speaking, the principle states that in all linear systems, the net response caused by two or more stimuli on a system is sum of the individual responses that would have been caused by each individual stimulus.</p>
+<blockquote>
+<div><p>The sum of responses of individual effects, is same as the response of the sum of individual effecs.</p>
+</div></blockquote>
+<p>Once we go through the mathematical structure in the coming sections, it will become clear that the superposition principle issentially is a consequence of <strong>linearity</strong> in the system, or linear behaviour.</p>
+<p>In quantum mechanics,</p>
+</section>
+<section id="role-of-interference">
+<h3>Role of interference<a class="headerlink" href="#role-of-interference" title="Link to this heading">#</a></h3>
+</section>
+<section id="principles-of-measurement">
+<h3>Principles of measurement<a class="headerlink" href="#principles-of-measurement" title="Link to this heading">#</a></h3>
+</section>
+<section id="no-cloning">
+<h3>No-cloning<a class="headerlink" href="#no-cloning" title="Link to this heading">#</a></h3>
+</section>
+<section id="entanglement">
+<h3>Entanglement<a class="headerlink" href="#entanglement" title="Link to this heading">#</a></h3>
+</section>
+<section id="tunnelling">
+<h3>Tunnelling<a class="headerlink" href="#tunnelling" title="Link to this heading">#</a></h3>
+</section>
 </section>
 <section id="mathematica-structure">
 <h2>Mathematica Structure<a class="headerlink" href="#mathematica-structure" title="Link to this heading">#</a></h2>
@@ -405,10 +481,12 @@ root(Mathematical Framework)
     Representation theory
         </div><section id="vector-space-hilbert-space">
 <h3>Vector Space, Hilbert Space<a class="headerlink" href="#vector-space-hilbert-space" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Scalar vs Vector</p></li>
-<li><p>States as Vector (Bra and Ket)</p></li>
-</ul>
+<section id="scalar-vs-vector">
+<h4>Scalar vs Vector<a class="headerlink" href="#scalar-vs-vector" title="Link to this heading">#</a></h4>
+</section>
+<section id="states-as-vector-bra-and-ket">
+<h4>States as Vector (Bra and Ket)<a class="headerlink" href="#states-as-vector-bra-and-ket" title="Link to this heading">#</a></h4>
+</section>
 </section>
 <section id="linear-combination">
 <h3>Linear combination<a class="headerlink" href="#linear-combination" title="Link to this heading">#</a></h3>
@@ -501,9 +579,23 @@ root(Mathematical Framework)
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#postulates-of-quantum-physics">Postulates of Quantum Physics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#postulates-of-quantum-physics">Postulates of Quantum Physics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uncertainty-principle">Uncertainty Principle</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#state-as-an-abstract-vector">State as an abstract vector</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#superposition-principle">Superposition principle</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#role-of-interference">Role of interference</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#principles-of-measurement">Principles of measurement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#no-cloning">No-cloning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#entanglement">Entanglement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tunnelling">Tunnelling</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematica-structure">Mathematica Structure</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-space-hilbert-space">Vector Space, Hilbert Space</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-space-hilbert-space">Vector Space, Hilbert Space</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scalar-vs-vector">Scalar vs Vector</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#states-as-vector-bra-and-ket">States as Vector (Bra and Ket)</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-combination">Linear combination</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inner-product">Inner Product</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-operators">Linear Operators</a></li>
@@ -554,8 +646,8 @@ By ICHEC Team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
