@@ -59,6 +59,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'lecture-11/quantum-algorithms-2';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -320,7 +322,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -336,6 +340,40 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nisq-era-and-algorithms">NISQ era and algorithms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variational-quantum-algorithms">Variational quantum algorithms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#map-of-nisq-algorithms">Map of NISQ algorithms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-algorithms-and-applications">Quantum algorithms and applications</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation">Simulation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advantage-of-nisq-simulation-algorithms">Advantage of NISQ simulation algorithms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-map">Simulation map</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-variational-quantum-eigensolver">The variational quantum eigensolver</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pfas-molecule-destruction">PFAS molecule destruction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimisation">Optimisation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimisation-map">Optimisation map</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#max-cut-problem">Max-cut problem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#travelling-salesman-problem">Travelling-salesman problem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimisation-using-annealing">Optimisation using annealing</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning">Machine learning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advantage-of-nisq-machine-learning-algorithms">Advantage of NISQ machine learning algorithms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-map">Machine learning map</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classical-neural-networks">Classical neural networks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-neural-network">Quantum neural network</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-tranfer-learning">Quantum tranfer learning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-machine-learning-example">Quantum machine learning example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anomaly-detection-with-qgans">Anomaly detection with qGANs</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wrap-up">Wrap-up</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -347,6 +385,224 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="lecture-11-quantum-algorithms-ii">
 <span id="lecture-11"></span><h1>Lecture 11: Quantum Algorithms - II<a class="headerlink" href="#lecture-11-quantum-algorithms-ii" title="Link to this heading">#</a></h1>
+<section id="nisq-era-and-algorithms">
+<h2>NISQ era and algorithms<a class="headerlink" href="#nisq-era-and-algorithms" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>NISQ stands for Noisy Intermediate Scale Quantum. This describes the current state of quantum hardware, with approximately 100 qubits, subject to noise.</p></li>
+<li><p>To work with this circuit, shallow quantum algorithms with low number of qubits are needed. In most of the cases, this algorithms are embbeded to a classical algorithm, resulting on <em>hybrid classical-quantum algorithms</em>.</p></li>
+<li><p>The most common type of NISQ algorithms are the variational quantum circuits (VQCs), which are quantum circuits that contain classical parameters that need to be classically optimised.</p></li>
+</ul>
+<img alt="../_images/nisq_algorithm.jpg" class="align-center" src="../_images/nisq_algorithm.jpg" />
+<section id="variational-quantum-algorithms">
+<h3>Variational quantum algorithms<a class="headerlink" href="#variational-quantum-algorithms" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>One can think as VQC’s as trainable quantum circuits. Different problems will require different gates and parameter structure.</p></li>
+<li><p>In order to train the variational parameters, we will measure the output of the circuit, sent it to a cost function (which is problem-dependant) and perform an optimisation step (like stochastic gradient descent) to update the parameters. We can repeat this process until we get a set of parameters that make the circuit output the desired solution.</p></li>
+</ul>
+<img alt="../_images/vqc.jpg" class="align-center" src="../_images/vqc.jpg" />
+<ul class="simple">
+<li><p>We can use VQCs to solve simulation, optimisation and machine learning problems.</p></li>
+<li><p>Even though VQCs by themselves doesn’t allow us to solve large problems, its integration in classical pipelines may be of interest in the near future.</p></li>
+</ul>
+</section>
+<section id="map-of-nisq-algorithms">
+<h3>Map of NISQ algorithms<a class="headerlink" href="#map-of-nisq-algorithms" title="Link to this heading">#</a></h3>
+<p>In the diagram below we can see some of the applications of NISQ algorithms. We will cover the different areas of application (simulation, optimisation and machine learning) in the following sections.</p>
+<img alt="../_images/nisq_applications.jpg" class="align-center" src="../_images/nisq_applications.jpg" />
+</section>
+<section id="quantum-algorithms-and-applications">
+<h3>Quantum algorithms and applications<a class="headerlink" href="#quantum-algorithms-and-applications" title="Link to this heading">#</a></h3>
+<p>In the diagram below we can see another diagram showing the problems solved by NISQ algorithms and the sectors in which these algorithms are useful. As examples, the maximum-cut proble is frequent in the tech sector, like in the study of networks. On the other hand fluid dynamics is present in aerospace engineer, or the travelling salesman problem in logistics.</p>
+<img alt="../_images/nisq_applications_2.jpg" class="align-center" src="../_images/nisq_applications_2.jpg" />
+</section>
+<section id="simulation">
+<h3>Simulation<a class="headerlink" href="#simulation" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Simulation of quantum systems aims to predict the behaviour of a complex physical system such as a molecule. It remains extremely difficult for a classical computer to simulate this kind of systems.</p></li>
+</ul>
+<img alt="../_images/simulation_1.jpg" class="align-center" src="../_images/simulation_1.jpg" />
+<ul class="simple">
+<li><p>These complex systems are generally composed of interacting quantum objects, which can be simulated on quantum computers by directly mapping these objects onto qubits.</p></li>
+<li><p>To run a quantum computing simulation algorithm, we have to encode the problem we are solving in a mathematical function called Hamiltonian, which can be thought as the energy model for the system. After encoding the Hamiltonian in the qubits of our circuit, we can apply one of our simulation algorithms to reach the desired solution.</p></li>
+</ul>
+<img alt="../_images/simulation_2.jpg" class="align-center" src="../_images/simulation_2.jpg" />
+</section>
+<section id="advantage-of-nisq-simulation-algorithms">
+<h3>Advantage of NISQ simulation algorithms<a class="headerlink" href="#advantage-of-nisq-simulation-algorithms" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Quantum systems like molecules are easy to simulate with other quantum systems (qubits are quantum systems!), as they maintain the same properties and follow the same physical laws.</p></li>
+<li><p>As quantum systems are very complex, they are impossible to simulate classically due to memory constraints when the system size exceeds <span class="math notranslate nohighlight">\(N=50\)</span>.</p></li>
+<li><p>This however doesn’t mean that any problem computation done with more than 50 qubits can’t be solved classically using alternative methods.</p></li>
+</ul>
+</section>
+<section id="simulation-map">
+<h3>Simulation map<a class="headerlink" href="#simulation-map" title="Link to this heading">#</a></h3>
+<img alt="../_images/simulation_map.jpg" class="align-center" src="../_images/simulation_map.jpg" />
+<ul class="simple">
+<li><p>Above is shown the mapping between quantum simulation algorithms and some of their applications in specific industries.</p></li>
+<li><p>Algorithms are shown in red, applications in green, and more abstract problems in blue.</p></li>
+<li><p>Algorithms can solve a set of particular problems, shown in blue, which can be used for a particular application on an industry.</p></li>
+<li><p>As we see, the generic simulation algorithms are the Variational Quantum Eigensolver (VQE) and the Quantum Approximate Optimsation Algorithm (QAOA). The objective of both algorithms is to measure the energies of some Hamiltonian.</p></li>
+</ul>
+</section>
+<section id="the-variational-quantum-eigensolver">
+<h3>The variational quantum eigensolver<a class="headerlink" href="#the-variational-quantum-eigensolver" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Looking back at the Benzene molecule we saw at the beginning of the lecture, let’s see how we can use the VQE to find its minimum energy state in a process called eigensolving.</p></li>
+<li><p>We can encode the Benzene molecule in a Hamiltonian in which we can the apply the VQE to.</p></li>
+<li><p>Each of our qubits will represent one component of the system. We can apply evolution operators to these qubits, which will contain variational quantum parameters, that will be optimised until we find the desired minimum energy.</p></li>
+</ul>
+<img alt="../_images/vqe.jpg" class="align-center" src="../_images/vqe.jpg" />
+</section>
+<section id="pfas-molecule-destruction">
+<h3>PFAS molecule destruction<a class="headerlink" href="#pfas-molecule-destruction" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>An important use-case of the VQE is the study of PFAS (per-and polyfluoroalkyl) molecule destruction. These molecules are used as heat, water and oil resistant coatings in many areas.</p></li>
+<li><p>These molecules are present in many materials, and have the inconvenient that are toxic to human bodies and they can easily contaminate water. Thus, there is an interest in chemical degradation and destruction of these molecules. In order to break these molecules we need to be able to simulate their energies, something that can be done with the VQE.</p></li>
+</ul>
+</section>
+<section id="optimisation">
+<h3>Optimisation<a class="headerlink" href="#optimisation" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Optimisation is a branch of mathematics and computer science that deals with finding the best solution (maximum or minimum) of some problem, by performing iterations of a given algorithm.</p></li>
+<li><p>One may want to minimise quantities like energy use or manufacturing time, or maximise profit for example.</p></li>
+<li><p>It turns out that the VQCs we have seen before are promising candidates to solve optimisation problems.</p></li>
+<li><p>An optimisation problem can be encoded on a VQC. The quantity we want to maximise/minimise would therefore be a function of the output when measuring the VQC. We can update the variational parameters of the VQC (using a classical optimiser) in successive iterations until the desired solution for our optimisation problem is attained.</p></li>
+</ul>
+<img alt="../_images/optimisation.jpg" class="align-center" src="../_images/optimisation.jpg" />
+</section>
+<section id="optimisation-map">
+<h3>Optimisation map<a class="headerlink" href="#optimisation-map" title="Link to this heading">#</a></h3>
+<img alt="../_images/optimisation_map.jpg" class="align-center" src="../_images/optimisation_map.jpg" />
+<ul class="simple">
+<li><p>Above is shown the mapping between quantum optimisation algorithms and some of their applications in different industries.</p></li>
+<li><p>When comparing this map with the one we presented before for simulation, we seen than the Grover adaptative search algorithm has been added now. This algorithm is a NISQ variation of Grover’s algorithm, where Grover search is iteratively applied and classically optimised to find good solutions.</p></li>
+<li><p>As we see, the applications and sectors are different when we compare them to the simulation map.</p></li>
+</ul>
+</section>
+<section id="max-cut-problem">
+<h3>Max-cut problem<a class="headerlink" href="#max-cut-problem" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>A graph is a structure made up of various nodes that have weighted connections (edges) between them. They can be used to model different problems and scenarios. For example social media users can be modelled using a graph, where its edges represent the influence between different users.</p></li>
+<li><p>The Max-cut problem aims to do a binary partition of the nodes of the graph so that the sum of the weights of the connections between the two sets is maximised. In the image below we can see how the graph’s nodes were divided in two sets: one conatining nodes 0,3 and the other containing nodes 1,2.</p></li>
+</ul>
+<img alt="../_images/max_cut.jpg" class="align-center" src="../_images/max_cut.jpg" />
+<ul class="simple">
+<li><p>The Max-cut problem can be easily mapped to what is called an Ising Hamiltonian, which can be easily encoded and optimised on quantum computers.</p></li>
+<li><p>The Max-cut problem has applications in many areas including clustering, or graph and electrical design. It is often used as benchmnarking for evaluating optimisation techniques.</p></li>
+</ul>
+</section>
+<section id="travelling-salesman-problem">
+<h3>Travelling-salesman problem<a class="headerlink" href="#travelling-salesman-problem" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>The travelling-salesman problem is another famous optimisation problem. Given a list of cities represented with nodes on a graph, and its distances represented by the weighted edges, the objective of this problem is to find the shortest possible route, so that each city is visited just once, and the starting and ending point of the route is the same.</p></li>
+<li><p>Similarly to Max-cut, this problem can be easily mapped to an Ising hamiltonian and optimised in a quantum computer. In the image below we can see the graph representing the problem (left) and the shortest optimal route (right).</p></li>
+</ul>
+<img alt="../_images/travelling_salesman.jpg" class="align-center" src="../_images/travelling_salesman.jpg" />
+<ul class="simple">
+<li><p>This problem has different applications in many areas, being finance and marketing among the most notable ones.</p></li>
+</ul>
+</section>
+<section id="optimisation-using-annealing">
+<h3>Optimisation using annealing<a class="headerlink" href="#optimisation-using-annealing" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Until now we have mainly focused on VQCs, a type of quantum algorithm that is meant to be implemented on a gate-based quantum computer. However, there exist other types of quantum computer architectures that are good when it comes to solve optimisation problems.</p></li>
+<li><p>One of these architectures is what is called quantum annealing. This type of quantum computers are only capable of solving problems that can be encoded as Ising Hamiltonians.</p></li>
+<li><p>While this is a limitation, it is compensated by the fact that annealers have more than 5,000 qubits available, meaning that the size of the problems that can be solved is much larger when compared to gate based computers.</p></li>
+</ul>
+<img alt="../_images/annealing.jpg" class="align-center" src="../_images/annealing.jpg" />
+<ul class="simple">
+<li><p>One of the most promising quantum annealing applications is portfolio optimisation.</li></p></li>
+</ul>
+</section>
+</section>
+<section id="machine-learning">
+<h2>Machine learning<a class="headerlink" href="#machine-learning" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>The primary goal of machine learning is to develop models that can generalize well to new, unseen data, allowing them to make accurate predictions or decisions in various situations.</p></li>
+<li><p>A simple example of a machine learning task is image classification. In the image below we can see bees and ants. One machine learning model (which is well trained), would be capable of distinguishing between the bees and ants in the image.</p></li>
+</ul>
+<img alt="../_images/machine_learning.png" class="align-center" src="../_images/machine_learning.png" />
+<section id="advantage-of-nisq-machine-learning-algorithms">
+<h3>Advantage of NISQ machine learning algorithms<a class="headerlink" href="#advantage-of-nisq-machine-learning-algorithms" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>We can find different computational bottlenecks in a classical machine learning workflow. One example of this is matrix-vector multiplication, a seemingly simple operation which consumes a lot of computation power when the matrices are very large.</p></li>
+</ul>
+<img alt="../_images/matrix.jpg" class="align-center" src="../_images/matrix.jpg" />
+<ul class="simple">
+<li><p>Other examples of computationally expensive tasks appearing in machine learning tasks are Fourier transforms, diagonalising matrices or solving linear systems of equations.</p></li>
+<li><p>With quantum algorithms it is thought that we can get an speed-up in some of these tasks.</p></li>
+</ul>
+</section>
+<section id="machine-learning-map">
+<h3>Machine learning map<a class="headerlink" href="#machine-learning-map" title="Link to this heading">#</a></h3>
+<img alt="../_images/machine_learning_map.jpg" class="align-center" src="../_images/machine_learning_map.jpg" />
+<ul class="simple">
+<li><p>Above is shown the mapping between quantum machine learning algorithms and some of their applications in different industries.</p></li>
+<li><p>When compared to the previous maps we have shown, it can be seen that VQCs are still important here, and also the quantum embedding kernels, which are based on classical kernel methods but implemented on a quantum computer.</p></li>
+<li><p>Among the applications we find neural networks (we can use VQCs as one neural network layer) or quantum generative adversarial methods (quantum GANs), that can be used to generate data that resembles the original data used for training. These are especially important in fraud detection in finance industry.</p></li>
+</ul>
+</section>
+<section id="classical-neural-networks">
+<h3>Classical neural networks<a class="headerlink" href="#classical-neural-networks" title="Link to this heading">#</a></h3>
+<img alt="../_images/neural_network.jpg" class="align-center" src="../_images/neural_network.jpg" />
+<ul class="simple">
+<li><p>A classical neural network is composed of multiple layers of transformations, governed by certain weights and parameters, which are represented in nodes in the image.</p></li>
+<li><p>A vector is input to the networks and is transformed multiple times until we get the output vector.</p></li>
+<li><p>The parameters of the network are trained to minimise a cost function that will depend on the quantity that we are measuring.</p></li>
+</ul>
+</section>
+<section id="quantum-neural-network">
+<h3>Quantum neural network<a class="headerlink" href="#quantum-neural-network" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>A quantum neural network is a neural network where one of more of the layers is a VQC.</p></li>
+<li><p>As we seen in the previous section, each layer of the network is governed by a set of parameters. When a layer is a VQC, these parameters will be the variational parameters appearing in the quantum circuit, that will be optimised during the training phase.</p></li>
+<li><p>What the benefits are of having a VQC as layer is still an open question in quantum machine learning.</p></li>
+</ul>
+<img alt="../_images/quantum_neural_network.jpg" class="align-center" src="../_images/quantum_neural_network.jpg" />
+</section>
+<section id="quantum-tranfer-learning">
+<h3>Quantum tranfer learning<a class="headerlink" href="#quantum-tranfer-learning" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Quantum transfer learning is a technique that falls within the field of quantum neural networks.</p></li>
+<li><p>This technique involves using a pre-trained classical neural network, and substituting one of the layers of the networks by a VQC, as we can see in the image.</p></li>
+<li><p>The VQC variational parameters are trained using the output of the pre-trained classical neural network to get the desired result.</p></li>
+</ul>
+<img alt="../_images/quantum_transfer_learning.jpg" class="align-center" src="../_images/quantum_transfer_learning.jpg" />
+</section>
+<section id="quantum-machine-learning-example">
+<h3>Quantum machine learning example<a class="headerlink" href="#quantum-machine-learning-example" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Let’s return to the image processing task on bees and ants that we saw before to see an example of application of quantum machine learning.</p></li>
+<li><p>As we see in the diagram, we input an image encoded in 512 pixeles to a pre-trained neural network on image classification.</p></li>
+<li><p>After that a layer is applied to reduce dimensionality, and its output is sent to a VQC with 4 parameters. Then, another layer is applied to get a 2-dimensional vector with out predictions</p></li>
+</ul>
+<img alt="../_images/quantum_machine_learning_example.jpg" class="align-center" src="../_images/quantum_machine_learning_example.jpg" />
+</section>
+<section id="anomaly-detection-with-qgans">
+<h3>Anomaly detection with qGANs<a class="headerlink" href="#anomaly-detection-with-qgans" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>As we have seen before, GANs have seen great success in anomaly detection.</p></li>
+<li><p>A GAN consists of two neural networks, a generator and a discriminator. The generator aims to to create a dataset which is indistinguishable from the training data provided, and the discriminator aims to succesfully distinguish between these two datasets.</p></li>
+<li><p>After training these two networks, the discriminator will be capable of detecting anomalies on unseen data.</p></li>
+<li><p>The classical GANs have shown limitations in training phase and sampling procedure. That is why in qGANs the classical generator is replaced with a VQC to try to overcome this limitations.</p></li>
+</ul>
+<img alt="../_images/qGANs.jpg" class="align-center" src="../_images/qGANs.jpg" />
+</section>
+</section>
+<section id="wrap-up">
+<h2>Wrap-up<a class="headerlink" href="#wrap-up" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Introduction to NISQ algorithms and their applications in different areas</p>
+<ul>
+<li><p>Simulation</p></li>
+<li><p>Optimisation</p></li>
+<li><p>Machine learning</p></li>
+</ul>
+</li>
+<li><p>Add more</p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -403,6 +659,47 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nisq-era-and-algorithms">NISQ era and algorithms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variational-quantum-algorithms">Variational quantum algorithms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#map-of-nisq-algorithms">Map of NISQ algorithms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-algorithms-and-applications">Quantum algorithms and applications</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation">Simulation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advantage-of-nisq-simulation-algorithms">Advantage of NISQ simulation algorithms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-map">Simulation map</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-variational-quantum-eigensolver">The variational quantum eigensolver</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pfas-molecule-destruction">PFAS molecule destruction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimisation">Optimisation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimisation-map">Optimisation map</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#max-cut-problem">Max-cut problem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#travelling-salesman-problem">Travelling-salesman problem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimisation-using-annealing">Optimisation using annealing</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning">Machine learning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advantage-of-nisq-machine-learning-algorithms">Advantage of NISQ machine learning algorithms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-map">Machine learning map</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classical-neural-networks">Classical neural networks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-neural-network">Quantum neural network</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-tranfer-learning">Quantum tranfer learning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-machine-learning-example">Quantum machine learning example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anomaly-detection-with-qgans">Anomaly detection with qGANs</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wrap-up">Wrap-up</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
