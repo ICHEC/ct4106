@@ -359,8 +359,12 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematica-structure">Mathematica Structure</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scalar-vs-vector">Scalar vs Vector</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scalars">Scalars</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vectors">Vectors</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-space-hilbert-space">Vector Space, Hilbert Space</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scalar-vs-vector">Scalar vs Vector</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#set">Set</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#group">Group</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#states-as-vector-bra-and-ket">States as Vector (Bra and Ket)</a></li>
 </ul>
 </li>
@@ -443,13 +447,24 @@ Formally speaking, the principle states that in all linear systems, the net resp
 <div><p>The sum of responses of individual effects, is same as the response of the sum of individual effecs.</p>
 </div></blockquote>
 <p>Once we go through the mathematical structure in the coming sections, it will become clear that the superposition principle issentially is a consequence of <strong>linearity</strong> in the system, or linear behaviour.</p>
-<p>In quantum mechanics,</p>
+<p>In quantum mechanics, the superposition applies to states. What that means is, that if a system can exist in say two states <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, then it can also exist in a superposition of <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>. In the section below we will learn how to interpret such a thing mathematically, but for now we can intuitively speculate, that a superposition of two states should have properties resembling both the states even though the two state might be very different.</p>
+<blockquote>
+<div><blockquote>
+<div><p>Figure for illustration</p>
+</div></blockquote>
+</div></blockquote>
 </section>
 <section id="role-of-interference">
 <h3>Role of interference<a class="headerlink" href="#role-of-interference" title="Link to this heading">#</a></h3>
+<p>The notion of intereference is quantum systems is very similar to what it means in waves. When two waves are combined, their instantaneous intensities or displacements are added. The intensity or displacement of the resulting wave can be greater or lower depending on their <code class="docutils literal notranslate"><span class="pre">relative</span> <span class="pre">phase</span></code>.</p>
+<p><img alt="" src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Waventerference.gif" /></p>
+<p>In case of quantum system, as we will see, probability amplitudes take the role of intensity or displacements.</p>
 </section>
 <section id="principles-of-measurement">
 <h3>Principles of measurement<a class="headerlink" href="#principles-of-measurement" title="Link to this heading">#</a></h3>
+<p>In quantum mechanics, a measurement is testing or manipulation of a physical system that yields a numerical result.
+This in principle doesn’t look much different than a measurement of a classical system. However, in the quantum realm,
+the process of <code class="docutils literal notranslate"><span class="pre">measureing</span></code> something also changes the underlying system.</p>
 </section>
 <section id="no-cloning">
 <h3>No-cloning<a class="headerlink" href="#no-cloning" title="Link to this heading">#</a></h3>
@@ -463,6 +478,8 @@ Formally speaking, the principle states that in all linear systems, the net resp
 </section>
 <section id="mathematica-structure">
 <h2>Mathematica Structure<a class="headerlink" href="#mathematica-structure" title="Link to this heading">#</a></h2>
+<p>Here we discuss in bravity the necessary mathematical structures upon which the formulation of quantum mechanics relies on.
+It progressively goes as follows -</p>
 <div class="mermaid">
             mindmap
 root(Mathematical Framework)
@@ -479,10 +496,32 @@ root(Mathematical Framework)
         Special operators: Unitary, Hermitian, ...
         Probability conservation
     Representation theory
-        </div><section id="vector-space-hilbert-space">
+        </div><section id="scalar-vs-vector">
+<h3>Scalar vs Vector<a class="headerlink" href="#scalar-vs-vector" title="Link to this heading">#</a></h3>
+<p>Any quantity that can be described by a single numerical value, usually with real, and sometimes with complex numbers is a scalar.
+The common examples of scalars are volume, density, speed, energy, mass and time.</p>
+<p>Quantities require multiples of numerical values, with each value describing some aspect of the quantities, are called vectors. The number of these values is called the <code class="docutils literal notranslate"><span class="pre">dimension</span></code> of the vector. Common examples of vector quantities from physics include position, velocity, momentum, and force.</p>
+<p>Both scalars and vectors are represented usually with real numbers, and often with complex numbers. So the notions of <code class="docutils literal notranslate"><span class="pre">addition</span></code>, <code class="docutils literal notranslate"><span class="pre">subtraction</span></code>, <code class="docutils literal notranslate"><span class="pre">multiplication</span></code> and <code class="docutils literal notranslate"><span class="pre">division</span></code>,
+through which we manipulate numbers, are suitably extended on scalars and vectors.</p>
+</section>
+<section id="scalars">
+<h3>Scalars<a class="headerlink" href="#scalars" title="Link to this heading">#</a></h3>
+<p>Scalars are expressed in terms of single number, so their algebra is essentially the same as algebra of real/complex numbers they are expressed in.</p>
+</section>
+<section id="vectors">
+<h3>Vectors<a class="headerlink" href="#vectors" title="Link to this heading">#</a></h3>
+<p>Vectors are expressed in terms of multiple numbers. So it’s not straight forward as to how to extend their algebra from the component numbers. We see below how this is done.</p>
+</section>
+<section id="vector-space-hilbert-space">
 <h3>Vector Space, Hilbert Space<a class="headerlink" href="#vector-space-hilbert-space" title="Link to this heading">#</a></h3>
-<section id="scalar-vs-vector">
-<h4>Scalar vs Vector<a class="headerlink" href="#scalar-vs-vector" title="Link to this heading">#</a></h4>
+<p>A Vector space is a mathematical structure, that constitutes the necessary components to manipulate vectors in sensible way. Before we define it, we need to understand a few definitions, namely <code class="docutils literal notranslate"><span class="pre">Set</span></code>, <code class="docutils literal notranslate"><span class="pre">Binary</span> <span class="pre">operations</span></code>, <code class="docutils literal notranslate"><span class="pre">Group</span></code> and <code class="docutils literal notranslate"><span class="pre">Field</span></code> -</p>
+<section id="set">
+<h4>Set<a class="headerlink" href="#set" title="Link to this heading">#</a></h4>
+<p>In Mathematics, a set is defined as a unique collection of well defined objects.^[1]</p>
+</section>
+<section id="group">
+<h4>Group<a class="headerlink" href="#group" title="Link to this heading">#</a></h4>
+<p>A group</p>
 </section>
 <section id="states-as-vector-bra-and-ket">
 <h4>States as Vector (Bra and Ket)<a class="headerlink" href="#states-as-vector-bra-and-ket" title="Link to this heading">#</a></h4>
@@ -591,8 +630,12 @@ root(Mathematical Framework)
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematica-structure">Mathematica Structure</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scalar-vs-vector">Scalar vs Vector</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scalars">Scalars</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vectors">Vectors</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-space-hilbert-space">Vector Space, Hilbert Space</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scalar-vs-vector">Scalar vs Vector</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#set">Set</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#group">Group</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#states-as-vector-bra-and-ket">States as Vector (Bra and Ket)</a></li>
 </ul>
 </li>
