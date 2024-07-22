@@ -364,7 +364,9 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vectors">Vectors</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-space-hilbert-space">Vector Space, Hilbert Space</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#set">Set</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-operations">Binary operations</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#group">Group</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#field"><strong>Field</strong></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#states-as-vector-bra-and-ket">States as Vector (Bra and Ket)</a></li>
 </ul>
 </li>
@@ -438,6 +440,7 @@ can change the system’s state. Alternatively, it’s also the minimum number o
 of some kind. For the moment we call it an abstract vector, as we don’t know it’s structure. As we go throught the sections, we will explore how this structure emerges, and how it works.</p>
 <p>So, for the moment, we say that the state of a quantum system is represented by an abstract vector. In due course we will learn several synonyms for this abstract vector defining the state of a quantum system.</p>
 </section>
+<hr class="docutils" />
 <section id="superposition-principle">
 <h3>Superposition principle<a class="headerlink" href="#superposition-principle" title="Link to this heading">#</a></h3>
 <p>Superposition, issentially means applying multiple effect/stimuli/attributes on a system/object.</p>
@@ -476,6 +479,7 @@ the process of <code class="docutils literal notranslate"><span class="pre">meas
 <h3>Tunnelling<a class="headerlink" href="#tunnelling" title="Link to this heading">#</a></h3>
 </section>
 </section>
+<hr class="docutils" />
 <section id="mathematica-structure">
 <h2>Mathematica Structure<a class="headerlink" href="#mathematica-structure" title="Link to this heading">#</a></h2>
 <p>Here we discuss in bravity the necessary mathematical structures upon which the formulation of quantum mechanics relies on.
@@ -517,14 +521,99 @@ through which we manipulate numbers, are suitably extended on scalars and vector
 <p>A Vector space is a mathematical structure, that constitutes the necessary components to manipulate vectors in sensible way. Before we define it, we need to understand a few definitions, namely <code class="docutils literal notranslate"><span class="pre">Set</span></code>, <code class="docutils literal notranslate"><span class="pre">Binary</span> <span class="pre">operations</span></code>, <code class="docutils literal notranslate"><span class="pre">Group</span></code> and <code class="docutils literal notranslate"><span class="pre">Field</span></code> -</p>
 <section id="set">
 <h4>Set<a class="headerlink" href="#set" title="Link to this heading">#</a></h4>
-<p>In Mathematics, a set is defined as a unique collection of well defined objects.^[1]</p>
+<p>Learning the notion of sets, and their manipulation provide not only training in fundamentals of logic of categorisation, organisation, it is crucial building block of most of mathematics.</p>
+<p>In Mathematics, a set is defined as a unique collection of well defined objects<a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>, and the object in the collection are called elements of the set.</p>
+<p>For example,</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(A=\{a, e, i, o, u\}\)</span> is a set of vovels in english language.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbb{Z} = \{0, \pm1, \pm2, \pm3,\dots\}\)</span> is the set of integers.</p></li>
+</ul>
+<p>It’s important to imphesise the important of uniqueness in a set. It means in that in a set, a member exists only once. Thus <span class="math notranslate nohighlight">\(A=\{a, e, i, o, u\}\)</span> is a well defined set, while <span class="math notranslate nohighlight">\(A=\{a, e, i, o, u, a, i\}\)</span> is not, as <span class="math notranslate nohighlight">\(a, i\)</span> are put twice. So a set is different than a mere list, which can have multiple occurrance of an object.</p>
+<p>Secondly, the order of elements in a set have no meaning, so <span class="math notranslate nohighlight">\(\{a, e, i, o, u\}\)</span> and say, <span class="math notranslate nohighlight">\(\{i, o, a, u, e\}\)</span> are same sets, just expressed differently.</p>
+<p>You can manipulate a set, by adding or removing elements from it. A set with no elements is called <code class="docutils literal notranslate"><span class="pre">Null</span> <span class="pre">set</span></code>, denoted by <span class="math notranslate nohighlight">\(\emptyset\)</span>.</p>
+<p><strong>Subsets</strong>
+Imagine we have two sets, A and B, and it is such that, every element of A is also element of B, then we say that A is a subset of B. It is denoted as <span class="math notranslate nohighlight">\(A\subset B\)</span>. We also in this case, call B as <strong>superset</strong> of A.</p>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="https://upload.wikimedia.org/wikipedia/commons/b/b0/Venn_A_subset_B.svg"><img alt="https://upload.wikimedia.org/wikipedia/commons/b/b0/Venn_A_subset_B.svg" src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Venn_A_subset_B.svg" style="width: 400px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">A is subset of B, and B is superset of A</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="https://upload.wikimedia.org/wikipedia/commons/a/a0/NumberSetinC.svg"><img alt="https://upload.wikimedia.org/wikipedia/commons/a/a0/NumberSetinC.svg" src="https://upload.wikimedia.org/wikipedia/commons/a/a0/NumberSetinC.svg" style="width: 400px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Visualisation of the set of numbers, <span class="math notranslate nohighlight">\(\mathbb{N, Z, Q, R, C}\)</span></span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="../_images/bd2fb67f16e91c8531839a1e84f17d308fdc52953c4142e73df27663fad56256.png" src="../_images/bd2fb67f16e91c8531839a1e84f17d308fdc52953c4142e73df27663fad56256.png" />
+</div>
+</div>
+<p>We defined what a set is, and introduced a notion of comparison by defining what a subset, and superset is. There is a lot more one can do with the notion of sets, to manipulate them, to the extent that it looks like everyday algebra.</p>
+<ul class="simple">
+<li><p><strong>Universal set:</strong> For a given consideration of problem, a universal set <span class="math notranslate nohighlight">\(U\)</span> is set of all elements considered, and fixed, so that every set defined for the problem, is a subset of <span class="math notranslate nohighlight">\(U\)</span>.</p></li>
+<li><p><strong>Complement:</strong> Compliment of a set A, denoted by <span class="math notranslate nohighlight">\(A'\)</span>, or sometimes <span class="math notranslate nohighlight">\(A^c\)</span> is defined with respect to the universal set, is set of all elements of <span class="math notranslate nohighlight">\(U\)</span> that are not in A.</p></li>
+<li><p><strong>Union:</strong> A union of two sets, say A and B, denoted as <span class="math notranslate nohighlight">\(A\cup B\)</span> is defined as the set of all elements that belong to either A, or B, or both. For example, if <span class="math notranslate nohighlight">\(A=\{1,2,3,4\}\)</span> and <span class="math notranslate nohighlight">\(B=\{1,3,5,7\}\)</span>, then <span class="math notranslate nohighlight">\(A\cup B = \{1, 2, 3, 4, 5, 7\}\)</span>.</p></li>
+<li><p><strong>Intersection:</strong> An intersection of two sets, say A and B, denoted as <span class="math notranslate nohighlight">\(A\cap B\)</span> is defined as set of all elements that belong to both A and B.</p></li>
+<li><p><strong>Difference:</strong> The set difference of A from B, denote as <span class="math notranslate nohighlight">\(A-B\)</span>, is set of all elements of A that are not elements of B.</p></li>
+<li><p><strong>Cartesian Product:</strong> A cartesian product of two sets, say A and B, denoted by <span class="math notranslate nohighlight">\(A\times B\)</span> is the set of all ordered pairs <span class="math notranslate nohighlight">\((a, b)\)</span> such that <span class="math notranslate nohighlight">\(a\)</span> belongs to A, and <span class="math notranslate nohighlight">\(b\)</span> belongs to B.</p></li>
+</ul>
+<blockquote>
+<div><p>Add illustration</p>
+</div></blockquote>
+</section>
+<section id="binary-operations">
+<h4>Binary operations<a class="headerlink" href="#binary-operations" title="Link to this heading">#</a></h4>
+<p>Binary operations, as the name suggests are operations that take two objects and combine them to give (usually) one unique object.</p>
+<p>In mathematics, binary operation is defined on a set, that takes two elements of the set, and returns one element of a  set.</p>
+<p>Formally, a binary operation on a set A is a mapping of elements of <span class="math notranslate nohighlight">\(A\times A\)</span> to A, expressed as</p>
+<div class="math notranslate nohighlight">
+\[
+o : A\times A \longrightarrow A
+\]</div>
+<p>For the binary operation to be well defined, the operation <span class="math notranslate nohighlight">\(o\)</span> should be such that <em>every</em> pair of elements from A, should map to a unique element in A. That is, if <span class="math notranslate nohighlight">\(a, b\)</span> are two arbitrary elements of A, then there exists a <span class="math notranslate nohighlight">\(c\)</span> in A, that <span class="math notranslate nohighlight">\(o(a, b) = c\)</span>. <span class="math notranslate nohighlight">\(o(a, b)\)</span> or <span class="math notranslate nohighlight">\(a~o~b\)</span> is denoted as result of the binary operation.</p>
+<p><strong>Commutativity</strong> A binary operation is said to be commutative, if the result of combining does not depend on which is combined to the other i.e., if <span class="math notranslate nohighlight">\(a o b = b o a\)</span> for every <span class="math notranslate nohighlight">\(a, b\)</span> in the set A.</p>
+<p>Examples:</p>
+<ul class="simple">
+<li><p>On the set of real numbers <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>, the usual addition <span class="math notranslate nohighlight">\(o(a,b) = a + b\)</span>, and the usual multiplication <span class="math notranslate nohighlight">\(o(a,b) = ab\)</span> are most common examples of binary operations.</p></li>
+</ul>
 </section>
 <section id="group">
 <h4>Group<a class="headerlink" href="#group" title="Link to this heading">#</a></h4>
-<p>A group</p>
+<p>When we have a set, it let’s us categorize, and organize the elements. Having binary operations defined on a set tells us how a pair of elements of the set result in another element, in effect how combining elements gives us different elements.</p>
+<p>The binary operations defined on a set, give new structure to the set. A group is one such structure.</p>
+<p>A group is a set <span class="math notranslate nohighlight">\(A\)</span> with an operation <span class="math notranslate nohighlight">\(o\)</span>, expressed as <span class="math notranslate nohighlight">\((A, o)\)</span>, such that the operation satifies following conditions -</p>
+<ol class="arabic simple">
+<li><p><strong>Associativity</strong> A binary operation is called associative, if <span class="math notranslate nohighlight">\(a o (b o c) = (a o b) o c\)</span> for every elements <span class="math notranslate nohighlight">\(a, b, c\)</span> in <span class="math notranslate nohighlight">\(A\)</span>.</p></li>
+<li><p><strong>Existence of Identity</strong> There exist an element <span class="math notranslate nohighlight">\(e\)</span> in <span class="math notranslate nohighlight">\(A\)</span> such that for every element <span class="math notranslate nohighlight">\(a\in A\)</span>, <span class="math notranslate nohighlight">\(e o a = a\)</span>, i.e., combining any element with <span class="math notranslate nohighlight">\(e\)</span> results in the same element.</p></li>
+<li><p><strong>Existence of Inverse</strong> For every element <span class="math notranslate nohighlight">\(a\in A\)</span>, there exists another element, say <span class="math notranslate nohighlight">\(a'\)</span> such that <span class="math notranslate nohighlight">\(a' o a = e\)</span>, i.e, combining the two results in indentity element.</p></li>
+</ol>
+<p>The inverse of an element <span class="math notranslate nohighlight">\(a\)</span> is often denoted by <span class="math notranslate nohighlight">\(a^{-1}\)</span>. There are certain consequence, that result directly out of the above two assumptions. Consider the identity in the group <span class="math notranslate nohighlight">\((A, o)\)</span>: we said for identity, <span class="math notranslate nohighlight">\(e o a = a\)</span>, and why not <span class="math notranslate nohighlight">\(a o e = a\)</span>?</p>
+<p>The two expressions are in general different, and can potentially, mean existence of two types of identity elements, say <code class="docutils literal notranslate"><span class="pre">left</span> <span class="pre">identity</span></code> and <code class="docutils literal notranslate"><span class="pre">right</span> <span class="pre">identity</span></code>. However one can prove based on the purely logic, and the knowledge that <span class="math notranslate nohighlight">\((A, o)\)</span> is a group, that the left and right identities, are the same element.</p>
+<p>The same question can be posed for the existence of the inverse. The left and the right inverses of an element (can be proven) are the same.</p>
+<p>The inverse of the inverse of the element <span class="math notranslate nohighlight">\(a\)</span>, is the element itself, i.e., <span class="math notranslate nohighlight">\((a^{-1})^{-1} = a\)</span></p>
+<p><strong>Examples:</strong></p>
+<ul class="simple">
+<li><p>The set of integers with arithmatic addition <span class="math notranslate nohighlight">\((\mathbb{Z}, +)\)</span> forms a group.</p></li>
+</ul>
+<ul class="simple">
+<li><p>What about the set of rational numbers, real numbers and complex numbers. Do any of these form a group with arithmatic addition <code class="docutils literal notranslate"><span class="pre">+</span></code>, or multiplication <code class="docutils literal notranslate"><span class="pre">*</span></code> ?</p></li>
+</ul>
+</section>
+<section id="field">
+<h4><strong>Field</strong><a class="headerlink" href="#field" title="Link to this heading">#</a></h4>
+<p>In mathematics, a field is defined as a set <span class="math notranslate nohighlight">\(F\)</span> with two binary operations, say <code class="docutils literal notranslate"><span class="pre">+</span></code> and <code class="docutils literal notranslate"><span class="pre">.</span></code> such that following conditions are satisfied -</p>
+<ol class="arabic simple">
+<li><p>The binary operations <code class="docutils literal notranslate"><span class="pre">+</span></code> and <code class="docutils literal notranslate"><span class="pre">.</span></code> are commutative, i.e., <span class="math notranslate nohighlight">\(a + b = b + a\)</span>, and <span class="math notranslate nohighlight">\(a\cdot b = b\cdot a\)</span> for every <span class="math notranslate nohighlight">\(a, b\in F\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\((F, +)\)</span> is a group. Let’s call <code class="docutils literal notranslate"><span class="pre">0</span></code> it’s identity for <code class="docutils literal notranslate"><span class="pre">+</span></code>.</p></li>
+<li><p><span class="math notranslate nohighlight">\((F^*, \cdot)\)</span> is also a group, where <span class="math notranslate nohighlight">\(F^* = F - \{0\}\)</span> is set with identity of <code class="docutils literal notranslate"><span class="pre">+</span></code> removed from it. Let’s call the identity for this as <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p></li>
+<li><p>The operation <code class="docutils literal notranslate"><span class="pre">.</span></code> distributes over <code class="docutils literal notranslate"><span class="pre">+</span></code>, i.e., <span class="math notranslate nohighlight">\(a\cdot (b + c) = (a\cdot b) + (a\cdot c)\)</span> for every <span class="math notranslate nohighlight">\(a, b, c \in F\)</span>.</p></li>
+</ol>
 </section>
 <section id="states-as-vector-bra-and-ket">
 <h4>States as Vector (Bra and Ket)<a class="headerlink" href="#states-as-vector-bra-and-ket" title="Link to this heading">#</a></h4>
+<p><a class="reference external" href="https://youtube.com/clip/Ugkxh9W3xafNSWAP-VU9LCrRXkx9kgUH0mY8?si=MVsRsDUeJld5fV9_">youtube</a></p>
 </section>
 </section>
 <section id="linear-combination">
@@ -550,6 +639,13 @@ through which we manipulate numbers, are suitably extended on scalars and vector
 </section>
 <section id="representation-theory">
 <h3>Representation theory<a class="headerlink" href="#representation-theory" title="Link to this heading">#</a></h3>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id2" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>See the <a class="reference external" href="https://en.wikipedia.org/wiki/Set_(mathematics)">Wikipedia article on set</a> for more details.</p>
+</aside>
+</aside>
 </section>
 </section>
 </section>
@@ -635,7 +731,9 @@ through which we manipulate numbers, are suitably extended on scalars and vector
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vectors">Vectors</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-space-hilbert-space">Vector Space, Hilbert Space</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#set">Set</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-operations">Binary operations</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#group">Group</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#field"><strong>Field</strong></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#states-as-vector-bra-and-ket">States as Vector (Bra and Ket)</a></li>
 </ul>
 </li>
