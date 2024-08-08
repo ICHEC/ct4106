@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/drawio.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/style.css?v=fb429c44" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -422,7 +422,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7381bccc24106ff5e8cc485508f94ee745fb80974525e57501e4e30053220bb1.png" src="../_images/7381bccc24106ff5e8cc485508f94ee745fb80974525e57501e4e30053220bb1.png" />
+<img alt="../_images/b3d5c7366636c8e2351fb779ed67721edbc442c6daceda694ecf7d0b8eae6361.png" src="../_images/b3d5c7366636c8e2351fb779ed67721edbc442c6daceda694ecf7d0b8eae6361.png" />
 </div>
 </div>
 <p>The small piece of code above is a <code class="docutils literal notranslate"><span class="pre">program</span></code> written in Python programming language and uses the popular scientific library <code class="docutils literal notranslate"><span class="pre">Numpy</span></code>. The first line imports the module<a class="footnote-reference brackets" href="#lib" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>/library, and the second line imports the famous plotting library <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>.
@@ -466,7 +466,7 @@ Although the underlying programs in the plotting library matplotlib and the rand
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2b61cbd58a8dce58b50fb85614b0f80dd9a29df62ba9fba44787056e42ef4986.png" src="../_images/2b61cbd58a8dce58b50fb85614b0f80dd9a29df62ba9fba44787056e42ef4986.png" />
+<img alt="../_images/1d40e5bce5b301663eed18ba75eef5c0f850403c40778fe6c413a2c720ad687f.png" src="../_images/1d40e5bce5b301663eed18ba75eef5c0f850403c40778fe6c413a2c720ad687f.png" />
 </div>
 </div>
 <p>In the above code, we import the <code class="docutils literal notranslate"><span class="pre">qiskit</span></code> library along with matplotlib, and construct a quantum circuit with 4 qubits and 4 classical bits, through <code class="docutils literal notranslate"><span class="pre">qc</span> <span class="pre">=</span> <span class="pre">qiskit.QuantumCircuit(size,</span> <span class="pre">size)</span></code> . Next we add <strong>Hadamard gates</strong> at each qubits through a for loop.
@@ -486,7 +486,7 @@ Next we add measurement instruction for each qubit <span class="math notranslate
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9bc72ae7a3bb2590cc3532e31c792d5f2237a33f4b8a664ab9e2020254fb2230.png" src="../_images/9bc72ae7a3bb2590cc3532e31c792d5f2237a33f4b8a664ab9e2020254fb2230.png" />
+<img alt="../_images/846015f57348db396da4c3d32038d1a6d9d97b523ef7473d5d8c11bc03460863.png" src="../_images/846015f57348db396da4c3d32038d1a6d9d97b523ef7473d5d8c11bc03460863.png" />
 </div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">Aer</span></code> module is part of qiskit software ecosystem, and provides us with a few backend software simulators for quantum computing. The line <code class="docutils literal notranslate"><span class="pre">sim</span> <span class="pre">=</span> <span class="pre">Aer.get_backend('aer_simulator')</span></code> defines a simulator object based on Aer’s ‘aer_simulator backend’.
@@ -648,7 +648,7 @@ For example, many types of quantum computers require refrigeration to cold tempe
 <p>For example, observe the following graph, as the number of qubits in our quantum system grows, the number of classical bits required to represent and simulate these qubits grows exponentially and this is the fundamental reason why quantum simulation is difficult especially when we acknowledge that most useful quantum algorithms require qubit numbers that far exceed any amount that a classical computer could simulate in a reasonable time.​</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="../_images/4497adcac1f778555a5df622aec4049f4e9f13e22f7fb0a4fe0c0ce8f42a368d.png" src="../_images/4497adcac1f778555a5df622aec4049f4e9f13e22f7fb0a4fe0c0ce8f42a368d.png" />
+<img alt="../_images/78ad15b0e3fef441045f6b9a1e3310d562d2a493441bf44ac711affbe2a6edc3.png" src="../_images/78ad15b0e3fef441045f6b9a1e3310d562d2a493441bf44ac711affbe2a6edc3.png" />
 </div>
 </div>
 <ul class="simple">
@@ -693,7 +693,7 @@ Memory Capacity and time grow exponentially with the number of qubits, so</p></l
 <p>Taking another look at the differences between these simulators, through the figure below. The tensor network simulator can simulate many qubits but at a relatively low circuit-depth, while the state-vector simulator can simulate a relatively low number of qubits at a higher circuit depth. Depending on the algorithm you wish to execute, you can vary which simulator type you use to best solve the problem.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="../_images/26c54921f7d5f94b22852c280c9956fa82302df12f6e68de0379c09eb2d44c8d.png" src="../_images/26c54921f7d5f94b22852c280c9956fa82302df12f6e68de0379c09eb2d44c8d.png" />
+<img alt="../_images/1013ffc8cdcd9d2f4e69e4bf86ee27eeebf080b725e106b06674507a2173d501.png" src="../_images/1013ffc8cdcd9d2f4e69e4bf86ee27eeebf080b725e106b06674507a2173d501.png" />
 </div>
 </div>
 </section>

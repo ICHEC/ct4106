@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/drawio.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/style.css?v=fb429c44" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -360,23 +360,33 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematica-structure">Mathematica Structure</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scalar-vs-vector">Scalar vs Vector</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scalars">Scalars</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vectors">Vectors</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-space-hilbert-space">Vector Space, Hilbert Space</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#set">Set</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#map">Map</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-operations">Binary operations</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#group">Group</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#field"><strong>Field</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set">Set</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#subsets">Subsets</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#map">Map</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-operations">Binary operations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#group">Group</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#subgroups">Subgroups</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#field">Field</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-space">Vector Space</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#states-as-vector-bra-and-ket">States as Vector (Bra and Ket)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-combination">Linear combination</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inner-product">Inner Product</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-operators">Linear Operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-combination">Linear combination</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-independence">Linear independence</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inner-product">Inner Product</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#overlap-of-vectors">Overlap of vectors</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#orthogonality">Orthogonality</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-operators">Linear Operators</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#states-as-vector-bra-and-ket">States as Vector (Bra and Ket)</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#representation-theory">Representation theory</a></li>
 </ul>
 </li>
@@ -511,33 +521,33 @@ The common examples of scalars are volume, density, speed, energy, mass and time
 <p>Quantities require multiples of numerical values, with each value describing some aspect of the quantities, are called vectors. The number of these values is called the <code class="docutils literal notranslate"><span class="pre">dimension</span></code> of the vector. Common examples of vector quantities from physics include position, velocity, momentum, and force.</p>
 <p>Both scalars and vectors are represented usually with real numbers, and often with complex numbers. So the notions of <code class="docutils literal notranslate"><span class="pre">addition</span></code>, <code class="docutils literal notranslate"><span class="pre">subtraction</span></code>, <code class="docutils literal notranslate"><span class="pre">multiplication</span></code> and <code class="docutils literal notranslate"><span class="pre">division</span></code>,
 through which we manipulate numbers, are suitably extended on scalars and vectors.</p>
+<p><strong>Scalars</strong>: are expressed in terms of single number, so their algebra is essentially the same as algebra of real/complex numbers they are expressed in.</p>
+<p><strong>Vectors</strong>: are expressed in terms of multiple numbers. So it’s not straight forward as to how to extend their algebra from the component numbers. We see below how this is done.</p>
+<p><strong>Vector Space, Hilbert Space</strong>: A Vector space is a mathematical structure, that constitutes the necessary components to manipulate vectors in sensible way. Before we define it, we need to understand a few definitions, namely <code class="docutils literal notranslate"><span class="pre">Set</span></code>, <code class="docutils literal notranslate"><span class="pre">map</span></code>, <code class="docutils literal notranslate"><span class="pre">Binary</span> <span class="pre">operations</span></code>, <code class="docutils literal notranslate"><span class="pre">Group</span></code> and <code class="docutils literal notranslate"><span class="pre">Field</span></code> -</p>
 </section>
-<section id="scalars">
-<h3>Scalars<a class="headerlink" href="#scalars" title="Link to this heading">#</a></h3>
-<p>Scalars are expressed in terms of single number, so their algebra is essentially the same as algebra of real/complex numbers they are expressed in.</p>
-</section>
-<section id="vectors">
-<h3>Vectors<a class="headerlink" href="#vectors" title="Link to this heading">#</a></h3>
-<p>Vectors are expressed in terms of multiple numbers. So it’s not straight forward as to how to extend their algebra from the component numbers. We see below how this is done.</p>
-</section>
-<section id="vector-space-hilbert-space">
-<h3>Vector Space, Hilbert Space<a class="headerlink" href="#vector-space-hilbert-space" title="Link to this heading">#</a></h3>
-<p>A Vector space is a mathematical structure, that constitutes the necessary components to manipulate vectors in sensible way. Before we define it, we need to understand a few definitions, namely <code class="docutils literal notranslate"><span class="pre">Set</span></code>, <code class="docutils literal notranslate"><span class="pre">map</span></code>, <code class="docutils literal notranslate"><span class="pre">Binary</span> <span class="pre">operations</span></code>, <code class="docutils literal notranslate"><span class="pre">Group</span></code> and <code class="docutils literal notranslate"><span class="pre">Field</span></code> -</p>
 <section id="set">
-<h4>Set<a class="headerlink" href="#set" title="Link to this heading">#</a></h4>
+<h3>Set<a class="headerlink" href="#set" title="Link to this heading">#</a></h3>
 <p>Learning the notion of sets, and their manipulation provide not only training in fundamentals of logic of categorisation, organisation, it is crucial building block of most of mathematics.</p>
 <p>In Mathematics, a set is defined as a unique collection of well defined objects<a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>, and the object in the collection are called elements of the set.</p>
 <p>For example,</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(A=\{a, e, i, o, u\}\)</span> is a set of vovels in english language.</p></li>
+<li><p><span class="math notranslate nohighlight">\(A=\{a, e, i, o, u\}\)</span> is a set of vowels in english language.</p></li>
 <li><p><span class="math notranslate nohighlight">\(\mathbb{Z} = \{0, \pm1, \pm2, \pm3,\dots\}\)</span> is the set of integers.</p></li>
 </ul>
 <p>It’s important to imphesise the important of uniqueness in a set. It means in that in a set, a member exists only once. Thus <span class="math notranslate nohighlight">\(A=\{a, e, i, o, u\}\)</span> is a well defined set, while <span class="math notranslate nohighlight">\(A=\{a, e, i, o, u, a, i\}\)</span> is not, as <span class="math notranslate nohighlight">\(a, i\)</span> are put twice. So a set is different than a mere list, which can have multiple occurrance of an object.</p>
 <p>Secondly, the order of elements in a set have no meaning, so <span class="math notranslate nohighlight">\(\{a, e, i, o, u\}\)</span> and say, <span class="math notranslate nohighlight">\(\{i, o, a, u, e\}\)</span> are same sets, just expressed differently.</p>
 <p>A set can be finite, or infinite, that is, the number of elements in a set can be finite, or infinite.</p>
 <p>You can manipulate a set, by adding or removing elements from it. A set with no elements is called <code class="docutils literal notranslate"><span class="pre">Null</span> <span class="pre">set</span></code>, denoted by <span class="math notranslate nohighlight">\(\emptyset\)</span>.</p>
-<p><strong>Subsets</strong>
-Imagine we have two sets, A and B, and it is such that, every element of A is also element of B, then we say that A is a subset of B. It is denoted as <span class="math notranslate nohighlight">\(A\subset B\)</span>. We also in this case, call B as <strong>superset</strong> of A.</p>
+<p>Sets can be finite and infinite. We all know what being finite is, so a finite set is a set with finite number of elements which one could count.
+Infinite is a slightly tricky concept in mathematics. To start with, an infinite set is a set that <strong>is not</strong> finite.</p>
+<p>The set of natural numbers <span class="math notranslate nohighlight">\(\mathbb{N} = \{1, 2, 3, \dots\}\)</span> plays a central role in the categorisation of sets. First, it let’s us define countability. So a set in which you could count the number of elements one by one, is called countable. If the counting finishes after finite number, the set is finite and countable. If you can count, and the counting can not finish in finite time, the set is said to be countably infinite. By definition or axiom, the set of natural number is countably infinite. <strong>Uncountable</strong> sets on the other hand, are the ones that are inifinite, and contains too many elements to be even countable.</p>
+<p>We use the term <strong>cardinality</strong> for representing a measure of number of elements in a set. The cardinality of a finite set is the number of elements in it. For infinite sets, the cardinality is symbolic and is established by comparison of two sets and defining map among them.</p>
+<section id="subsets">
+<h4>Subsets<a class="headerlink" href="#subsets" title="Link to this heading">#</a></h4>
+<p>Imagine we have two sets, A and B, and it is such that, every element of A is also element of B, then we say that A is a subset of B. It is denoted as <span class="math notranslate nohighlight">\(A\subset B\)</span>. We also in this case, call B as <strong>superset</strong> of A.</p>
+<p>Naturally, every set is subset and superset of itself. We a call a set A to be a <strong>proper subset</strong> of B, if every element of A is in B, but at least one element exists in B that is not in A. In this case, B is called a <strong>proper superset</strong> of A.</p>
+<p>For finite sets, their proper subsets have strictly lower number of element than the set itself. However for infinite sets, a proper subset may
+have same cardinality as the set itself.</p>
 <figure class="align-center" id="id3">
 <a class="reference internal image-reference" href="https://upload.wikimedia.org/wikipedia/commons/b/b0/Venn_A_subset_B.svg"><img alt="https://upload.wikimedia.org/wikipedia/commons/b/b0/Venn_A_subset_B.svg" src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Venn_A_subset_B.svg" style="width: 400px;" /></a>
 <figcaption>
@@ -552,7 +562,7 @@ Imagine we have two sets, A and B, and it is such that, every element of A is al
 </figure>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="../_images/bd2fb67f16e91c8531839a1e84f17d308fdc52953c4142e73df27663fad56256.png" src="../_images/bd2fb67f16e91c8531839a1e84f17d308fdc52953c4142e73df27663fad56256.png" />
+<img alt="../_images/41f98e9e2d18dae4a00cd94de0eaade15c4a92dec104d2970054ca629aa8c071.png" src="../_images/41f98e9e2d18dae4a00cd94de0eaade15c4a92dec104d2970054ca629aa8c071.png" />
 </div>
 </div>
 <p>We defined what a set is, and introduced a notion of comparison by defining what a subset, and superset is. There is a lot more one can do with the notion of sets, to manipulate them, to the extent that it looks like everyday algebra.</p>
@@ -568,8 +578,9 @@ Imagine we have two sets, A and B, and it is such that, every element of A is al
 <div><p>Add illustration</p>
 </div></blockquote>
 </section>
+</section>
 <section id="map">
-<h4>Map<a class="headerlink" href="#map" title="Link to this heading">#</a></h4>
+<h3>Map<a class="headerlink" href="#map" title="Link to this heading">#</a></h3>
 <p>In mathematics, a map is somethings that defines a symbolic relation from elements of a set <strong>X</strong> to elements of another set <strong>Y</strong>, such that each element of <strong>X</strong> gets associated to an element of <strong>Y</strong>. The set <strong>X</strong> whose elemets get <code class="docutils literal notranslate"><span class="pre">mapped</span> <span class="pre">to</span></code> is called the <strong>domain of the map</strong> and the set <strong>Y</strong> the elements of which they get <code class="docutils literal notranslate"><span class="pre">mapped</span> <span class="pre">from</span></code> is called the <strong>range or codomain of the map</strong>.</p>
 <p>Symbolically, a map is expressed as follows</p>
 <ul class="simple">
@@ -591,6 +602,33 @@ Imagine we have two sets, A and B, and it is such that, every element of A is al
 <a class="reference internal image-reference" href="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Bijection.svg/1024px-Bijection.svg.png"><img alt="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Bijection.svg/1024px-Bijection.svg.png" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Bijection.svg/1024px-Bijection.svg.png" style="width: 70%;" /></a>
 </figure>
 <ul class="simple">
+<li><p>Recall the uncountable sets. Using concept of map we can more clearly define it as follows - A set X is uncountable if and only if there exists no injective map from the set X to set of natural numbers <span class="math notranslate nohighlight">\(\mathbb{N}\)</span>.</p></li>
+<li><p>Consider the set of integers <span class="math notranslate nohighlight">\(\mathbb{Z}=\{\dots, -2, -1, 0, 1, 2, \dots\}\)</span> and a map <span class="math notranslate nohighlight">\(f:\mathbb{Z}\longrightarrow \mathbb{Z};\quad f(n)=3n\)</span>. The range of this set is a proper subset of <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span>, as the range only contains numbers that are multiple of 3. However, since the map is injective, this means that the subset has the same cardinality as <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span>.</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+    \begin{Bmatrix}
+    \vdots \\
+    -2\\
+    -1\\
+    0\\
+    1\\
+    2\\
+    \vdots
+    \end{Bmatrix} \underrightarrow{~~~~~~f~~~~~~}
+    \begin{Bmatrix}
+    \vdots \\
+    -6\\
+    -3\\
+    0\\
+    3\\
+    6\\
+    \vdots
+    \end{Bmatrix}
+\end{align}
+\end{split}\]</div>
+<ul class="simple">
 <li><p>Maps can be combined. Instead of exploring general consequences, consider two bijective maps <span class="math notranslate nohighlight">\(f, g\)</span> from a set X to itself. If <span class="math notranslate nohighlight">\(f\)</span> maps an arbitrary element <span class="math notranslate nohighlight">\(a\)</span> in X to <span class="math notranslate nohighlight">\(b=f(a)\)</span>, and <span class="math notranslate nohighlight">\(g\)</span> maps <span class="math notranslate nohighlight">\(b\)</span> to <span class="math notranslate nohighlight">\(c=g(b)\)</span>, then the the <strong>combination, or composition</strong> of the two maps <span class="math notranslate nohighlight">\(fog\)</span> maps <span class="math notranslate nohighlight">\(a\)</span> to <span class="math notranslate nohighlight">\(fog(a) = f(g(a))\)</span>.</p></li>
 </ul>
 <div align="center" class="mermaid align-center">
@@ -603,7 +641,7 @@ a --fog--&gt; c
         </div>
         </section>
 <section id="binary-operations">
-<h4>Binary operations<a class="headerlink" href="#binary-operations" title="Link to this heading">#</a></h4>
+<h3>Binary operations<a class="headerlink" href="#binary-operations" title="Link to this heading">#</a></h3>
 <p>Binary operations, as the name suggests are operations that take two objects and combine them to give (usually) one unique object.</p>
 <p>In mathematics, binary operation is defined on a set, that takes two elements of the set, and returns one element of a  set.</p>
 <p>Formally, a binary operation on a set A is a mapping of elements of <span class="math notranslate nohighlight">\(A\times A\)</span> to A, expressed as</p>
@@ -620,7 +658,7 @@ o : A\times A \longrightarrow A
 </ul>
 </section>
 <section id="group">
-<h4>Group<a class="headerlink" href="#group" title="Link to this heading">#</a></h4>
+<h3>Group<a class="headerlink" href="#group" title="Link to this heading">#</a></h3>
 <p>When we have a set, it let’s us categorize, and organize the elements. Having binary operations defined on a set tells us how a pair of elements of the set result in another element, in effect how combining elements gives us different elements.</p>
 <p>The binary operations defined on a set, give new structure to the set. A group is one such structure.</p>
 <p>A group is a set <span class="math notranslate nohighlight">\(A\)</span> with an operation <span class="math notranslate nohighlight">\(o\)</span>, expressed as <span class="math notranslate nohighlight">\((A, o)\)</span>, such that the operation satifies following conditions -</p>
@@ -629,10 +667,17 @@ o : A\times A \longrightarrow A
 <li><p><strong>Existence of Identity</strong> There exist an element <span class="math notranslate nohighlight">\(e\)</span> in <span class="math notranslate nohighlight">\(A\)</span> such that for every element <span class="math notranslate nohighlight">\(a\in A\)</span>, <span class="math notranslate nohighlight">\(e o a = a\)</span>, i.e., combining any element with <span class="math notranslate nohighlight">\(e\)</span> results in the same element.</p></li>
 <li><p><strong>Existence of Inverse</strong> For every element <span class="math notranslate nohighlight">\(a\in A\)</span>, there exists another element, say <span class="math notranslate nohighlight">\(a'\)</span> such that <span class="math notranslate nohighlight">\(a' o a = e\)</span>, i.e, combining the two results in indentity element.</p></li>
 </ol>
-<p>The inverse of an element <span class="math notranslate nohighlight">\(a\)</span> is often denoted by <span class="math notranslate nohighlight">\(a^{-1}\)</span>. There are certain consequence, that result directly out of the above two assumptions. Consider the identity in the group <span class="math notranslate nohighlight">\((A, o)\)</span>: we said for identity, <span class="math notranslate nohighlight">\(e o a = a\)</span>, and why not <span class="math notranslate nohighlight">\(a o e = a\)</span>?</p>
+<p>The inverse of an element <span class="math notranslate nohighlight">\(a\)</span> is often denoted by <span class="math notranslate nohighlight">\(a^{-1}\)</span>. There are certain consequence, that result directly out of the above three assumptions. Consider the identity in the group <span class="math notranslate nohighlight">\((A, o)\)</span>: we said for identity, <span class="math notranslate nohighlight">\(e o a = a\)</span>, and why not <span class="math notranslate nohighlight">\(a o e = a\)</span>?</p>
 <p>The two expressions are in general different, and can potentially, mean existence of two types of identity elements, say <code class="docutils literal notranslate"><span class="pre">left</span> <span class="pre">identity</span></code> and <code class="docutils literal notranslate"><span class="pre">right</span> <span class="pre">identity</span></code>. However one can prove based on the purely logic, and the knowledge that <span class="math notranslate nohighlight">\((A, o)\)</span> is a group, that the left and right identities, are the same element.</p>
 <p>The same question can be posed for the existence of the inverse. The left and the right inverses of an element (can be proven) are the same.</p>
 <p>The inverse of the inverse of the element <span class="math notranslate nohighlight">\(a\)</span>, is the element itself, i.e., <span class="math notranslate nohighlight">\((a^{-1})^{-1} = a\)</span></p>
+<section id="subgroups">
+<h4>Subgroups<a class="headerlink" href="#subgroups" title="Link to this heading">#</a></h4>
+<p>Just like sets have subsets, groups have subgroups. A subgroup of a group <span class="math notranslate nohighlight">\((G, o)\)</span> is a subset <span class="math notranslate nohighlight">\(S\subset G\)</span>, that forms group under the binary operation <span class="math notranslate nohighlight">\(o\)</span> of the group constrained within <span class="math notranslate nohighlight">\(S\)</span>. So in order for a subset to be a subgroup, following must be satisfied</p>
+<ul class="simple">
+<li><p>The binary operation <span class="math notranslate nohighlight">\(o\)</span> defined on the set <span class="math notranslate nohighlight">\(G\)</span>, is also a binary operation on the subset <span class="math notranslate nohighlight">\(S\)</span>.</p></li>
+<li><p>The identity of <span class="math notranslate nohighlight">\(o\)</span>, say <span class="math notranslate nohighlight">\(e\)</span> belongs to <span class="math notranslate nohighlight">\(S\)</span>, and for every <span class="math notranslate nohighlight">\(a\)</span> in <span class="math notranslate nohighlight">\(S\)</span>, <span class="math notranslate nohighlight">\(a^{-1}\)</span> also belongs to <span class="math notranslate nohighlight">\(S\)</span></p></li>
+</ul>
 <p><strong>Examples:</strong></p>
 <div class="information admonition">
 <p class="admonition-title">The set of integers with arithmatic addition <span class="math notranslate nohighlight">\((\mathbb{Z}, +)\)</span> forms a group.</p>
@@ -733,6 +778,7 @@ p_1 p_3(abc) &amp;= p_1(bac) = (bac) = p_2(abc) \implies p_1p_3 = p_2\\
 \dots &amp;= \dots
 \end{align}
 \end{split}\]</div>
+<p>Below is the operation table for composition <span class="math notranslate nohighlight">\(o\)</span>. Row and column numbers correspond to first and second operand respectively (row <span class="math notranslate nohighlight">\(o\)</span> column).</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(o\)</span></p></th>
@@ -797,10 +843,24 @@ p_1 p_3(abc) &amp;= p_1(bac) = (bac) = p_2(abc) \implies p_1p_3 = p_2\\
 </table>
 </div>
 <p>If we consider the set <span class="math notranslate nohighlight">\(P=\{p_0\, p_1, ..., p_5\}\)</span>, then the above composition <span class="math notranslate nohighlight">\(o\)</span> is a binary operation, and <span class="math notranslate nohighlight">\((P, o)\)</span> forms a group. Here <span class="math notranslate nohighlight">\(p_0\)</span>, is the identity, as combining it with any other map gives the same map. Each element has an inverse, <span class="math notranslate nohighlight">\(p_0, p_1, p_2, p_5\)</span> are inverses of their own, and <span class="math notranslate nohighlight">\(p_3\)</span> and <span class="math notranslate nohighlight">\(p_4\)</span> are inverses of each other.</p>
-<p>This is called permutation group. We showed the example of three objects, but the group generalises to any number of objects. For <span class="math notranslate nohighlight">\(n\)</span> object, the set of bijective maps has <span class="math notranslate nohighlight">\(!n\)</span> elements.</p>
+<p>This is called permutation group. We showed the example of three objects, but the group generalises to any number of objects. For <span class="math notranslate nohighlight">\(n\)</span> object, the set of bijective maps has <span class="math notranslate nohighlight">\(n!\)</span> elements.</p>
+<div class="information admonition">
+<p class="admonition-title">Group of modular arithmatic</p>
+<p>Modular arithmatic is a system of arithmatic, where numbers wrap around after reaching a certain value. A common example is arithmatic of <code class="docutils literal notranslate"><span class="pre">12-hour</span> <span class="pre">clock</span></code>. In general, consider a positive integer <span class="math notranslate nohighlight">\(m &gt; 1\)</span>. Now any arbitrary integer <span class="math notranslate nohighlight">\(a\in \mathbb{Z}\)</span>, we can write <span class="math notranslate nohighlight">\(a = qm + r\)</span> where <span class="math notranslate nohighlight">\(q, r\)</span> are some integers. There is unique pair <span class="math notranslate nohighlight">\(q, r\)</span> such that <span class="math notranslate nohighlight">\(q\)</span> is largest, and <span class="math notranslate nohighlight">\(0\le r\lt m\)</span>, in which case we know <span class="math notranslate nohighlight">\(q\)</span> and <span class="math notranslate nohighlight">\(r\)</span> as quotient and remainder when <span class="math notranslate nohighlight">\(a\)</span> is divided by <span class="math notranslate nohighlight">\(m\)</span>. Since in this unique representation <span class="math notranslate nohighlight">\(r\)</span> can have only <span class="math notranslate nohighlight">\(m\)</span> possible values in set <span class="math notranslate nohighlight">\(Z_m = \{0, 1, 2, \dots, m-1\}\)</span>.</p>
+<p>On this set, we define modular addition <span class="math notranslate nohighlight">\(\oplus\)</span>, to distinguish with usual addition <code class="docutils literal notranslate"><span class="pre">+</span></code> as follows:</p>
+<p>For any two arbitrary <span class="math notranslate nohighlight">\(a, b\)</span> in <span class="math notranslate nohighlight">\(Z_m\)</span>, <span class="math notranslate nohighlight">\(a \oplus b = c\)</span> where <span class="math notranslate nohighlight">\(a + b = qm + c\)</span>, i.e, <span class="math notranslate nohighlight">\(c\)</span> is obtained by computing the remainder when <span class="math notranslate nohighlight">\(a+b\)</span> is divided by <span class="math notranslate nohighlight">\(m\)</span>.</p>
+<p>Then <span class="math notranslate nohighlight">\((Z_m, \oplus)\)</span> forms a group, because of following -</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\oplus\)</span> is a binary operation, moreover, it is also commutative.</p></li>
+<li><p>0 is the identity, for any <span class="math notranslate nohighlight">\(a\oplus 0 = a\)</span>.</p></li>
+<li><p>For any <span class="math notranslate nohighlight">\(a\)</span> in <span class="math notranslate nohighlight">\(Z_m\)</span>, <span class="math notranslate nohighlight">\(0\le a\lt m\)</span>, there exists <span class="math notranslate nohighlight">\(m-a\)</span>, such that <span class="math notranslate nohighlight">\(a\oplus (m-a) = 0\)</span>, so <span class="math notranslate nohighlight">\(m-a\)</span> is the inverse of <span class="math notranslate nohighlight">\(a\)</span>.</p></li>
+</ul>
+</div>
+<p><strong>Illustration:</strong> Consider <span class="math notranslate nohighlight">\((Z_{8}, \oplus)\)</span>, where <span class="math notranslate nohighlight">\(Z_8 = \{0, 1, 2, 3, 4, 5, 6, 7\}\)</span>, then under modular arithmatic, <span class="math notranslate nohighlight">\(2\oplus 3 = 5\)</span>, but <span class="math notranslate nohighlight">\(4\oplus 4 = 0\)</span> and <span class="math notranslate nohighlight">\(4\oplus 7 = 3\)</span></p>
+</section>
 </section>
 <section id="field">
-<h4><strong>Field</strong><a class="headerlink" href="#field" title="Link to this heading">#</a></h4>
+<h3>Field<a class="headerlink" href="#field" title="Link to this heading">#</a></h3>
 <p>In mathematics, a field is defined as a set <span class="math notranslate nohighlight">\(F\)</span> with two binary operations, say <code class="docutils literal notranslate"><span class="pre">+</span></code> and <code class="docutils literal notranslate"><span class="pre">.</span></code> such that following conditions are satisfied -</p>
 <ol class="arabic simple">
 <li><p>The binary operations <code class="docutils literal notranslate"><span class="pre">+</span></code> and <code class="docutils literal notranslate"><span class="pre">.</span></code> are commutative, i.e., <span class="math notranslate nohighlight">\(a + b = b + a\)</span>, and <span class="math notranslate nohighlight">\(a\cdot b = b\cdot a\)</span> for every <span class="math notranslate nohighlight">\(a, b\in F\)</span>.</p></li>
@@ -811,49 +871,87 @@ p_1 p_3(abc) &amp;= p_1(bac) = (bac) = p_2(abc) \implies p_1p_3 = p_2\\
 <p><strong>Examples:</strong></p>
 <ul class="simple">
 <li><p>The set of rational (<span class="math notranslate nohighlight">\(\mathbb{Q}\)</span>), real (<span class="math notranslate nohighlight">\(\mathbb{R}\)</span>), and complex numbers (<span class="math notranslate nohighlight">\(\mathbb{C}\)</span>), all from respective fields with usual arithmatic addition <code class="docutils literal notranslate"><span class="pre">+</span></code> and multiplication <code class="docutils literal notranslate"><span class="pre">.</span></code>. <span class="math notranslate nohighlight">\((\mathbb{Q}, +, \cdot)\)</span>, <span class="math notranslate nohighlight">\((\mathbb{R}, +, \cdot)\)</span>, <span class="math notranslate nohighlight">\((\mathbb{C}, +, \cdot)\)</span> are all fields, with 0 as additive identity, and 1 as multiplicative identity.</p></li>
+<li><p>There are examples of fields of finite set, but their discussion takes us (more than usual) different direction than we intend this lecture notes to. For most of the discussion, even the group aspect might be generally needed, the field of number relevant for us will be that of <span class="math notranslate nohighlight">\((\mathbb{R}, +, \cdot)\)</span> and <span class="math notranslate nohighlight">\((\mathbb{C}, +, \cdot)\)</span>.</p></li>
+<li><p>Recall the modular arithmatic, where <span class="math notranslate nohighlight">\((Z_m, \oplus)\)</span> formed a group for any arbitrary positive integer <span class="math notranslate nohighlight">\(m\)</span>. Now consider a modular version of the usual arithmatic multiplication, <span class="math notranslate nohighlight">\(\odot\)</span>, defined as follows. If <span class="math notranslate nohighlight">\(a, b\)</span> are two arbitrary integers in <span class="math notranslate nohighlight">\(Z_m\)</span>, then <span class="math notranslate nohighlight">\(a\odot b = c\)</span> where <span class="math notranslate nohighlight">\(c\)</span> is the remainder you get when you divide <span class="math notranslate nohighlight">\(ab\)</span> with <span class="math notranslate nohighlight">\(m\)</span>. Does the <span class="math notranslate nohighlight">\((Z_m, \oplus, \odot)\)</span></p>
+<ul>
+<li><p>Clearly, <span class="math notranslate nohighlight">\(\odot: Z_m\times Z_m \longrightarrow Z_m\)</span> is a binary operation.</p></li>
+<li><p>1 is the multiplicative identity, as <span class="math notranslate nohighlight">\(1 \odot a = a\)</span> for every <span class="math notranslate nohighlight">\(a\)</span> in <span class="math notranslate nohighlight">\(Z_m\)</span>.</p></li>
+<li><p>However, unless <span class="math notranslate nohighlight">\(m\)</span> is prime, we have issues with the structure of identity and inverse.</p></li>
+<li><p>Does every element has an inverse? Imagine <span class="math notranslate nohighlight">\(a, b\)</span> in <span class="math notranslate nohighlight">\(Z_m\)</span> are inverses of each other, then <span class="math notranslate nohighlight">\(a\odot b = 1\)</span>, which means <span class="math notranslate nohighlight">\(ab\)</span> is of the form <span class="math notranslate nohighlight">\(ab = qm + 1\)</span>, which means <span class="math notranslate nohighlight">\(b= {qm + 1\over a}\)</span></p></li>
 </ul>
-</section>
+</li>
+</ul>
+<div class="tip admonition">
+<p class="admonition-title">Polynomials</p>
+<p>We need the structure of a field, i.e., set with atleast two binary operations to construct expressions that we call polynomials.</p>
+</div>
 </section>
 </section>
 <section id="vector-space">
 <h2>Vector Space<a class="headerlink" href="#vector-space" title="Link to this heading">#</a></h2>
 <p>All the above mathematical definitions, going through which can be perhaps excruciating, let us define what we need for the underlying math of quantum computing: A vector space, and a Hilbert space. We will see, that these two are nearly same structures, with one difference.</p>
 <p>A vector space is a mathematical structure, that consists of two sets, which have the following substructures:</p>
-<ul>
-<li><p>The first set, say <strong>V</strong>, whose elements are called vectors, is a commutative group <span class="math notranslate nohighlight">\((\mathbf{V}, +_v)\)</span> with <code class="docutils literal notranslate"><span class="pre">addition</span></code> <span class="math notranslate nohighlight">\(+_v\)</span></p></li>
-<li><p>The second set, say F, whose elements are called scalars, is a Field <span class="math notranslate nohighlight">\((F, +_f, \cdot_f)\)</span> with <code class="docutils literal notranslate"><span class="pre">addition</span></code> <span class="math notranslate nohighlight">\(+_f\)</span> and <code class="docutils literal notranslate"><span class="pre">multiplication</span></code> <span class="math notranslate nohighlight">\(\cdot_f\)</span>.</p></li>
-<li><p>A binary operation <span class="math notranslate nohighlight">\(\cdot : F\times V \longrightarrow V\)</span> called scalar multiplication. This operation combines a scalar and a vector, and gives us a vector. It lets manipulate vectors through scalars, and satisfies following -</p>
 <ul class="simple">
-<li><p>Associativity: For any arbitrary <span class="math notranslate nohighlight">\(a, b\)</span> in F, and any arbitrary <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> in <strong>V</strong>,
-$<span class="math notranslate nohighlight">\(a \cdot (b\cdot\mathbf{v}) = (a\cdot_f b)\mathbf{v}\)</span>$
-This means multiplying a vector successively by two scalars gives the same vector, as when multiplying the field multiplication of those two scalars to the vector.</p></li>
-<li><p>Distribution: The scalar multiplication distributes over addition of vectors, and addition of scalars. That is, for any arbitrary scalars <span class="math notranslate nohighlight">\(a, b\)</span> in F and any arbitrary vectors <span class="math notranslate nohighlight">\(\mathbf{u, v}\)</span> in <strong>V</strong>, the following holds</p></li>
+<li><p>The first set, say <strong>V</strong>, whose elements are called vectors, is a commutative group <span class="math notranslate nohighlight">\((\mathbf{V}, +_v)\)</span> with <code class="docutils literal notranslate"><span class="pre">addition</span></code> <span class="math notranslate nohighlight">\(+_v\)</span>. Let’s call <span class="math notranslate nohighlight">\(0_v\)</span> the zero vector as the identity of this group.</p></li>
+<li><p>The second set, say F, whose elements are called scalars, is a Field <span class="math notranslate nohighlight">\((F, +_f, \cdot_f)\)</span> with <code class="docutils literal notranslate"><span class="pre">addition</span></code> <span class="math notranslate nohighlight">\(+_f\)</span> and <code class="docutils literal notranslate"><span class="pre">multiplication</span></code> <span class="math notranslate nohighlight">\(\cdot_f\)</span>. Let’s call the <span class="math notranslate nohighlight">\(0\)</span> and <span class="math notranslate nohighlight">\(1\)</span> additive and multiplicative identity of the field.</p></li>
+<li><p>A binary operation <span class="math notranslate nohighlight">\(\cdot : F\times V \longrightarrow V\)</span> called scalar multiplication. This operation combines a scalar and a vector, and gives us a vector. It lets manipulate vectors through scalars, and satisfies following -</p></li>
 </ul>
+<ol class="arabic simple">
+<li><p><strong>Associativity</strong>:
+For any arbitrary <span class="math notranslate nohighlight">\(a, b\)</span> in F, and any arbitrary <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> in <strong>V</strong>,</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[a \cdot (b\cdot\mathbf{v}) = (a\cdot_f b)\mathbf{v}\]</div>
+<p>This means multiplying a vector successively by two scalars gives the same vector, as when multiplying the field multiplication of those two scalars to the vector.</p>
+<ol class="arabic simple" start="2">
+<li><p><strong>Distribution</strong>:
+The scalar multiplication distributes over addition of vectors, and addition of scalars. That is, for any arbitrary scalars <span class="math notranslate nohighlight">\(a, b\)</span> in F and any arbitrary vectors <span class="math notranslate nohighlight">\(\mathbf{u, v}\)</span> in <strong>V</strong>, the following holds</p></li>
+</ol>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-    \begin{align*}
-    a\cdot(\mathbf{u} +_v \mathbf{v}) &amp;= (a\cdot\mathbf{u}) +_v (a\cdot\mathbf{v})\\
-    (a +_f b)\cdot \mathbf{v} &amp;= (a\cdot\mathbf{v}) +_v (b\cdot\mathbf{v})
-    \end{align*}
-    \end{split}\]</div>
-</li>
+\begin{align*}
+a\cdot(\mathbf{u} +_v \mathbf{v}) &amp;= (a\cdot\mathbf{u}) +_v (a\cdot\mathbf{v})\\
+(a +_f b)\cdot \mathbf{v} &amp;= (a\cdot\mathbf{v}) +_v (b\cdot\mathbf{v})
+\end{align*}
+\end{split}\]</div>
+<ul class="simple">
+<li><p>Multiplying any scalar with zero vector gives zero vector, <span class="math notranslate nohighlight">\(a\cdot 0_v = 0_v\)</span>, and multiplying zero scalar 0, with any vector gives zero vector, <span class="math notranslate nohighlight">\(0\cdot v = 0_v\)</span>.</p></li>
 </ul>
-<section id="states-as-vector-bra-and-ket">
-<h3>States as Vector (Bra and Ket)<a class="headerlink" href="#states-as-vector-bra-and-ket" title="Link to this heading">#</a></h3>
-<p><a class="reference external" href="https://youtube.com/clip/Ugkxh9W3xafNSWAP-VU9LCrRXkx9kgUH0mY8?si=MVsRsDUeJld5fV9_">youtube</a></p>
-</section>
+<p>Because of associativity, and distribution of scalars with vectors, we often use the same symbol for addition (<code class="docutils literal notranslate"><span class="pre">+</span></code> for <span class="math notranslate nohighlight">\(+_v\)</span> and <span class="math notranslate nohighlight">\(+_f\)</span>) and scalar multiplications (<span class="math notranslate nohighlight">\(\cdot\)</span> for <span class="math notranslate nohighlight">\(\cdot_f\)</span>).</p>
+<p>Let us take a moment to appreciate what makes the structure of vector space rich.
+We have a set <strong>V</strong> of vectors elements, and set <strong>F</strong> of scalar elements. If one of the sets is infinite, the vector space automatically becomes infinite. (Guess Why?)</p>
+<p><strong>Examples:</strong></p>
+<p>Consider the set of points on 3D space, they are represented by the cartesian product of the set of real numbers</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbb{R}^3 = \mathbb{R}\times \mathbb{R}\times \mathbb{R} = {(x, y, z): x, y, z\in \mathbb{R}}
+\]</div>
+<p>If we define vector addition of two arbitrary points <span class="math notranslate nohighlight">\(\mathbf{r_1}=(x_1, y_1, z_1)\)</span>, and <span class="math notranslate nohighlight">\(\mathbf{r_2}=(x_2, y_2, z_2)\)</span> as</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{r_1} + \mathbf{r_2} = (x_1 + x_2, y_1 + y_2, z_1 + z_2)
+\]</div>
+<p>then <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span> forms a vector space over the field of real numbers <span class="math notranslate nohighlight">\((\mathbb{R}, +, \cdot)\)</span>.</p>
 <section id="linear-combination">
 <h3>Linear combination<a class="headerlink" href="#linear-combination" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Linear independence</p></li>
-</ul>
+<p>The scalar multiplication</p>
+<p>Consider an arbitrarily chosen set of <span class="math notranslate nohighlight">\(n\)</span> vectors <span class="math notranslate nohighlight">\(v_1, v_2, v_3, \dots, v_n\)</span> in <strong>V</strong>, and scalars <span class="math notranslate nohighlight">\(a_1, a_2, a_3, \dots, a_n\)</span>, then the following is called a linear combination of the vectors</p>
+<div class="math notranslate nohighlight">
+\[
+v = \sum_{i=1}^n a_i v_i = a_1 v_1 + a_2 v_2 + \dots a_n v_n
+\]</div>
+<section id="linear-independence">
+<h4>Linear independence<a class="headerlink" href="#linear-independence" title="Link to this heading">#</a></h4>
+</section>
 </section>
 <section id="inner-product">
 <h3>Inner Product<a class="headerlink" href="#inner-product" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Overlap of vectors</p></li>
-<li><p>Orthogonality</p></li>
-</ul>
+<section id="overlap-of-vectors">
+<h4>Overlap of vectors<a class="headerlink" href="#overlap-of-vectors" title="Link to this heading">#</a></h4>
+</section>
+<section id="orthogonality">
+<h4>Orthogonality<a class="headerlink" href="#orthogonality" title="Link to this heading">#</a></h4>
+</section>
 </section>
 <section id="linear-operators">
 <h3>Linear Operators<a class="headerlink" href="#linear-operators" title="Link to this heading">#</a></h3>
@@ -862,6 +960,10 @@ This means multiplying a vector successively by two scalars gives the same vecto
 <li><p>Special operators: Unitary, Hermitian, …</p></li>
 <li><p>Probability conservation</p></li>
 </ul>
+<section id="states-as-vector-bra-and-ket">
+<h4>States as Vector (Bra and Ket)<a class="headerlink" href="#states-as-vector-bra-and-ket" title="Link to this heading">#</a></h4>
+<p><a class="reference external" href="https://youtube.com/clip/Ugkxh9W3xafNSWAP-VU9LCrRXkx9kgUH0mY8?si=MVsRsDUeJld5fV9_">youtube</a></p>
+</section>
 </section>
 <section id="representation-theory">
 <h3>Representation theory<a class="headerlink" href="#representation-theory" title="Link to this heading">#</a></h3>
@@ -953,23 +1055,33 @@ This means multiplying a vector successively by two scalars gives the same vecto
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematica-structure">Mathematica Structure</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scalar-vs-vector">Scalar vs Vector</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scalars">Scalars</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vectors">Vectors</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-space-hilbert-space">Vector Space, Hilbert Space</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#set">Set</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#map">Map</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-operations">Binary operations</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#group">Group</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#field"><strong>Field</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set">Set</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#subsets">Subsets</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#map">Map</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-operations">Binary operations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#group">Group</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#subgroups">Subgroups</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#field">Field</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-space">Vector Space</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#states-as-vector-bra-and-ket">States as Vector (Bra and Ket)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-combination">Linear combination</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inner-product">Inner Product</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-operators">Linear Operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-combination">Linear combination</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-independence">Linear independence</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inner-product">Inner Product</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#overlap-of-vectors">Overlap of vectors</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#orthogonality">Orthogonality</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-operators">Linear Operators</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#states-as-vector-bra-and-ket">States as Vector (Bra and Ket)</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#representation-theory">Representation theory</a></li>
 </ul>
 </li>
