@@ -562,7 +562,7 @@ have same cardinality as the set itself.</p>
 </figure>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="../_images/41f98e9e2d18dae4a00cd94de0eaade15c4a92dec104d2970054ca629aa8c071.png" src="../_images/41f98e9e2d18dae4a00cd94de0eaade15c4a92dec104d2970054ca629aa8c071.png" />
+<img alt="../_images/3d630d726007966d68cac03ab3ec3850b0548dd232abed7a027873de27301844.png" src="../_images/3d630d726007966d68cac03ab3ec3850b0548dd232abed7a027873de27301844.png" />
 </div>
 </div>
 <p>We defined what a set is, and introduced a notion of comparison by defining what a subset, and superset is. There is a lot more one can do with the notion of sets, to manipulate them, to the extent that it looks like everyday algebra.</p>
@@ -932,14 +932,57 @@ We have a set <strong>V</strong> of vectors elements, and set <strong>F</strong>
 \mathbf{r_1} + \mathbf{r_2} = (x_1 + x_2, y_1 + y_2, z_1 + z_2)
 \]</div>
 <p>then <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span> forms a vector space over the field of real numbers <span class="math notranslate nohighlight">\((\mathbb{R}, +, \cdot)\)</span>.</p>
+<p>Consider a toy example of ‘constructing a vector space’. Let there be a set of just two non-zero vectors <span class="math notranslate nohighlight">\(\mathbf{V} = \{0, \mathbf{a_{\uparrow}}, \mathbf{a_{\downarrow}}\}\)</span>, where 0 is zero vector with respect to some addition operator ‘+’ which we define below. To define addition as binary operation, we have the following by definition of zero, or identity.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathbf{a_{\uparrow}} + 0 = 0 + \mathbf{a_{\uparrow}} = \mathbf{a_{\uparrow}}\\
+\mathbf{a_{\downarrow}} + 0 = 0 + \mathbf{a_{\downarrow}} = \mathbf{a_{\downarrow}}
+\end{split}\]</div>
+<p>But what about <span class="math notranslate nohighlight">\(\mathbf{a_{\uparrow}} + \mathbf{a_{\downarrow}}\)</span> ? It’s value can neither be <span class="math notranslate nohighlight">\(\mathbf{a_{\uparrow}}\)</span>, nor <span class="math notranslate nohighlight">\(\mathbf{a_{\downarrow}}\)</span> as in either case, the other element becomes the identity, or 0.</p>
+<div class="math notranslate nohighlight">
+\[
+\text{If}\quad\mathbf{a_{\uparrow}} + \mathbf{a_{\downarrow}} = \mathbf{a_{\uparrow}} \implies \mathbf{a_{\downarrow}} = 0\quad\text{but we assumed it to be non-zero.}
+\]</div>
+<p>Thus the only option <strong>within the set</strong> is <span class="math notranslate nohighlight">\(\mathbf{a_{\uparrow}} + \mathbf{a_{\downarrow}} = 0\)</span>, which makes the two vectors inverse of each other. Now, what do we assign to <span class="math notranslate nohighlight">\(\mathbf{a_{\uparrow}} + \mathbf{a_{\uparrow}}\)</span>, and <span class="math notranslate nohighlight">\(\mathbf{a_{\downarrow}} + \mathbf{a_{\downarrow}}\)</span>? We can’t have <span class="math notranslate nohighlight">\(\mathbf{a_{\uparrow}} + \mathbf{a_{\uparrow}} = 0\)</span> as this will make <span class="math notranslate nohighlight">\(\mathbf{a_{\uparrow}} = 0\)</span>, and same argument holds for <span class="math notranslate nohighlight">\(\mathbf{a_{\downarrow}}\)</span>. So the only option plaussible is <span class="math notranslate nohighlight">\(\mathbf{a_{\uparrow}} + \mathbf{a_{\uparrow}} = \mathbf{a_{\downarrow}}\)</span>, and <span class="math notranslate nohighlight">\(\mathbf{a_{\downarrow}} + \mathbf{a_{\downarrow}} = \mathbf{a_{\uparrow}}\)</span>.</p>
+<p>This gives the structure of this three element group, where combining any non-zero element with itself gives the other element, and both non-zero elements are inverses of each other.</p>
+<p>Other option, which gives us more to play with in context of vector space is, to assume that <span class="math notranslate nohighlight">\(\mathbf{a_{\uparrow}} + \mathbf{a_{\downarrow}}\)</span> should exist as separate vector in <strong>V</strong>.
+Moreover, if <span class="math notranslate nohighlight">\(\mathbf{a_{\uparrow}}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{a_{\downarrow}}\)</span> aren’t inverses of each other like above, they should have separate inverses. This means that the set <strong>V</strong> should be extended to atleast</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{V} \to \{0, \mathbf{a_{\uparrow}}, -\mathbf{a_{\uparrow}}, \mathbf{a_{\downarrow}}, -\mathbf{a_{\downarrow}}, \mathbf{a_{\uparrow}} + \mathbf{a_{\downarrow}}, -(\mathbf{a_{\uparrow}} + \mathbf{a_{\downarrow}})\}
+\]</div>
+<p>With introduction of more elements, we have to again make sure that the binary operation is well defined, i.e., addition of any two element results an element in the set. Consider now the <span class="math notranslate nohighlight">\(\mathbf{a_{\uparrow}} + (\mathbf{a_{\uparrow}} + \mathbf{a_{\downarrow}})\)</span>, just like previous exercise, its value can not be either of <span class="math notranslate nohighlight">\(\mathbf{a_{\uparrow}}, \mathbf{a_{\downarrow}}\)</span> or <span class="math notranslate nohighlight">\(\mathbf{a_{\uparrow}} + \mathbf{a_{\downarrow}}\)</span>, otherwise either of these will result in a contradiction.</p>
+<p>So, <span class="math notranslate nohighlight">\(\mathbf{a_{\uparrow}} + (\mathbf{a_{\uparrow}} + \mathbf{a_{\downarrow}})\)</span>, and it’s inverse must now exist as seperate vector. We can simplify the expression <span class="math notranslate nohighlight">\(\mathbf{a_{\uparrow}} + (\mathbf{a_{\uparrow}} + \mathbf{a_{\downarrow}})\)</span> = <span class="math notranslate nohighlight">\((\mathbf{a_{\uparrow}} + \mathbf{a_{\uparrow}}) + \mathbf{a_{\downarrow}}\)</span> = <span class="math notranslate nohighlight">\(2\mathbf{a_{\uparrow}} + \mathbf{a_{\downarrow}}\)</span>, where <span class="math notranslate nohighlight">\(2\mathbf{a_{\uparrow}}\)</span> symbolically means <span class="math notranslate nohighlight">\(\mathbf{a_{\uparrow}} + \mathbf{a_{\uparrow}}\)</span>. We can easily see that</p>
+<ul class="simple">
+<li><p>This process of extending is actually endless</p></li>
+<li><p>If we keep doing this over and over again, the new elements added are expressed as some ‘combination’ of the originally assumed two non-zero vectors.</p></li>
+<li><p>We have deceptively used the notion of actual numbers to express new vectors.</p></li>
+<li><p>The fully extended set looks like</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathbf{V} \to \{
+    0, \mathbf{a_{\uparrow}}, -\mathbf{a_{\uparrow}}, \mathbf{a_{\downarrow}}, -\mathbf{a_{\downarrow}}, \mathbf{a_{\uparrow}} + \mathbf{a_{\downarrow}}, -(\mathbf{a_{\uparrow}} + \mathbf{a_{\downarrow}}),
+    2\mathbf{a_{\uparrow}} + \mathbf{a_{\downarrow}},-(2\mathbf{a_{\uparrow}} + \mathbf{a_{\downarrow}}),\\
+    \mathbf{a_{\uparrow}} + 2\mathbf{a_{\downarrow}},-(\mathbf{a_{\uparrow}} + 2\mathbf{a_{\downarrow}}),
+    3\mathbf{a_{\uparrow}} + \mathbf{a_{\downarrow}},-(3\mathbf{a_{\uparrow}} + \mathbf{a_{\downarrow}}),
+    \mathbf{a_{\uparrow}} + 3\mathbf{a_{\downarrow}},-(\mathbf{a_{\uparrow}} + 3\mathbf{a_{\downarrow}}),\\
+    2\mathbf{a_{\uparrow}} + 3\mathbf{a_{\downarrow}},-(2\mathbf{a_{\uparrow}} + 3\mathbf{a_{\downarrow}}),
+    3\mathbf{a_{\uparrow}} +2\mathbf{a_{\downarrow}},-(3\mathbf{a_{\uparrow}} + 2\mathbf{a_{\downarrow}}),
+    \dots
+\}
+\end{split}\]</div>
+<p>In a more compact form (albeit terse looking) the set looks like <span class="math notranslate nohighlight">\(\mathbf{V} = \{n_1\mathbf{a_{\uparrow}} + n_2\mathbf{a_{\downarrow}}: \text{where}\quad n_1, n_2 \in \mathbb{Z}\}\)</span>, i.e., every element in the set is of the form <span class="math notranslate nohighlight">\(n_1\mathbf{a_{\uparrow}} + n_2\mathbf{a_{\downarrow}}\)</span> for some integers <span class="math notranslate nohighlight">\(n_1, n_2\)</span>.</p>
+<p>So we had to issentially grow the initial set to contain infinitely many element to make sure the binary operation was within the set, which makes <span class="math notranslate nohighlight">\((\mathbf{V}, +)\)</span> a group. While extending the set, we used integers to express derived vectors as combinations of <span class="math notranslate nohighlight">\(\mathbf{a_{\uparrow}}, \mathbf{a_{\downarrow}}\)</span>. This is basically trying to use the integers as scalar field. We know that the set of integers does not form a field, so we have to also generalise the numbers from integers to atleast rational number, or for comfort real or complex numbers.</p>
 <section id="linear-combination">
 <h3>Linear combination<a class="headerlink" href="#linear-combination" title="Link to this heading">#</a></h3>
-<p>The scalar multiplication</p>
-<p>Consider an arbitrarily chosen set of <span class="math notranslate nohighlight">\(n\)</span> vectors <span class="math notranslate nohighlight">\(v_1, v_2, v_3, \dots, v_n\)</span> in <strong>V</strong>, and scalars <span class="math notranslate nohighlight">\(a_1, a_2, a_3, \dots, a_n\)</span>, then the following is called a linear combination of the vectors</p>
+<p>We saw from the above example, how a finite set object can be extended to an infinite set with a vector space by using combinations of those finite elements.
+These combinations are called linear combination of vectors. More formally, consider an arbitrarily chosen set of <span class="math notranslate nohighlight">\(n\)</span> vectors <span class="math notranslate nohighlight">\(v_1, v_2, v_3, \dots, v_n\)</span> in <strong>V</strong>, and scalars <span class="math notranslate nohighlight">\(a_1, a_2, a_3, \dots, a_n\)</span>, then the following is called a linear combination of the vectors</p>
 <div class="math notranslate nohighlight">
 \[
 v = \sum_{i=1}^n a_i v_i = a_1 v_1 + a_2 v_2 + \dots a_n v_n
 \]</div>
+<p>Let’s try to make some interpretations on this linear combination. Given a vector <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> and a non-zero scalars <span class="math notranslate nohighlight">\(a, b\)</span>, <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> and <span class="math notranslate nohighlight">\(a\mathbf{v}\)</span>, <span class="math notranslate nohighlight">\(b\mathbf{v}\)</span>, and <span class="math notranslate nohighlight">\((a+b)\mathbf{v}\)</span> are all different vectors.</p>
 <section id="linear-independence">
 <h4>Linear independence<a class="headerlink" href="#linear-independence" title="Link to this heading">#</a></h4>
 </section>
