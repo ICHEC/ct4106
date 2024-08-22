@@ -374,16 +374,16 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-space">Vector Space</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-sub-space">Vector Sub-space</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-combination">Linear combination</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-independence">Linear independence</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basis">Basis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-operators">Linear Operators</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inner-product">Inner Product</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#overlap-of-vectors">Overlap of vectors</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#orthogonality">Orthogonality</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-operators">Linear Operators</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#states-as-vector-bra-and-ket">States as Vector (Bra and Ket)</a></li>
 </ul>
 </li>
@@ -518,11 +518,11 @@ root(Mathematical Framework)
 <h3>Scalar vs Vector<a class="headerlink" href="#scalar-vs-vector" title="Link to this heading">#</a></h3>
 <p>Any quantity that can be described by a single numerical value, usually with real, and sometimes with complex numbers is a scalar.
 The common examples of scalars are volume, density, speed, energy, mass and time.</p>
-<p>Quantities require multiples of numerical values, with each value describing some aspect of the quantities, are called vectors. The number of these values is called the <code class="docutils literal notranslate"><span class="pre">dimension</span></code> of the vector. Common examples of vector quantities from physics include position, velocity, momentum, and force.</p>
+<p>Quantities require multiples of numerical values, with each value describing some aspect or attribute of the quantities, are called vectors. The number of these values is called the <code class="docutils literal notranslate"><span class="pre">dimension</span></code> of the vector. Common examples of vector quantities from physics include position, velocity, momentum, and force. They all have two common attributes, (i) a <strong>magnitude</strong>, and (ii) a <strong>direction</strong> associated with them.</p>
 <p>Both scalars and vectors are represented usually with real numbers, and often with complex numbers. So the notions of <code class="docutils literal notranslate"><span class="pre">addition</span></code>, <code class="docutils literal notranslate"><span class="pre">subtraction</span></code>, <code class="docutils literal notranslate"><span class="pre">multiplication</span></code> and <code class="docutils literal notranslate"><span class="pre">division</span></code>,
 through which we manipulate numbers, are suitably extended on scalars and vectors.</p>
 <p><strong>Scalars</strong>: are expressed in terms of single number, so their algebra is essentially the same as algebra of real/complex numbers they are expressed in.</p>
-<p><strong>Vectors</strong>: are expressed in terms of multiple numbers. So it’s not straight forward as to how to extend their algebra from the component numbers. We see below how this is done.</p>
+<p><strong>Vectors</strong>: are expressed in terms of multiple numbers. So it’s not straight forward as to how to manipulate vectors, based on scalars, or formally extend their algebra from the component numbers. We see below how this is done.</p>
 <p><strong>Vector Space, Hilbert Space</strong>: A Vector space is a mathematical structure, that constitutes the necessary components to manipulate vectors in sensible way. Before we define it, we need to understand a few definitions, namely <code class="docutils literal notranslate"><span class="pre">Set</span></code>, <code class="docutils literal notranslate"><span class="pre">map</span></code>, <code class="docutils literal notranslate"><span class="pre">Binary</span> <span class="pre">operations</span></code>, <code class="docutils literal notranslate"><span class="pre">Group</span></code> and <code class="docutils literal notranslate"><span class="pre">Field</span></code> -</p>
 </section>
 <section id="set">
@@ -974,18 +974,66 @@ Moreover, if <span class="math notranslate nohighlight">\(\mathbf{a_{\uparrow}}\
 \end{split}\]</div>
 <p>In a more compact form (albeit terse looking) the set looks like <span class="math notranslate nohighlight">\(\mathbf{V} = \{n_1\mathbf{a_{\uparrow}} + n_2\mathbf{a_{\downarrow}}: \text{where}\quad n_1, n_2 \in \mathbb{Z}\}\)</span>, i.e., every element in the set is of the form <span class="math notranslate nohighlight">\(n_1\mathbf{a_{\uparrow}} + n_2\mathbf{a_{\downarrow}}\)</span> for some integers <span class="math notranslate nohighlight">\(n_1, n_2\)</span>.</p>
 <p>So we had to issentially grow the initial set to contain infinitely many element to make sure the binary operation was within the set, which makes <span class="math notranslate nohighlight">\((\mathbf{V}, +)\)</span> a group. While extending the set, we used integers to express derived vectors as combinations of <span class="math notranslate nohighlight">\(\mathbf{a_{\uparrow}}, \mathbf{a_{\downarrow}}\)</span>. This is basically trying to use the integers as scalar field. We know that the set of integers does not form a field, so we have to also generalise the numbers from integers to atleast rational number, or for comfort real or complex numbers.</p>
+<section id="vector-sub-space">
+<h3>Vector Sub-space<a class="headerlink" href="#vector-sub-space" title="Link to this heading">#</a></h3>
+<p>Just like Groups have subgroup, vector space had vector subspace. Given a vector space <strong>(V, +)</strong>, with a field <span class="math notranslate nohighlight">\(F(+, .)\)</span>, a sub-space is a subset <strong>S</strong> of <strong>V</strong>, such that <strong>(S, +)</strong>, forms a vector space with a field <span class="math notranslate nohighlight">\(F(+, .)\)</span>. Since here all the operations, field are defined for the parent set <strong>V</strong>, to form a sub-space, all one needs to ensure is that those operations done on elements of <strong>S</strong> keep the results within <strong>S</strong>.</p>
+</section>
 <section id="linear-combination">
 <h3>Linear combination<a class="headerlink" href="#linear-combination" title="Link to this heading">#</a></h3>
 <p>We saw from the above example, how a finite set object can be extended to an infinite set with a vector space by using combinations of those finite elements.
-These combinations are called linear combination of vectors. More formally, consider an arbitrarily chosen set of <span class="math notranslate nohighlight">\(n\)</span> vectors <span class="math notranslate nohighlight">\(v_1, v_2, v_3, \dots, v_n\)</span> in <strong>V</strong>, and scalars <span class="math notranslate nohighlight">\(a_1, a_2, a_3, \dots, a_n\)</span>, then the following is called a linear combination of the vectors</p>
+These combinations are called linear combination of vectors, as they are expressed as sum of terms, each of those terms being vector, with scalar multiplied to. More formally, consider an arbitrarily chosen set of <span class="math notranslate nohighlight">\(n\)</span> vectors <span class="math notranslate nohighlight">\(v_1, v_2, v_3, \dots, v_n\)</span> in <strong>V</strong>, and scalars <span class="math notranslate nohighlight">\(a_1, a_2, a_3, \dots, a_n\)</span>, then the following is called a linear combination of the vectors</p>
 <div class="math notranslate nohighlight">
 \[
-v = \sum_{i=1}^n a_i v_i = a_1 v_1 + a_2 v_2 + \dots a_n v_n
+v = \sum_{i=1}^n a_i \mathbf{v_i} = a_1 \mathbf{v_1} + a_2 \mathbf{v_2} + \dots a_n \mathbf{v_n}
 \]</div>
-<p>Let’s try to make some interpretations on this linear combination. Given a vector <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> and a non-zero scalars <span class="math notranslate nohighlight">\(a, b\)</span>, <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> and <span class="math notranslate nohighlight">\(a\mathbf{v}\)</span>, <span class="math notranslate nohighlight">\(b\mathbf{v}\)</span>, and <span class="math notranslate nohighlight">\((a+b)\mathbf{v}\)</span> are all different vectors.</p>
+<p>and the scalars <span class="math notranslate nohighlight">\(a_i\)</span> are called <strong>coefficients</strong> of corresponding vectors <span class="math notranslate nohighlight">\(\mathbf{v_i}\)</span>.</p>
+<p>Let’s try to make some interpretations on this linear combination, and here we recall that in physics we usually called single valued objects as scalars, and multi-valued objects as vectors. Thus a number is enough to represent scalar, while a vector having multiple attributes, requires multiple numbers.</p>
+<p>Given a vector <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> and a non-zero scalars <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>, <span class="math notranslate nohighlight">\(\mathbf{v}\)</span>, <span class="math notranslate nohighlight">\(a\mathbf{v}\)</span>, <span class="math notranslate nohighlight">\(b\mathbf{v}\)</span>, and <span class="math notranslate nohighlight">\((a+b)\mathbf{v}\)</span> are all different vectors, yet they have something in common, the <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> itself. One can say, that all these, share some attributes. Recalling that a vector defined in usual sense in physics has a magnitude, and a direction, and magnitude is scalar while the direction is a multi attribute object, we can interpret the following -</p>
+<ul class="simple">
+<li><p>Multiplying a vector with a scalar, changes it’s <code class="docutils literal notranslate"><span class="pre">magnitude</span></code>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{v}\)</span>, <span class="math notranslate nohighlight">\(a\mathbf{v}\)</span>, <span class="math notranslate nohighlight">\(b\mathbf{v}\)</span>, <span class="math notranslate nohighlight">\((a+b)\mathbf{v}\)</span> all have the same <code class="docutils literal notranslate"><span class="pre">direction</span></code>.</p></li>
+</ul>
+<p>Given a vector space <strong>(V, +)</strong>, with a field <span class="math notranslate nohighlight">\(F(+, .)\)</span>, and a non-zero vector <span class="math notranslate nohighlight">\(\mathbf{v}\)</span>, we can imagine a set of all vectors that can be created by multiplying scalars to <span class="math notranslate nohighlight">\(\mathbf{v}\)</span>. This is called a <strong>linear span of the vector</strong> <span class="math notranslate nohighlight">\(\mathbf{v}\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+F\mathbf{v} = \{a\mathbf{v}: \text{For every}\quad a\in F\}
+\]</div>
+<p>Clearly, <span class="math notranslate nohighlight">\(F\mathbf{v}\)</span> is a subset of <strong>V</strong>, and its easy to see that it forms a vector sub-space.</p>
 <section id="linear-independence">
 <h4>Linear independence<a class="headerlink" href="#linear-independence" title="Link to this heading">#</a></h4>
+<p>Consider the following equation: <span class="math notranslate nohighlight">\(a\mathbf{u} + b\mathbf{v} = 0\)</span>, where <span class="math notranslate nohighlight">\(a, b\)</span> are some arbitraty scalars and <span class="math notranslate nohighlight">\(\mathbf{u}, \mathbf{v}\)</span> are two arbitray vectors, and speculate it’s implication.</p>
+<p>The left part of the expression is a vector that is linear combination of <span class="math notranslate nohighlight">\(\mathbf{u}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{v}\)</span>, and equating to zero means that the sum is zero vector. But then we can say the following -</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(a\mathbf{u}\)</span> and <span class="math notranslate nohighlight">\(b\mathbf{v}\)</span> are inverses of each other.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(a \ne 0\)</span>, then <span class="math notranslate nohighlight">\(\mathbf{u} = (-a^{-1}b)\mathbf{v}\)</span>, which means <span class="math notranslate nohighlight">\(\mathbf{u}\)</span> shares the same direction as <span class="math notranslate nohighlight">\(\mathbf{v}\)</span>.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(b \ne 0\)</span>, then <span class="math notranslate nohighlight">\(\mathbf{v} = (-b^{-1}a)\mathbf{u}\)</span>, which also means <span class="math notranslate nohighlight">\(\mathbf{u}\)</span> shares the same direction as <span class="math notranslate nohighlight">\(\mathbf{v}\)</span>.</p></li>
+<li><p>The set of their span are identical <span class="math notranslate nohighlight">\(F\mathbf{u} = F\mathbf{v}\)</span> (try to see why).</p></li>
+</ul>
+<p>What happens, if this cannot happen? That is, for the above two vectors, <span class="math notranslate nohighlight">\(\mathbf{u}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> there is no <span class="math notranslate nohighlight">\(a, b\)</span> with atleast one of them being non-zero, such that <span class="math notranslate nohighlight">\(a\mathbf{u} + b\mathbf{v} = 0\)</span> ?</p>
+<p>Then the vector’s don’t share directions. A logically equivalent, but more intuitive way of saying the above is if two vectors don’t share direction, or can’t be written as scalar multiple of each other, then <span class="math notranslate nohighlight">\(a\mathbf{u} + b\mathbf{v} = 0\)</span> implies that <span class="math notranslate nohighlight">\(a=b=0\)</span>.</p>
+<p>Let’s extend this line of thinking, and imagine we have two vectors <span class="math notranslate nohighlight">\(\mathbf{v_1}\)</span>, <span class="math notranslate nohighlight">\(\mathbf{v_2}\)</span> that don’t share direction. We can construct the span of these two vectors</p>
+<div class="math notranslate nohighlight">
+\[
+F\mathbf{v_1, v_2} = {a_1\mathbf{v_1}+a_2\mathbf{v_2}: \text{For every} a_1, a_2 \in F}
+\]</div>
+<p>It’s also easy to see that this is a sup-space.</p>
+<p>This situation, generalised to arbitrary number of vectors is defined as <strong>linear independence</strong>. Formally, a set of vectors <span class="math notranslate nohighlight">\(n\)</span> vectors <span class="math notranslate nohighlight">\(\mathbf{v_1}\)</span>, <span class="math notranslate nohighlight">\(\mathbf{v_2}\)</span>, <span class="math notranslate nohighlight">\(\dots\)</span>, <span class="math notranslate nohighlight">\(\mathbf{v_n}\)</span> are called linearly independent, if and only if</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{i=1}^n a_i \mathbf{v_i} = a_1 \mathbf{v_1} + a_2 \mathbf{v_2} + \dots a_n \mathbf{v_n} = 0;\implies a_1 = a_2 = \dots a_n = 0
+\]</div>
 </section>
+</section>
+<section id="basis">
+<h3>Basis<a class="headerlink" href="#basis" title="Link to this heading">#</a></h3>
+</section>
+<section id="linear-operators">
+<h3>Linear Operators<a class="headerlink" href="#linear-operators" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Commutativity</p></li>
+<li><p>Special operators: Unitary, Hermitian, …</p></li>
+<li><p>Probability conservation</p></li>
+</ul>
 </section>
 <section id="inner-product">
 <h3>Inner Product<a class="headerlink" href="#inner-product" title="Link to this heading">#</a></h3>
@@ -995,14 +1043,6 @@ v = \sum_{i=1}^n a_i v_i = a_1 v_1 + a_2 v_2 + \dots a_n v_n
 <section id="orthogonality">
 <h4>Orthogonality<a class="headerlink" href="#orthogonality" title="Link to this heading">#</a></h4>
 </section>
-</section>
-<section id="linear-operators">
-<h3>Linear Operators<a class="headerlink" href="#linear-operators" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Commutativity</p></li>
-<li><p>Special operators: Unitary, Hermitian, …</p></li>
-<li><p>Probability conservation</p></li>
-</ul>
 <section id="states-as-vector-bra-and-ket">
 <h4>States as Vector (Bra and Ket)<a class="headerlink" href="#states-as-vector-bra-and-ket" title="Link to this heading">#</a></h4>
 <p><a class="reference external" href="https://youtube.com/clip/Ugkxh9W3xafNSWAP-VU9LCrRXkx9kgUH0mY8?si=MVsRsDUeJld5fV9_">youtube</a></p>
@@ -1112,16 +1152,16 @@ v = \sum_{i=1}^n a_i v_i = a_1 v_1 + a_2 v_2 + \dots a_n v_n
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-space">Vector Space</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-sub-space">Vector Sub-space</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-combination">Linear combination</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-independence">Linear independence</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basis">Basis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-operators">Linear Operators</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inner-product">Inner Product</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#overlap-of-vectors">Overlap of vectors</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#orthogonality">Orthogonality</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-operators">Linear Operators</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#states-as-vector-bra-and-ket">States as Vector (Bra and Ket)</a></li>
 </ul>
 </li>
