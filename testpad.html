@@ -387,7 +387,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/7203003b14236306f61ef8d02a904731d2f7d2eb25e1646cd18fbedc0df3c047.png" src="_images/7203003b14236306f61ef8d02a904731d2f7d2eb25e1646cd18fbedc0df3c047.png" />
+<img alt="_images/7ebabd8b081c3d8e874fe2f77aa1c291e495e45869abe1b128ab2d2240f143cd.png" src="_images/7ebabd8b081c3d8e874fe2f77aa1c291e495e45869abe1b128ab2d2240f143cd.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -397,22 +397,22 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;1010&#39;: 612,
- &#39;0010&#39;: 639,
- &#39;0100&#39;: 637,
- &#39;0001&#39;: 629,
- &#39;1111&#39;: 638,
- &#39;1101&#39;: 622,
- &#39;1110&#39;: 614,
- &#39;0000&#39;: 612,
- &#39;0011&#39;: 593,
- &#39;0111&#39;: 622,
- &#39;1011&#39;: 650,
- &#39;0110&#39;: 627,
- &#39;1000&#39;: 635,
- &#39;1100&#39;: 612,
- &#39;0101&#39;: 650,
- &#39;1001&#39;: 608}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;1111&#39;: 605,
+ &#39;1101&#39;: 632,
+ &#39;1011&#39;: 628,
+ &#39;0011&#39;: 595,
+ &#39;0111&#39;: 586,
+ &#39;0000&#39;: 629,
+ &#39;0010&#39;: 651,
+ &#39;0001&#39;: 607,
+ &#39;1001&#39;: 614,
+ &#39;0101&#39;: 633,
+ &#39;1110&#39;: 632,
+ &#39;1100&#39;: 640,
+ &#39;0110&#39;: 660,
+ &#39;1000&#39;: 634,
+ &#39;0100&#39;: 640,
+ &#39;1010&#39;: 614}
 </pre></div>
 </div>
 </div>
@@ -622,6 +622,122 @@ fill_betweenx : Fill between two sets of x-values.
 <span class=" -Color -Color-Red">Type:</span>      function
 </pre></div>
 </div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Library</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib_venn</span> <span class="kn">import</span> <span class="n">venn2</span><span class="p">,</span> <span class="n">venn3</span>
+ 
+<span class="c1"># Basic Venn</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">venn2</span><span class="p">(</span><span class="n">subsets</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;10&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;01&#39;</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span> <span class="s1">&#39;11&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">},</span>
+          <span class="n">set_labels</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">),</span>
+          <span class="n">set_colors</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">),</span>
+          <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span>
+ 
+<span class="c1"># Change Backgroud</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+<span class="c1">#plt.gca().set_axis_on()</span>
+ 
+<span class="c1"># Show it</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/b1327d91060fa3c687c832e41c4424db706fc5a0a67df13536c854aa776a3658.png" src="_images/b1327d91060fa3c687c832e41c4424db706fc5a0a67df13536c854aa776a3658.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>venn2<span class="o">?</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">Signature:</span>
+venn2<span class=" -Color -Color-Blue">(</span>
+    subsets<span class=" -Color -Color-Blue">,</span>
+    set_labels<span class=" -Color -Color-Blue">=(&#39;A&#39;,</span> <span class=" -Color -Color-Blue">&#39;B&#39;),</span>
+    set_colors<span class=" -Color -Color-Blue">=(&#39;r&#39;,</span> <span class=" -Color -Color-Blue">&#39;g&#39;),</span>
+    alpha<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Cyan">0.4</span><span class=" -Color -Color-Blue">,</span>
+    normalize_to<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Cyan">1.0</span><span class=" -Color -Color-Blue">,</span>
+    ax<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    subset_label_formatter<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+<span class=" -Color -Color-Blue">)</span>
+<span class=" -Color -Color-Red">Docstring:</span>
+Plots a 2-set area-weighted Venn diagram.
+The subsets parameter can be one of the following:
+ - A list (or a tuple) containing two set objects.
+ - A dict, providing sizes of three diagram regions.
+   The regions are identified via two-letter binary codes (&#39;10&#39;, &#39;01&#39;, and &#39;11&#39;), hence a valid set could look like:
+   {&#39;10&#39;: 10, &#39;01&#39;: 20, &#39;11&#39;: 40}. Unmentioned codes are considered to map to 0.
+ - A list (or a tuple) with three numbers, denoting the sizes of the regions in the following order:
+   (10, 01, 11)
+
+``set_labels`` parameter is a list of two strings - set labels. Set it to None to disable set labels.
+The ``set_colors`` parameter should be a list of two elements, specifying the &quot;base colors&quot; of the two circles.
+The color of circle intersection will be computed based on those.
+
+The ``normalize_to`` parameter specifies the total (on-axes) area of the circles to be drawn. Sometimes tuning it (together
+with the overall fiture size) may be useful to fit the text labels better.
+The return value is a ``VennDiagram`` object, that keeps references to the ``Text`` and ``Patch`` objects used on the plot
+and lets you know the centers and radii of the circles, if you need it.
+
+The ``ax`` parameter specifies the axes on which the plot will be drawn (None means current axes).
+
+The ``subset_label_formatter`` parameter is a function that can be passed to format the labels
+that describe the size of each subset.
+
+&gt;&gt;&gt; from matplotlib_venn import *
+&gt;&gt;&gt; v = venn2(subsets={&#39;10&#39;: 1, &#39;01&#39;: 1, &#39;11&#39;: 1}, set_labels = (&#39;A&#39;, &#39;B&#39;))
+&gt;&gt;&gt; c = venn2_circles(subsets=(1, 1, 1), linestyle=&#39;dashed&#39;)
+&gt;&gt;&gt; v.get_patch_by_id(&#39;10&#39;).set_alpha(1.0)
+&gt;&gt;&gt; v.get_patch_by_id(&#39;10&#39;).set_color(&#39;white&#39;)
+&gt;&gt;&gt; v.get_label_by_id(&#39;10&#39;).set_text(&#39;Unknown&#39;)
+&gt;&gt;&gt; v.get_label_by_id(&#39;A&#39;).set_text(&#39;Set A&#39;)
+
+You can provide sets themselves rather than subset sizes:
+&gt;&gt;&gt; v = venn2(subsets=[set([1,2]), set([2,3,4,5])], set_labels = (&#39;A&#39;, &#39;B&#39;))
+&gt;&gt;&gt; c = venn2_circles(subsets=[set([1,2]), set([2,3,4,5])], linestyle=&#39;dashed&#39;)
+&gt;&gt;&gt; print(&quot;%0.2f&quot; % (v.get_circle_radius(1)/v.get_circle_radius(0)))
+1.41
+<span class=" -Color -Color-Red">File:</span>      ~/miniforge/envs/jb/lib/python3.12/site-packages/matplotlib_venn/_venn2.py
+<span class=" -Color -Color-Red">Type:</span>      function
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="n">venn3</span><span class="p">(</span><span class="n">subsets</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">set_labels</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/1ec6b15d9ee471a8867fea3cb82a60bc7b5c80a9491141acf8ebea10f6307f3f.png" src="_images/1ec6b15d9ee471a8867fea3cb82a60bc7b5c80a9491141acf8ebea10f6307f3f.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mf">7.7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mf">8.2</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">x</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;o-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axline</span><span class="p">((</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.lines.AxLine at 0x1207b3770&gt;
+</pre></div>
+</div>
+<img alt="_images/7453cddf809cb638784cafe91a6ad3810581746210e21c241a7ab34825247b08.png" src="_images/7453cddf809cb638784cafe91a6ad3810581746210e21c241a7ab34825247b08.png" />
 </div>
 </div>
 
