@@ -381,12 +381,26 @@ document.write(`
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basis">Basis</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-operators">Linear Operators</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inner-product">Inner Product</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#overlap-of-vectors">Overlap of vectors</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#orthogonality">Orthogonality</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#states-as-vector-bra-and-ket">States as Vector (Bra and Ket)</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inner-product-space">Inner product space</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hilbert-space">Hilbert space</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#orthogonality-normality">Orthogonality, normality</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#overlap-of-vectors">Overlap of vectors</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#orthogonality">Orthogonality</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#orthonormal-basis">Orthonormal basis</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dirac-notation">Dirac Notation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#special-operators">Special operators</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hermitian-operators">Hermitian operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unitary-opertors">Unitary opertors</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#states-and-operators">States and Operators</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connection-with-experiment">Connection with Experiment</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#representation-theory">Representation theory</a></li>
 </ul>
 </li>
@@ -536,10 +550,20 @@ through which we manipulate numbers, are suitably extended on scalars and vector
 </ul>
 <p>It’s important to imphesise the important of uniqueness in a set. It means in that in a set, a member exists only once. Thus <span class="math notranslate nohighlight">\(A=\{a, e, i, o, u\}\)</span> is a well defined set, while <span class="math notranslate nohighlight">\(A=\{a, e, i, o, u, a, i\}\)</span> is not, as <span class="math notranslate nohighlight">\(a, i\)</span> are put twice. So a set is different than a mere list, which can have multiple occurrance of an object.</p>
 <p>Secondly, the order of elements in a set have no meaning, so <span class="math notranslate nohighlight">\(\{a, e, i, o, u\}\)</span> and say, <span class="math notranslate nohighlight">\(\{i, o, a, u, e\}\)</span> are same sets, just expressed differently.</p>
+<p>A set is expressed with mainly two ways:</p>
+<ol class="arabic simple">
+<li><p><strong>Roster method</strong>: This is the method where we list all the elements of the set, in no particular order, and put them in curly braces. The set of vowels, <span class="math notranslate nohighlight">\(\{a, e, i, o, u\}\)</span> is one such examples. It is the simplest method, but becomes inconvenient for sets with large number of elements, or infinite number of elements.</p></li>
+<li><p><strong>Set builder/logical method</strong>: In this method, instead of trying to list elements one by one, we name a representative element, and describe it’s specific properties that make it a member of the set. For example, see below, and example of set builder method.</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+B = \{a| a\in \mathbb{Z}, \text{ and } a \text{ is even}\}
+\]</div>
+<p>The above is seen or read as “B equals a set of all ‘<span class="math notranslate nohighlight">\(a\)</span>’ such that <span class="math notranslate nohighlight">\(a\)</span> is an integer, and <span class="math notranslate nohighlight">\(a\)</span> is even”. Equivalently, B is set of all even integers. The roster version of this would be <span class="math notranslate nohighlight">\(B = \{\dots, -3, -2, -1, 0, 1, 2, 3, \dots\}\)</span>.</p>
 <p>A set can be finite, or infinite, that is, the number of elements in a set can be finite, or infinite.</p>
 <p>You can manipulate a set, by adding or removing elements from it. A set with no elements is called <code class="docutils literal notranslate"><span class="pre">Null</span> <span class="pre">set</span></code>, denoted by <span class="math notranslate nohighlight">\(\emptyset\)</span>.</p>
-<p>Sets can be finite and infinite. We all know what being finite is, so a finite set is a set with finite number of elements which one could count.
-Infinite is a slightly tricky concept in mathematics. To start with, an infinite set is a set that <strong>is not</strong> finite.</p>
+<p>Sets can be finite and infinite. We all know what being finite is, so a finite set is a set with finite number of elements which one could count.</p>
+<p>Infinite is a slightly tricky concept in mathematics. To start with, an infinite set is a set that <strong>is not</strong> finite.</p>
 <p>The set of natural numbers <span class="math notranslate nohighlight">\(\mathbb{N} = \{1, 2, 3, \dots\}\)</span> plays a central role in the categorisation of sets. First, it let’s us define countability. So a set in which you could count the number of elements one by one, is called countable. If the counting finishes after finite number, the set is finite and countable. If you can count, and the counting can not finish in finite time, the set is said to be countably infinite. By definition or axiom, the set of natural number is countably infinite. <strong>Uncountable</strong> sets on the other hand, are the ones that are inifinite, and contains too many elements to be even countable.</p>
 <p>We use the term <strong>cardinality</strong> for representing a measure of number of elements in a set. The cardinality of a finite set is the number of elements in it. For infinite sets, the cardinality is symbolic and is established by comparison of two sets and defining map among them.</p>
 <section id="subsets">
@@ -569,14 +593,32 @@ have same cardinality as the set itself.</p>
 <ul class="simple">
 <li><p><strong>Universal set:</strong> For a given consideration of problem, a universal set <span class="math notranslate nohighlight">\(U\)</span> is set of all elements considered, and fixed, so that every set defined for the problem, is a subset of <span class="math notranslate nohighlight">\(U\)</span>.</p></li>
 <li><p><strong>Complement:</strong> Compliment of a set A, denoted by <span class="math notranslate nohighlight">\(A'\)</span>, or sometimes <span class="math notranslate nohighlight">\(A^c\)</span> is defined with respect to the universal set, is set of all elements of <span class="math notranslate nohighlight">\(U\)</span> that are not in A.</p></li>
-<li><p><strong>Union:</strong> A union of two sets, say A and B, denoted as <span class="math notranslate nohighlight">\(A\cup B\)</span> is defined as the set of all elements that belong to either A, or B, or both. For example, if <span class="math notranslate nohighlight">\(A=\{1,2,3,4\}\)</span> and <span class="math notranslate nohighlight">\(B=\{1,3,5,7\}\)</span>, then <span class="math notranslate nohighlight">\(A\cup B = \{1, 2, 3, 4, 5, 7\}\)</span>.</p></li>
+</ul>
+<aside class="sidebar">
+<figure class="align-default" id="id5">
+<img alt="../_images/set-union-inters-diff.jpg" src="../_images/set-union-inters-diff.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Set Union, intersection and set difference.</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</aside>
+<ul class="simple">
+<li><p><strong>Union:</strong> A union of two sets, say A and B, denoted as <span class="math notranslate nohighlight">\(A\cup B\)</span> is defined as the set of all elements that belong to either A, or B, or both. For example, if <span class="math notranslate nohighlight">\(A=\{1,2,3,4\}\)</span> and <span class="math notranslate nohighlight">\(B=\{1,3,5,7\}\)</span>, then</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[A\cup B = \{1, 2, 3, 4, 5, 7\}\]</div>
+<ul class="simple">
 <li><p><strong>Intersection:</strong> An intersection of two sets, say A and B, denoted as <span class="math notranslate nohighlight">\(A\cap B\)</span> is defined as set of all elements that belong to both A and B.</p></li>
 <li><p><strong>Difference:</strong> The set difference of A from B, denote as <span class="math notranslate nohighlight">\(A-B\)</span>, is set of all elements of A that are not elements of B.</p></li>
 <li><p><strong>Cartesian Product:</strong> A cartesian product of two sets, say A and B, denoted by <span class="math notranslate nohighlight">\(A\times B\)</span> is the set of all ordered pairs <span class="math notranslate nohighlight">\((a, b)\)</span> such that <span class="math notranslate nohighlight">\(a\)</span> belongs to A, and <span class="math notranslate nohighlight">\(b\)</span> belongs to B.</p></li>
 </ul>
-<blockquote>
-<div><p>Add illustration</p>
-</div></blockquote>
+<p>For examples, if <span class="math notranslate nohighlight">\(A=\{a, b, c\}\)</span> and <span class="math notranslate nohighlight">\(B=\{x, y, z\}\)</span> then</p>
+<div class="math notranslate nohighlight">
+\[
+A\times B = \{(a, x), (a, y), (a, z),
+(b, x), (b, y), (b, z),
+(c, x), (c, y), (c, z)\}
+\]</div>
 </section>
 </section>
 <section id="map">
@@ -729,7 +771,7 @@ o : A\times A \longrightarrow A
 <figure class="align-center" id="rgb">
 <img alt="https://upload.wikimedia.org/wikipedia/commons/4/4c/Permutations_RGB.svg" src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Permutations_RGB.svg" />
 <figcaption>
-<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Each row represents an arrangement of the three balls of colour red, green and blue. There are 6 such arrangements.</span><a class="headerlink" href="#rgb" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Each row represents an arrangement of the three balls of colour red, green and blue. There are 6 such arrangements.</span><a class="headerlink" href="#rgb" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -1166,25 +1208,67 @@ l_{n1} &amp; l_{n2} &amp; \dots &amp; l_{nn}
 \end{pmatrix}
 \end{split}\]</div>
 <p>Is the matrix representation of the linear map L, and if we express an arbitrary vector <span class="math notranslate nohighlight">\(\mathbf{v} = \sum_i a_i \mathbf{v_i}\)</span>, as coordinate vector <span class="math notranslate nohighlight">\(\mathbf{a} = (a_1, a_2, \dots, a_n)^T\)</span>, then the coordinates of the <span class="math notranslate nohighlight">\(\mathbf{La}\)</span> are the same as the coefficients of the vector obtained by applying the linear map, when expressed in the basis B.</p>
-<p>This is how matrices representation of linear operators naturally emerges.</p>
+<p>This is how matrices representation of linear operators naturally emerges. To see more clearly, let’s compute <span class="math notranslate nohighlight">\(L({\bf v})\)</span> in terms of basis.</p>
+<div class="math notranslate nohighlight">
+\[
+L({\bf v}) = L\left(
+    \sum_j a_j {\bf v_j}
+\right)
+=\sum_j a_j L({\bf v_j})=
+\sum_j a_j \left(
+    \sum_i l_{ij} {\bf v_i}
+\right)
+=\sum_i \left(
+    \sum_j l_{ij} a_j
+\right){\bf v_i}
+=\sum_i ({\bf La})_i {\bf v_i}
+\]</div>
+<p>Thus the image <span class="math notranslate nohighlight">\(L({\bf v})\)</span> of an arbitrary vector <span class="math notranslate nohighlight">\({\bf v}=\sum_i a_j {\bf v_j}\)</span> expressed in the same basis <span class="math notranslate nohighlight">\({\bf v_j}\)</span> has coefficients <span class="math notranslate nohighlight">\(({\bf La})_i\)</span>, or, equivalently the ‘coordinates’ <span class="math notranslate nohighlight">\({\bf a}=(a_1, a_2, \dots, a_n)^T\)</span> is mapped to coordinates <span class="math notranslate nohighlight">\(({\bf La})_i\)</span>, wchih are result of matrix multiplication <span class="math notranslate nohighlight">\({\bf La}\)</span>.</p>
 <ul class="simple">
-<li><p>Commutativity</p></li>
-<li><p>Special operators: Unitary, Hermitian, …</p></li>
-<li><p>Probability conservation</p></li>
+<li><p>So once we choose the basis, we can express abstract vectors as regular array of numbers, and linear operators as matrices.</p></li>
+<li><p>This helps us encode abstract problems of vector space to matrix-vector manipulations, which are naturally done efficiently on computers.</p></li>
+<li><p>This is why we map states and operators to regular vectors and matrices in Quantum Physics and quantum computing.</p></li>
 </ul>
 </section>
-<section id="inner-product">
-<h3>Inner Product<a class="headerlink" href="#inner-product" title="Link to this heading">#</a></h3>
+</section>
+<section id="inner-product-space">
+<h2>Inner product space<a class="headerlink" href="#inner-product-space" title="Link to this heading">#</a></h2>
+<section id="hilbert-space">
+<h3>Hilbert space<a class="headerlink" href="#hilbert-space" title="Link to this heading">#</a></h3>
+<section id="orthogonality-normality">
+<h4>Orthogonality, normality<a class="headerlink" href="#orthogonality-normality" title="Link to this heading">#</a></h4>
+</section>
 <section id="overlap-of-vectors">
 <h4>Overlap of vectors<a class="headerlink" href="#overlap-of-vectors" title="Link to this heading">#</a></h4>
 </section>
 <section id="orthogonality">
 <h4>Orthogonality<a class="headerlink" href="#orthogonality" title="Link to this heading">#</a></h4>
 </section>
-<section id="states-as-vector-bra-and-ket">
-<h4>States as Vector (Bra and Ket)<a class="headerlink" href="#states-as-vector-bra-and-ket" title="Link to this heading">#</a></h4>
-<p><a class="reference external" href="https://youtube.com/clip/Ugkxh9W3xafNSWAP-VU9LCrRXkx9kgUH0mY8?si=MVsRsDUeJld5fV9_">youtube</a></p>
+<section id="orthonormal-basis">
+<h4>Orthonormal basis<a class="headerlink" href="#orthonormal-basis" title="Link to this heading">#</a></h4>
 </section>
+</section>
+<section id="dirac-notation">
+<h3>Dirac Notation<a class="headerlink" href="#dirac-notation" title="Link to this heading">#</a></h3>
+</section>
+</section>
+<section id="special-operators">
+<h2>Special operators<a class="headerlink" href="#special-operators" title="Link to this heading">#</a></h2>
+<section id="hermitian-operators">
+<h3>Hermitian operators<a class="headerlink" href="#hermitian-operators" title="Link to this heading">#</a></h3>
+</section>
+<section id="unitary-opertors">
+<h3>Unitary opertors<a class="headerlink" href="#unitary-opertors" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Probability conservation</p></li>
+</ul>
+</section>
+</section>
+<section id="states-and-operators">
+<h2>States and Operators<a class="headerlink" href="#states-and-operators" title="Link to this heading">#</a></h2>
+<section id="connection-with-experiment">
+<h3>Connection with Experiment<a class="headerlink" href="#connection-with-experiment" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://youtube.com/clip/Ugkxh9W3xafNSWAP-VU9LCrRXkx9kgUH0mY8?si=MVsRsDUeJld5fV9_">youtube</a></p>
 </section>
 <section id="representation-theory">
 <h3>Representation theory<a class="headerlink" href="#representation-theory" title="Link to this heading">#</a></h3>
@@ -1297,12 +1381,26 @@ l_{n1} &amp; l_{n2} &amp; \dots &amp; l_{nn}
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basis">Basis</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-operators">Linear Operators</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inner-product">Inner Product</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#overlap-of-vectors">Overlap of vectors</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#orthogonality">Orthogonality</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#states-as-vector-bra-and-ket">States as Vector (Bra and Ket)</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inner-product-space">Inner product space</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hilbert-space">Hilbert space</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#orthogonality-normality">Orthogonality, normality</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#overlap-of-vectors">Overlap of vectors</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#orthogonality">Orthogonality</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#orthonormal-basis">Orthonormal basis</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dirac-notation">Dirac Notation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#special-operators">Special operators</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hermitian-operators">Hermitian operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unitary-opertors">Unitary opertors</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#states-and-operators">States and Operators</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connection-with-experiment">Connection with Experiment</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#representation-theory">Representation theory</a></li>
 </ul>
 </li>
