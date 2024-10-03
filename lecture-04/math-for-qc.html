@@ -384,6 +384,8 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inner-product-space">Inner product space</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#norm-of-a-vector">Norm of a vector</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#caucy-schwarz-inequality">Caucy-Schwarz inequality</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hilbert-space">Hilbert space</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#orthogonality-normality">Orthogonality, normality</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#overlap-of-vectors">Overlap of vectors</a></li>
@@ -1233,8 +1235,101 @@ L({\bf v}) = L\left(
 </section>
 <section id="inner-product-space">
 <h2>Inner product space<a class="headerlink" href="#inner-product-space" title="Link to this heading">#</a></h2>
+<p>We now know what a vector space <span class="math notranslate nohighlight">\(V(F)\)</span> is. We call the elements of <span class="math notranslate nohighlight">\(V\)</span> as vector, as in general we expect these elements to have some notion of magnitude and direction.</p>
+<p>For vector spaces that are defined over the field of real <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> or complex <span class="math notranslate nohighlight">\(\mathbb{C}\)</span> numbers, one can define more concrete geometric attributes. This is formally done by defining an <strong>Inner Product</strong> on the vector space. For the discussion onwards, we will assume the field to be of either real, or complex numbers <span class="math notranslate nohighlight">\(F=\mathbb{R, C}\)</span>.</p>
+<p>An inner product, is a map <span class="math notranslate nohighlight">\(\langle , \rangle: V\times V \longrightarrow F\)</span> that satisfies the following conditions.</p>
+<p>For any arbitrary vectors <span class="math notranslate nohighlight">\(v_1, v_2, v_3 \in V\)</span>, and arbitrary scalars <span class="math notranslate nohighlight">\(a_1, a_2, a_3 \in F\)</span>  -</p>
+<ol class="arabic simple">
+<li><p><strong>Conjugate symmetry:</strong> <span class="math notranslate nohighlight">\(\langle v_1, v_2\rangle = \langle v_2, v_1\rangle^*\)</span>, where <span class="math notranslate nohighlight">\(^*\)</span> denotes complex conjugate of the complex number. If the <span class="math notranslate nohighlight">\(F=\mathbb{R}\)</span>, then this becomes symmetry.</p></li>
+<li><p><strong>Linearity:</strong> Given that it is a function of two vectors, and is conjugate symmetric (point 1 above), it should have some level of linearity. Formally, it should be linear in the second argument, and conjugate linear in first argument, i.e.,</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\langle {\color{red} v_1}, a_2 v_2 + a_3 v_3\rangle = a_2 \langle {\color{red} v_1}, v_2 \rangle + a_3 \langle {\color{red} v_1}, v_3 \rangle
+\\
+\langle a_1 v_1 + a_2 v_2, {\color{red} v_3} \rangle = a_1^* \langle v_1, {\color{red} v_3} \rangle + a_2^* \langle v_2, {\color{red} v_3} \rangle
+\end{split}\]</div>
+<ol class="arabic simple" start="3">
+<li><p><strong>Positive definiteness:</strong> Note, that conjugate symmetry dictates that <span class="math notranslate nohighlight">\(\langle v, v\rangle = \langle v, v \rangle^*\)</span>, so the inner product of a vector with itself is a real number. We further say, that for every <span class="math notranslate nohighlight">\(v\in V\)</span>, the inner product of a vector with itself is non-negative, i.e, <span class="math notranslate nohighlight">\(\langle v, v\rangle \ge 0\)</span>. Moreover, <span class="math notranslate nohighlight">\(\langle v, v\rangle = 0\)</span> if and only if <span class="math notranslate nohighlight">\(v=0\)</span>, i.e, a non-zero vector’s inner product with itself is always a positive non-zero number.</p></li>
+</ol>
+<p>The inner product can be defined in two ways in terms of linearity, (i) as above, where in condition 2, we imposed linearity in second argument, and conjugate linearity in first argument, and (ii) where we impose linearity in the first argument</p>
+<div class="tip admonition">
+<p class="admonition-title">Inner product space</p>
+<p>A vector space that has an inner product defined on it, is called an <strong>Inner product space</strong>.</p>
+</div>
+<section id="norm-of-a-vector">
+<h3>Norm of a vector<a class="headerlink" href="#norm-of-a-vector" title="Link to this heading">#</a></h3>
+<p>As we saw in the definitio of inner product, <span class="math notranslate nohighlight">\(\langle v, v\rangle\)</span> is a positive definite number, and depends only on single vector <span class="math notranslate nohighlight">\(v\)</span>, so it can be used to define the length or size of a vector.</p>
+<p>The <strong>norm</strong> of a vector is defined as <span class="math notranslate nohighlight">\(|v|=\sqrt{\langle v, v\rangle}\)</span>. The larger this value, he bigger the size of the vector. Let’s see how scalar multiple affects the size of a vector. Consider a scalar <span class="math notranslate nohighlight">\(a\ne 0\)</span>, then the norm of <span class="math notranslate nohighlight">\(av\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[
+|av| = \sqrt{\langle av, av\rangle} = \sqrt{a^*\langle v, av\rangle} = \sqrt{a^* a\langle v, v\rangle} =\sqrt{|a|^2\langle v, v\rangle} = |a||v|
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(|a|\)</span> is magnitude of the scalar <span class="math notranslate nohighlight">\(a\)</span>. So the scalar multiplication to a vector multiplies to the norm of the vector.</p>
+</section>
+<section id="caucy-schwarz-inequality">
+<h3>Caucy-Schwarz inequality<a class="headerlink" href="#caucy-schwarz-inequality" title="Link to this heading">#</a></h3>
+<p>It is a theorem, that states that the absolute value of the inner product of two vectors in a vector space is always less than or equal to the product of their norm.</p>
+<div class="math notranslate nohighlight">
+\[
+|\langle v_1, v_2\rangle|\le |v_1||v_2|,\quad \text{or equivalently}\quad {\langle v_1, v_2 \rangle\over |v_1||v_2|} \le 1
+\]</div>
+<p>Since this ratio of inner product and product of norms of the two vector is bounded below 1, we can interpret this ratio to be cosine of an angle, and call this angle as the angle between two vectors.</p>
+<div class="math notranslate nohighlight">
+\[
+\cos{\theta} = {\langle v_1, v_2 \rangle\over |v_1||v_2|}, \quad\text{or equivalently}\quad
+\theta = \cos^{-1}{\langle v_1, v_2 \rangle\over |v_1||v_2|}
+\]</div>
+<p>With this interpretation, the inner product tells us how ‘close’ two vectors are in direction.</p>
+</section>
 <section id="hilbert-space">
 <h3>Hilbert space<a class="headerlink" href="#hilbert-space" title="Link to this heading">#</a></h3>
+<p>With the inner product defined on the vector space, we can extend the notion of distance between two vectors. For this we need a function of two vectors to act as distance, but just any function wouldn’t do. This function has to generalise the concept of distance in real life, for it to make sense.</p>
+<p>In mathematics, such a function is called a metric. A metric, or distance function defined on a set <span class="math notranslate nohighlight">\(V\)</span> is a map <span class="math notranslate nohighlight">\(d: V\times V\longrightarrow R^{+}\)</span>, where <span class="math notranslate nohighlight">\(R^{+}\)</span> is the set of non-negative real numbers, and satisfies following conditions -</p>
+<ol class="arabic simple">
+<li><p><strong>Positive definiteness:</strong> For any arbitrary <span class="math notranslate nohighlight">\(v_1, v_2 \in V\)</span>, <span class="math notranslate nohighlight">\(d(v_1, v_2)\ge 0\)</span>, and <span class="math notranslate nohighlight">\(d(v_1, v_2)=0\)</span> if and only if <span class="math notranslate nohighlight">\(v_1 = v_2\)</span>.</p></li>
+<li><p><strong>Symmetry:</strong> the distance function is symmetric, i.e., <span class="math notranslate nohighlight">\(d(v_1, v_2) = d(v_2, v_1)\)</span></p></li>
+<li><p><strong>Triangular inequality:</strong> For any three elements/vectors <span class="math notranslate nohighlight">\(v_1, v_2, v_3 \in V\)</span>, the sum of the distance between the first two vectors is always more than or equal to the distance between the first and third vector, i.e., we have
+$<span class="math notranslate nohighlight">\(
+d(v_1, v_2) + d(v_2, v_3) \ge d(v_1, v_3)
+\)</span>$</p></li>
+</ol>
+<p>Any set with a metric defined on it, is called a <strong>metric space</strong>. It’s elements can be thought of as point in a geometrical sense, as there is a well defined distance between each of them.</p>
+<p>With this notion added, the vectors can be seen as ‘points’ in a vector space. The inner product space has a naturally defined notion of distance through the inner product itself, and that is</p>
+<div class="math notranslate nohighlight">
+\[
+d(v_1, v_2) = |v_1 - v_2| = \sqrt{\langle v_1 - v_2, v_1 - v_2\rangle }
+= \sqrt{|v_1|^2 + |v_2|^2 + \langle v_1, v_2\rangle +\langle v_1, v_2\rangle^*}
+\]</div>
+<p>It is easy to check that the above defined distance satisfies the three condition for being a metric.</p>
+<p>With this distance defined on it, we have a <strong>Hilbert space</strong>. Formally,</p>
+<div class="tip admonition">
+<p class="admonition-title">Hilbert Space</p>
+<p>Hilbert Space is a vector space equipped with an inner product that induces a metric/distance function for which the space is a complete metric space.</p>
+</div>
+<p>Now what is a complete metric space, or equivalently completeness?
+We will not go into details of this, but rather illustrate the concept of completeness.
+We know that vector addition is a binary operation, and similarly usual addition is a binary operation. And by definition, adding two numbers or vectors gives another number/vector.</p>
+<p>Within the set of rational numbers <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span>, if we have a sequence of <span class="math notranslate nohighlight">\(n\)</span> rational numbers, say <span class="math notranslate nohighlight">\(a_1, a_2, \dots, a_n\)</span> then because of associativity,
+their sum <span class="math notranslate nohighlight">\(S_n\)</span> defined as</p>
+<p><span class="math notranslate nohighlight">\(S_n = \sum_{l=1}^n a_l = a_1 + a_2 + \dots, a_n\)</span></p>
+<p>is also a rational number and belongs to the same set <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span>. But what happens when <span class="math notranslate nohighlight">\(n\)</span> is not finite, but infinite. In this case, question arises, as to whether the sum ‘converges’ to a specific finite number, or ‘diverges’ to infinity. Within the set of rational numbers, there is an issue even with the converged scenario. For example, consider the sequence <span class="math notranslate nohighlight">\(a_n = (-1)^{n-1}\frac{1}{2n+1}\)</span> then the sum of the <span class="math notranslate nohighlight">\(n\)</span> terms is</p>
+<div class="math notranslate nohighlight">
+\[
+S_n = 1 -\frac 13 + \frac 15 - \frac 17+\dots + (-1)^{n-1}\frac{1}{2n+1}
+\]</div>
+<p>So far, the sum is rational number. However in the limit of <span class="math notranslate nohighlight">\(n\to \infty\)</span>, this sum is known to be equal to <span class="math notranslate nohighlight">\(\frac{\pi}{4}\)</span>, which is an irrational number
+$<span class="math notranslate nohighlight">\(
+S_\infty = 1 -\frac 13 + \frac 15 - \frac 17+\dots = \frac{\pi}{4}
+\)</span><span class="math notranslate nohighlight">\(
+This illustrates, that an infinite summation of rational numbers is actually not rational, but an irrational number. This is what completeness is about. In a complete metric space, the limit of an infinite sequence lies in the set. Thus, \)</span>\mathbb{Q}<span class="math notranslate nohighlight">\( is not complete, though the set of real numbers \)</span>\mathbb{R}$ is complete.</p>
+<figure class="align-default" id="id6">
+<img alt="https://upload.wikimedia.org/wikipedia/commons/8/89/Completeness_in_Hilbert_space.png" src="https://upload.wikimedia.org/wikipedia/commons/8/89/Completeness_in_Hilbert_space.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 8 </span><span class="caption-text">An infinite series of sum of vectors results in a well defined net displacement vector.</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>In case of vectors in a vector space, this translates to the property that linear combination of infinitely many vectors is still a vector in the vector space. Having this property insures we do not end up in an unphysical state outside the vector space.</p>
 <section id="orthogonality-normality">
 <h4>Orthogonality, normality<a class="headerlink" href="#orthogonality-normality" title="Link to this heading">#</a></h4>
 </section>
@@ -1384,6 +1479,8 @@ L({\bf v}) = L\left(
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inner-product-space">Inner product space</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#norm-of-a-vector">Norm of a vector</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#caucy-schwarz-inequality">Caucy-Schwarz inequality</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hilbert-space">Hilbert space</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#orthogonality-normality">Orthogonality, normality</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#overlap-of-vectors">Overlap of vectors</a></li>
