@@ -1322,8 +1322,8 @@ S_n = 1 -\frac 13 + \frac 15 - \frac 17+\dots + (-1)^{n-1}\frac{1}{2n+1}
 <p>So far, the sum is rational number. However in the limit of <span class="math notranslate nohighlight">\(n\to \infty\)</span>, this sum is known to be equal to <span class="math notranslate nohighlight">\(\frac{\pi}{4}\)</span>, which is an irrational number
 $<span class="math notranslate nohighlight">\(
 S_\infty = 1 -\frac 13 + \frac 15 - \frac 17+\dots = \frac{\pi}{4}
-\)</span><span class="math notranslate nohighlight">\(
-This illustrates, that an infinite summation of rational numbers is actually not rational, but an irrational number. This is what completeness is about. In a complete metric space, the limit of an infinite sequence lies in the set. Thus, \)</span>\mathbb{Q}<span class="math notranslate nohighlight">\( is not complete, though the set of real numbers \)</span>\mathbb{R}$ is complete.</p>
+\)</span>$</p>
+<p>This illustrates, that an infinite summation of rational numbers is actually not rational, but an irrational number. This is what completeness is about. In a complete metric space, the limit of an infinite sequence lies in the set. Thus, <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span> is not complete, though the set of real numbers <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> is complete.</p>
 <figure class="align-default" id="id7">
 <img alt="https://upload.wikimedia.org/wikipedia/commons/8/89/Completeness_in_Hilbert_space.png" src="https://upload.wikimedia.org/wikipedia/commons/8/89/Completeness_in_Hilbert_space.png" />
 <figcaption>
@@ -1333,10 +1333,20 @@ This illustrates, that an infinite summation of rational numbers is actually not
 <p>In case of vectors in a vector space, this translates to the property that linear combination of infinitely many vectors is still a vector in the vector space. Having this property insures we do not end up in an unphysical state outside the vector space.</p>
 <section id="normality">
 <h4>Normality<a class="headerlink" href="#normality" title="Link to this heading">#</a></h4>
-<p>Normality, or a vector being normal is just size of vector being of unit size. A vector <span class="math notranslate nohighlight">\(v\)</span> is called normal if <span class="math notranslate nohighlight">\(|v|=1\)</span>. This notion is the same as those of unit vectors in coordinate geometry. When we work with a basis, it is eiser to express coordinates if the basis vectors are normal.</p>
+<p>Normality, or a vector being normal is just size of vector being of unit size. A vector <span class="math notranslate nohighlight">\(v\)</span> is called normal if <span class="math notranslate nohighlight">\(|v|=1\)</span>. This notion is the same as those of unit vectors in coordinate geometry. When we work with a basis, it is easier to express coordinates if the basis vectors are normal.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Any non-zero vector <span class="math notranslate nohighlight">\(v\)</span> can always be normalized as <span class="math notranslate nohighlight">\(v\to\frac{1}{|v|}v\)</span></p>
+</div>
 </section>
 <section id="orthogonality">
 <h4>Orthogonality<a class="headerlink" href="#orthogonality" title="Link to this heading">#</a></h4>
+<p>Orthogonality in a vector space is the generalisation of two vectors being perpendicular in coordinate geometry. In this sense, the inner product naturally extends the notion of ordinary dot product.</p>
+<p>So, two vectors, say <span class="math notranslate nohighlight">\(v_1, v_2\)</span> of an inner product space are called orthogonal, if
+their inner product is zero, i.e., <span class="math notranslate nohighlight">\(\langle v_1, v_2\rangle=0\)</span>. If we recall the angular interpretation of the inner product <span class="math notranslate nohighlight">\(\theta = \cos^{-1}\frac{\langle v_1, v_2\rangle}{|v_1||v_2|}\)</span>, then if the inner product is zero, then <span class="math notranslate nohighlight">\(\theta = \cos^{-1}(0) = \frac{\pi}{2}\)</span>. That is, the ‘angle’ between the two vectors is <span class="math notranslate nohighlight">\(90\degree\)</span>.</p>
+<p>If two vectors are linearly independent, then the angle between them can not be zero. Such vectors can be transformed into orthogonal vectors. This process is called <strong>Gram Schmidt Orthogonalization</strong>, see the <a class="reference external" href="https://en.wikipedia.org/wiki/Gram%E2%80%93Schmidt_process">wiki link</a>.</p>
+<p>Let’s see this through two vectors. Assume we have two vectors <span class="math notranslate nohighlight">\(v_1, v_2\)</span> in the inner product space, that aren’t orthogonal, and we need to get new set of two vectors <span class="math notranslate nohighlight">\(v_1', v_2'\)</span> from them that are. Then we do the following -</p>
+<p>We can choose the first vector <span class="math notranslate nohighlight">\(v_1'=v_1\)</span> as the original one. We then need <span class="math notranslate nohighlight">\(v_2'\)</span> such that <span class="math notranslate nohighlight">\(\langle v_1', v_2'\rangle = 0\)</span>. We use the following ansatz</p>
 </section>
 <section id="overlap-of-vectors">
 <h4>Overlap of vectors<a class="headerlink" href="#overlap-of-vectors" title="Link to this heading">#</a></h4>
