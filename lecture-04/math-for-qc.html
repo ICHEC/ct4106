@@ -387,9 +387,10 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#norm-of-a-vector">Norm of a vector</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#caucy-schwarz-inequality">Caucy-Schwarz inequality</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hilbert-space">Hilbert space</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#orthogonality-normality">Orthogonality, normality</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#overlap-of-vectors">Overlap of vectors</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#normality">Normality</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#orthogonality">Orthogonality</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#overlap-of-vectors">Overlap of vectors</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Orthogonality</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#orthonormal-basis">Orthonormal basis</a></li>
 </ul>
 </li>
@@ -544,7 +545,7 @@ through which we manipulate numbers, are suitably extended on scalars and vector
 <section id="set">
 <h3>Set<a class="headerlink" href="#set" title="Link to this heading">#</a></h3>
 <p>Learning the notion of sets, and their manipulation provide not only training in fundamentals of logic of categorisation, organisation, it is crucial building block of most of mathematics.</p>
-<p>In Mathematics, a set is defined as a unique collection of well defined objects<a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>, and the object in the collection are called elements of the set.</p>
+<p>In Mathematics, a set is defined as a unique collection of well defined objects<a class="footnote-reference brackets" href="#id3" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>, and the object in the collection are called elements of the set.</p>
 <p>For example,</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(A=\{a, e, i, o, u\}\)</span> is a set of vowels in english language.</p></li>
@@ -574,16 +575,16 @@ B = \{a| a\in \mathbb{Z}, \text{ and } a \text{ is even}\}
 <p>Naturally, every set is subset and superset of itself. We a call a set A to be a <strong>proper subset</strong> of B, if every element of A is in B, but at least one element exists in B that is not in A. In this case, B is called a <strong>proper superset</strong> of A.</p>
 <p>For finite sets, their proper subsets have strictly lower number of element than the set itself. However for infinite sets, a proper subset may
 have same cardinality as the set itself.</p>
-<figure class="align-center" id="id3">
+<figure class="align-center" id="id4">
 <a class="reference internal image-reference" href="https://upload.wikimedia.org/wikipedia/commons/b/b0/Venn_A_subset_B.svg"><img alt="https://upload.wikimedia.org/wikipedia/commons/b/b0/Venn_A_subset_B.svg" src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Venn_A_subset_B.svg" style="width: 400px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 4 </span><span class="caption-text">A is subset of B, and B is superset of A</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">A is subset of B, and B is superset of A</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="id4">
+<figure class="align-center" id="id5">
 <a class="reference internal image-reference" href="https://upload.wikimedia.org/wikipedia/commons/a/a0/NumberSetinC.svg"><img alt="https://upload.wikimedia.org/wikipedia/commons/a/a0/NumberSetinC.svg" src="https://upload.wikimedia.org/wikipedia/commons/a/a0/NumberSetinC.svg" style="width: 400px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Visualisation of the set of numbers, natural numbers <span class="math notranslate nohighlight">\(\mathbb{N}\)</span>, integers <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span>, rational numbers <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span>, real numbers <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>, and complex numbers <span class="math notranslate nohighlight">\(\mathbb{C}\)</span>. We have following <span class="math notranslate nohighlight">\(\mathbb{N}\subset \mathbb{Z}\subset \mathbb{Q}\subset \mathbb{R}\subset \mathbb{C}\)</span></span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Visualisation of the set of numbers, natural numbers <span class="math notranslate nohighlight">\(\mathbb{N}\)</span>, integers <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span>, rational numbers <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span>, real numbers <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>, and complex numbers <span class="math notranslate nohighlight">\(\mathbb{C}\)</span>. We have following <span class="math notranslate nohighlight">\(\mathbb{N}\subset \mathbb{Z}\subset \mathbb{Q}\subset \mathbb{R}\subset \mathbb{C}\)</span></span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="cell tag_remove-input docutils container">
@@ -597,10 +598,10 @@ have same cardinality as the set itself.</p>
 <li><p><strong>Complement:</strong> Compliment of a set A, denoted by <span class="math notranslate nohighlight">\(A'\)</span>, or sometimes <span class="math notranslate nohighlight">\(A^c\)</span> is defined with respect to the universal set, is set of all elements of <span class="math notranslate nohighlight">\(U\)</span> that are not in A.</p></li>
 </ul>
 <aside class="sidebar">
-<figure class="align-default" id="id5">
+<figure class="align-default" id="id6">
 <img alt="../_images/set-union-inters-diff.jpg" src="../_images/set-union-inters-diff.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Set Union, intersection and set difference.</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Set Union, intersection and set difference.</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </aside>
@@ -1323,21 +1324,25 @@ $<span class="math notranslate nohighlight">\(
 S_\infty = 1 -\frac 13 + \frac 15 - \frac 17+\dots = \frac{\pi}{4}
 \)</span><span class="math notranslate nohighlight">\(
 This illustrates, that an infinite summation of rational numbers is actually not rational, but an irrational number. This is what completeness is about. In a complete metric space, the limit of an infinite sequence lies in the set. Thus, \)</span>\mathbb{Q}<span class="math notranslate nohighlight">\( is not complete, though the set of real numbers \)</span>\mathbb{R}$ is complete.</p>
-<figure class="align-default" id="id6">
+<figure class="align-default" id="id7">
 <img alt="https://upload.wikimedia.org/wikipedia/commons/8/89/Completeness_in_Hilbert_space.png" src="https://upload.wikimedia.org/wikipedia/commons/8/89/Completeness_in_Hilbert_space.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 8 </span><span class="caption-text">An infinite series of sum of vectors results in a well defined net displacement vector.</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 8 </span><span class="caption-text">An infinite series of sum of vectors results in a well defined net displacement vector.</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>In case of vectors in a vector space, this translates to the property that linear combination of infinitely many vectors is still a vector in the vector space. Having this property insures we do not end up in an unphysical state outside the vector space.</p>
-<section id="orthogonality-normality">
-<h4>Orthogonality, normality<a class="headerlink" href="#orthogonality-normality" title="Link to this heading">#</a></h4>
+<section id="normality">
+<h4>Normality<a class="headerlink" href="#normality" title="Link to this heading">#</a></h4>
+<p>Normality, or a vector being normal is just size of vector being of unit size. A vector <span class="math notranslate nohighlight">\(v\)</span> is called normal if <span class="math notranslate nohighlight">\(|v|=1\)</span>. This notion is the same as those of unit vectors in coordinate geometry. When we work with a basis, it is eiser to express coordinates if the basis vectors are normal.</p>
+</section>
+<section id="orthogonality">
+<h4>Orthogonality<a class="headerlink" href="#orthogonality" title="Link to this heading">#</a></h4>
 </section>
 <section id="overlap-of-vectors">
 <h4>Overlap of vectors<a class="headerlink" href="#overlap-of-vectors" title="Link to this heading">#</a></h4>
 </section>
-<section id="orthogonality">
-<h4>Orthogonality<a class="headerlink" href="#orthogonality" title="Link to this heading">#</a></h4>
+<section id="id2">
+<h4>Orthogonality<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
 </section>
 <section id="orthonormal-basis">
 <h4>Orthonormal basis<a class="headerlink" href="#orthonormal-basis" title="Link to this heading">#</a></h4>
@@ -1369,7 +1374,7 @@ This illustrates, that an infinite summation of rational numbers is actually not
 <h3>Representation theory<a class="headerlink" href="#representation-theory" title="Link to this heading">#</a></h3>
 <hr class="footnotes docutils" />
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id2" role="doc-footnote">
+<aside class="footnote brackets" id="id3" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
 <p>See the <a class="reference external" href="https://en.wikipedia.org/wiki/Set_(mathematics)">Wikipedia article on set</a> for more details.</p>
 </aside>
@@ -1482,9 +1487,10 @@ This illustrates, that an infinite summation of rational numbers is actually not
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#norm-of-a-vector">Norm of a vector</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#caucy-schwarz-inequality">Caucy-Schwarz inequality</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hilbert-space">Hilbert space</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#orthogonality-normality">Orthogonality, normality</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#overlap-of-vectors">Overlap of vectors</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#normality">Normality</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#orthogonality">Orthogonality</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#overlap-of-vectors">Overlap of vectors</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Orthogonality</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#orthonormal-basis">Orthonormal basis</a></li>
 </ul>
 </li>

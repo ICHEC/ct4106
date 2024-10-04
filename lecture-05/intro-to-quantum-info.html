@@ -320,7 +320,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -336,6 +338,16 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-the-guest">About the Guest</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-lecture">Summary of lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -351,6 +363,8 @@ document.write(`
 <p class="admonition-title">Overview</p>
 <p>This is a placeholder for the Guest Lecture. It will be populated in due time with necessary prerequisits, and supplementary content on Quantum Information.</p>
 </div>
+<section id="about-the-guest">
+<h2>About the Guest<a class="headerlink" href="#about-the-guest" title="Link to this heading">#</a></h2>
 <div class="information admonition">
 <p class="admonition-title">The Speaker: Dr. Homer Papadopoulos</p>
 <p>Dr. Homer Papadopoulos is a functional researcher at the Institute of Informatics and Telecommunications (IIT) of NCSR Demokritos and co-founder of the startup <strong>Syndesis Ltd</strong>, living and working in Athens. A natural polymath, Dr. Papadopoulos holds degrees in Physics, Telecommunications, Management, and a PhD in Information Systems Science, among others. With over 20 years of research experience, he has submitted numerous papers in various fields, showcasing his expertise and deep understanding of complex subjects and he has created multidisciplinary research programs, consistently pushing the boundaries of innovation in digital technologies.</p>
@@ -366,6 +380,80 @@ document.write(`
 The Institute of Informatics and Telecommunications - <a class="reference external" href="https://www.iit.demokritos.gr/">IIT</a>, one of the five Institutes of NCSRD, has accumulated substantial expertise and is actively involved in many areas of information technologies including Quantum information technologies, mobile applications and telecommunications, while it has participated in numerous EU and nationally funded research projects. NCSRD’s IIT is involved in technological research and it has been participating in a number of European projects in the above mentioned fields such as the Quantum information domain, namely: OPENQKD, HellasQCI and others
 <a class="reference external" href="https://www.syndesis.eu/">Syndesis Ltd</a>, a spin-off from the NCSR “Demokritos”, grounded in a solid background in informatics, software engineering, digital security, and trusted computing ensures its leading role in  developing the central hub for PQC utilising AI technologies. Its participation in the OPENQKD pilot project and HellasQCI project highlights its advanced expertise in PQC technologies and standardisation efforts. Syndesis is an active member of standard development organisations (SDOs) like CEN/CENELEC JTC 22 and the QuIC, where it leads the standards working group. The company’s contributions to the development of the CEN/CENELEC FGQT roadmap for standardising quantum technologies in the EU demonstrate its role in quantum standardisation.</p>
 </div>
+</section>
+<section id="summary-of-lecture">
+<h2>Summary of lecture<a class="headerlink" href="#summary-of-lecture" title="Link to this heading">#</a></h2>
+<div class="information admonition">
+<p class="admonition-title">Summary</p>
+<p>He will first touch upon what is information, and how do we quantify it. He will describe aspects of information, such as transferring from point A to point B, encoding and decoding information, and measuring information. He will describe the distinction between classical and quantum information, and tools for measuring quantum information.</p>
+<p>He will then dwelve into aspect of information security, particularly encryption. He will describe what cryptography is, and how it is used to safely transfer information for the right recepient, and protect it from third party. He will discuss symmetric and assymmytric cryptography, and digital signatures.</p>
+<p>This will be followed by some demos on cryptography, and then he will discuss Quantum enabled cryptography, quantum key distribution (QKD), quantum random number generation, and challenges in quantum cryptography, and introduce post-quantum cryptography (PQC). He will conclude the lecture after discussing some necessary aspects of PQC.</p>
+</div>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<p>It will be good idea to have looked through or read the following references before the guest lecture. These are recommended by Dr. Papadopoulos.</p>
+<div class="information admonition">
+<p class="admonition-title">References</p>
+<ol class="arabic simple">
+<li><p>Quantum Communications—Michal Hajdušek and Rodney Van Meter</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://arxiv.org/abs/2311.02367">Arxiv book</a></p></li>
+</ul>
+</li>
+<li><p>Quantum Information Theory – Lecture Notes—Christoph Dittel</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://arxiv.org/abs/2311.12442">Arxiv Lecture notes</a></p></li>
+</ul>
+</li>
+<li><p>Basics of Quantum Information</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://learning.quantum.ibm.com/course/basics-of-quantum-information">IBM tutorial</a></p></li>
+</ul>
+</li>
+<li><p>Quantum internet: A vision for the road ahead</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.science.org/doi/10.1126/science.aam9288">Science Review, semi-technical</a></p></li>
+</ul>
+</li>
+<li><p>DIKW pyramid:</p>
+<ul class="simple">
+<li><p>Wiki page <a class="reference external" href="https://en.wikipedia.org/wiki/DIKW_pyramid">https://en.wikipedia.org/wiki/DIKW_pyramid</a></p></li>
+</ul>
+</li>
+<li><p>Information Science in Theory and Practice</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://dokumen.pub/information-science-in-theory-and-practice-3nbsped-3598116586-9783598116582.html">Book by Alina Vickery and Brian C. Vickery, (1987)</a></p></li>
+</ul>
+</li>
+<li><p>The Mathematical Theory of Communication</p>
+<ul class="simple">
+<li><p>Book by <em>Shannon, C., &amp; Weaver, W.</em> (1948), University of Illinois Press.</p></li>
+</ul>
+</li>
+<li><p>An Introduction to Public Key Cryptography</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://betterprogramming.pub/an-introduction-to-public-key-cryptography-3ea0cf7bf4ba">Semi-technical article</a></p></li>
+</ul>
+</li>
+<li><p>Quantum random number generation</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.nature.com/articles/npjqi201621">Article, NPJ Quantum Inf <strong>2</strong>, 16021, 2016</a></p></li>
+</ul>
+</li>
+<li><p>NIST Releases First 3 Finalized Post-Quantum Encryption Standards</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.nist.gov/news-events/news/2024/08/nist-releases-first-3-finalized-post-quantum-encryption-standards">NIST press release, 13 Aug, 2024</a></p></li>
+</ul>
+</li>
+<li><p>Homomorphic Encryption Standardization</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://homomorphicencryption.org/">Website on Homomorphic Encryption Standardization</a></p></li>
+</ul>
+</li>
+</ol>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -422,6 +510,23 @@ The Institute of Informatics and Telecommunications - <a class="reference extern
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-the-guest">About the Guest</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-lecture">Summary of lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
