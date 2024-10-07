@@ -368,6 +368,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-operations">Binary operations</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#group">Group</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#subgroups">Subgroups</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#field">Field</a></li>
@@ -375,10 +376,8 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-space">Vector Space</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-sub-space">Vector Sub-space</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-combination">Linear combination</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-independence">Linear independence</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-combination">Linear combination</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-independence">Linear independence</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basis">Basis</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-operators">Linear Operators</a></li>
 </ul>
@@ -386,20 +385,21 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inner-product-space">Inner product space</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#norm-of-a-vector">Norm of a vector</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#caucy-schwarz-inequality">Caucy-Schwarz inequality</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hilbert-space">Hilbert space</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#normality">Normality</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#orthogonality">Orthogonality</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#overlap-of-vectors">Overlap of vectors</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Orthogonality</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#orthonormal-basis">Orthonormal basis</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dirac-notation">Dirac Notation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hilbert-space">Hilbert space</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normality">Normality</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#orthogonality">Orthogonality</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overlap-of-vectors">Overlap of vectors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#orthonormal-basis">Orthonormal basis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-basis">Changing basis</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#special-operators">Special operators</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adjoint-operator">Adjoint operator</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hermitian-operators">Hermitian operators</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unitary-opertors">Unitary opertors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dirac-notation">Dirac Notation</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#states-and-operators">States and Operators</a><ul class="nav section-nav flex-column">
@@ -545,7 +545,7 @@ through which we manipulate numbers, are suitably extended on scalars and vector
 <section id="set">
 <h3>Set<a class="headerlink" href="#set" title="Link to this heading">#</a></h3>
 <p>Learning the notion of sets, and their manipulation provide not only training in fundamentals of logic of categorisation, organisation, it is crucial building block of most of mathematics.</p>
-<p>In Mathematics, a set is defined as a unique collection of well defined objects<a class="footnote-reference brackets" href="#id3" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>, and the object in the collection are called elements of the set.</p>
+<p>In Mathematics, a set is defined as a unique collection of well defined objects<a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>, and the object in the collection are called elements of the set.</p>
 <p>For example,</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(A=\{a, e, i, o, u\}\)</span> is a set of vowels in english language.</p></li>
@@ -575,16 +575,16 @@ B = \{a| a\in \mathbb{Z}, \text{ and } a \text{ is even}\}
 <p>Naturally, every set is subset and superset of itself. We a call a set A to be a <strong>proper subset</strong> of B, if every element of A is in B, but at least one element exists in B that is not in A. In this case, B is called a <strong>proper superset</strong> of A.</p>
 <p>For finite sets, their proper subsets have strictly lower number of element than the set itself. However for infinite sets, a proper subset may
 have same cardinality as the set itself.</p>
-<figure class="align-center" id="id4">
+<figure class="align-center" id="id3">
 <a class="reference internal image-reference" href="https://upload.wikimedia.org/wikipedia/commons/b/b0/Venn_A_subset_B.svg"><img alt="https://upload.wikimedia.org/wikipedia/commons/b/b0/Venn_A_subset_B.svg" src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Venn_A_subset_B.svg" style="width: 400px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 4 </span><span class="caption-text">A is subset of B, and B is superset of A</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">A is subset of B, and B is superset of A</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="id5">
+<figure class="align-center" id="id4">
 <a class="reference internal image-reference" href="https://upload.wikimedia.org/wikipedia/commons/a/a0/NumberSetinC.svg"><img alt="https://upload.wikimedia.org/wikipedia/commons/a/a0/NumberSetinC.svg" src="https://upload.wikimedia.org/wikipedia/commons/a/a0/NumberSetinC.svg" style="width: 400px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Visualisation of the set of numbers, natural numbers <span class="math notranslate nohighlight">\(\mathbb{N}\)</span>, integers <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span>, rational numbers <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span>, real numbers <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>, and complex numbers <span class="math notranslate nohighlight">\(\mathbb{C}\)</span>. We have following <span class="math notranslate nohighlight">\(\mathbb{N}\subset \mathbb{Z}\subset \mathbb{Q}\subset \mathbb{R}\subset \mathbb{C}\)</span></span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Visualisation of the set of numbers, natural numbers <span class="math notranslate nohighlight">\(\mathbb{N}\)</span>, integers <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span>, rational numbers <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span>, real numbers <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>, and complex numbers <span class="math notranslate nohighlight">\(\mathbb{C}\)</span>. We have following <span class="math notranslate nohighlight">\(\mathbb{N}\subset \mathbb{Z}\subset \mathbb{Q}\subset \mathbb{R}\subset \mathbb{C}\)</span></span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="cell tag_remove-input docutils container">
@@ -598,10 +598,10 @@ have same cardinality as the set itself.</p>
 <li><p><strong>Complement:</strong> Compliment of a set A, denoted by <span class="math notranslate nohighlight">\(A'\)</span>, or sometimes <span class="math notranslate nohighlight">\(A^c\)</span> is defined with respect to the universal set, is set of all elements of <span class="math notranslate nohighlight">\(U\)</span> that are not in A.</p></li>
 </ul>
 <aside class="sidebar">
-<figure class="align-default" id="id6">
+<figure class="align-default" id="id5">
 <img alt="../_images/set-union-inters-diff.jpg" src="../_images/set-union-inters-diff.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Set Union, intersection and set difference.</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Set Union, intersection and set difference.</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </aside>
@@ -723,7 +723,9 @@ o : A\times A \longrightarrow A
 <li><p>The binary operation <span class="math notranslate nohighlight">\(o\)</span> defined on the set <span class="math notranslate nohighlight">\(G\)</span>, is also a binary operation on the subset <span class="math notranslate nohighlight">\(S\)</span>.</p></li>
 <li><p>The identity of <span class="math notranslate nohighlight">\(o\)</span>, say <span class="math notranslate nohighlight">\(e\)</span> belongs to <span class="math notranslate nohighlight">\(S\)</span>, and for every <span class="math notranslate nohighlight">\(a\)</span> in <span class="math notranslate nohighlight">\(S\)</span>, <span class="math notranslate nohighlight">\(a^{-1}\)</span> also belongs to <span class="math notranslate nohighlight">\(S\)</span></p></li>
 </ul>
-<p><strong>Examples:</strong></p>
+</section>
+<section id="examples">
+<h4>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h4>
 <div class="information admonition">
 <p class="admonition-title">The set of integers with arithmatic addition <span class="math notranslate nohighlight">\((\mathbb{Z}, +)\)</span> forms a group.</p>
 <p>The arithmatic operation <code class="docutils literal notranslate"><span class="pre">+</span></code> is a binary operation, as adding any two integers results in another, unique integer. Since the order of adding two integers, does not matter, the operation is obviously commutative.</p>
@@ -1052,8 +1054,9 @@ F\mathbf{v} = \{a\mathbf{v}: \text{For every}\quad a\in F\}
 F_A=F_{\{\mathbf{v_1, v_2, \dots,v_n}\}} = \{a_1\mathbf{v_1}+a_2\mathbf{v_2}+\dots +a_n\mathbf{v_n}: \text{For every}~~a_1, a_2, \dots, a_n \in F\}
 \]</div>
 </div>
+</section>
 <section id="linear-independence">
-<h4>Linear independence<a class="headerlink" href="#linear-independence" title="Link to this heading">#</a></h4>
+<h3>Linear independence<a class="headerlink" href="#linear-independence" title="Link to this heading">#</a></h3>
 <p>Consider the following equation: <span class="math notranslate nohighlight">\(a\mathbf{u} + b\mathbf{v} = 0\)</span>, where <span class="math notranslate nohighlight">\(a, b\)</span> are some arbitraty scalars and <span class="math notranslate nohighlight">\(\mathbf{u}, \mathbf{v}\)</span> are two arbitray vectors, and speculate it’s implication.</p>
 <p>The left part of the expression is a vector that is linear combination of <span class="math notranslate nohighlight">\(\mathbf{u}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{v}\)</span>, and equating to zero means that the sum is zero vector. But then we can say the following -</p>
 <ul class="simple">
@@ -1100,7 +1103,6 @@ F\mathbf{v_1, v_2, v_3} = \{a_1\mathbf{v_1}+a_2\mathbf{v_2}+a_3\mathbf{v_3}: \te
 \]</div>
 <p>They are called linearly dependent, if there exists a set of coefficients <span class="math notranslate nohighlight">\((a_1, a_2,\dots,a_n)\)</span> with atleast one non-zero component such that above linear combination equals to zero.</p>
 <p>This concept linear independence enhances the ability to express vectors, and categorise or manipulate vector space by defining various types of sub-spaces.</p>
-</section>
 </section>
 <section id="basis">
 <h3>Basis<a class="headerlink" href="#basis" title="Link to this heading">#</a></h3>
@@ -1283,8 +1285,9 @@ L({\bf v}) = L\left(
 \]</div>
 <p>With this interpretation, the inner product tells us how ‘close’ two vectors are in direction.</p>
 </section>
+</section>
 <section id="hilbert-space">
-<h3>Hilbert space<a class="headerlink" href="#hilbert-space" title="Link to this heading">#</a></h3>
+<h2>Hilbert space<a class="headerlink" href="#hilbert-space" title="Link to this heading">#</a></h2>
 <p>With the inner product defined on the vector space, we can extend the notion of distance between two vectors. For this we need a function of two vectors to act as distance, but just any function wouldn’t do. This function has to generalise the concept of distance in real life, for it to make sense.</p>
 <p>In mathematics, such a function is called a metric. A metric, or distance function defined on a set <span class="math notranslate nohighlight">\(V\)</span> is a map <span class="math notranslate nohighlight">\(d: V\times V\longrightarrow R^{+}\)</span>, where <span class="math notranslate nohighlight">\(R^{+}\)</span> is the set of non-negative real numbers, and satisfies following conditions -</p>
 <ol class="arabic simple">
@@ -1324,15 +1327,15 @@ $<span class="math notranslate nohighlight">\(
 S_\infty = 1 -\frac 13 + \frac 15 - \frac 17+\dots = \frac{\pi}{4}
 \)</span>$</p>
 <p>This illustrates, that an infinite summation of rational numbers is actually not rational, but an irrational number. This is what completeness is about. In a complete metric space, the limit of an infinite sequence lies in the set. Thus, <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span> is not complete, though the set of real numbers <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> is complete.</p>
-<figure class="align-default" id="id7">
+<figure class="align-default" id="id6">
 <img alt="https://upload.wikimedia.org/wikipedia/commons/8/89/Completeness_in_Hilbert_space.png" src="https://upload.wikimedia.org/wikipedia/commons/8/89/Completeness_in_Hilbert_space.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 8 </span><span class="caption-text">An infinite series of sum of vectors results in a well defined net displacement vector.</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 8 </span><span class="caption-text">An infinite series of sum of vectors results in a well defined net displacement vector.</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>In case of vectors in a vector space, this translates to the property that linear combination of infinitely many vectors is still a vector in the vector space. Having this property insures we do not end up in an unphysical state outside the vector space.</p>
 <section id="normality">
-<h4>Normality<a class="headerlink" href="#normality" title="Link to this heading">#</a></h4>
+<h3>Normality<a class="headerlink" href="#normality" title="Link to this heading">#</a></h3>
 <p>Normality, or a vector being normal is just size of vector being of unit size. A vector <span class="math notranslate nohighlight">\(v\)</span> is called normal if <span class="math notranslate nohighlight">\(|v|=1\)</span>. This notion is the same as those of unit vectors in coordinate geometry. When we work with a basis, it is easier to express coordinates if the basis vectors are normal.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1340,51 +1343,205 @@ S_\infty = 1 -\frac 13 + \frac 15 - \frac 17+\dots = \frac{\pi}{4}
 </div>
 </section>
 <section id="orthogonality">
-<h4>Orthogonality<a class="headerlink" href="#orthogonality" title="Link to this heading">#</a></h4>
+<h3>Orthogonality<a class="headerlink" href="#orthogonality" title="Link to this heading">#</a></h3>
 <p>Orthogonality in a vector space is the generalisation of two vectors being perpendicular in coordinate geometry. In this sense, the inner product naturally extends the notion of ordinary dot product.</p>
 <p>So, two vectors, say <span class="math notranslate nohighlight">\(v_1, v_2\)</span> of an inner product space are called orthogonal, if
-their inner product is zero, i.e., <span class="math notranslate nohighlight">\(\langle v_1, v_2\rangle=0\)</span>. If we recall the angular interpretation of the inner product <span class="math notranslate nohighlight">\(\theta = \cos^{-1}\frac{\langle v_1, v_2\rangle}{|v_1||v_2|}\)</span>, then if the inner product is zero, then <span class="math notranslate nohighlight">\(\theta = \cos^{-1}(0) = \frac{\pi}{2}\)</span>. That is, the ‘angle’ between the two vectors is <span class="math notranslate nohighlight">\(90\degree\)</span>.</p>
+their inner product is zero, i.e., <span class="math notranslate nohighlight">\(\langle v_1, v_2\rangle=0\)</span>. If we recall the angular interpretation of the inner product <span class="math notranslate nohighlight">\(\theta = \cos^{-1}\frac{\langle v_1, v_2\rangle}{|v_1||v_2|}\)</span>, then if the inner product is zero, then <span class="math notranslate nohighlight">\(\theta = \cos^{-1}(0) = \frac{\pi}{2}\)</span>. That is, the ‘angle’ between the two vectors is <span class="math notranslate nohighlight">\(90^o\)</span>.</p>
 <p>If two vectors are linearly independent, then the angle between them can not be zero. Such vectors can be transformed into orthogonal vectors. This process is called <strong>Gram Schmidt Orthogonalization</strong>, see the <a class="reference external" href="https://en.wikipedia.org/wiki/Gram%E2%80%93Schmidt_process">wiki link</a>.</p>
 <p>Let’s see this through two vectors. Assume we have two vectors <span class="math notranslate nohighlight">\(v_1, v_2\)</span> in the inner product space, that aren’t orthogonal, and we need to get new set of two vectors <span class="math notranslate nohighlight">\(v_1', v_2'\)</span> from them that are. Then we do the following -</p>
 <p>We can choose the first vector <span class="math notranslate nohighlight">\(v_1'=v_1\)</span> as the original one. We then need <span class="math notranslate nohighlight">\(v_2'\)</span> such that <span class="math notranslate nohighlight">\(\langle v_1', v_2'\rangle = 0\)</span>. We use the following ansatz</p>
+<div class="math notranslate nohighlight">
+\[
+v_2' = v_2 -\frac{\langle v_1, v_2\rangle}{\langle v_1, v_1 \rangle} v_1
+\]</div>
+<p>then</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\langle v_1', v_2' \rangle = \langle v_1, v_2' \rangle = 
+\left\langle 
+    v_1, v_2 -\frac{\langle v_1, v_2\rangle}{\langle v_1, v_1 \rangle} v_1
+\right\rangle
+=\\
+\langle v_1, v_2 \rangle -
+\frac{\langle v_1, v_2\rangle}{\langle v_1, v_1 \rangle} \langle v_1, v_1 \rangle
+= \langle v_1, v_2 \rangle - \langle v_1, v_2 \rangle = 0
+\end{split}\]</div>
+<p>Here we subtracted <span class="math notranslate nohighlight">\(\frac{\langle v_1, v_2\rangle}{\langle v_1, v_1 \rangle}v_1\)</span> from <span class="math notranslate nohighlight">\(v_2\)</span>, which resulted in the new set being orthogonal.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><span class="math notranslate nohighlight">\(\frac{\langle v_1, v_2\rangle}{\langle v_1, v_1 \rangle}v_1\)</span> is interpreted as the projection of <span class="math notranslate nohighlight">\(v_2\)</span> with <span class="math notranslate nohighlight">\(v_1\)</span>.</p>
+</div>
 </section>
 <section id="overlap-of-vectors">
-<h4>Overlap of vectors<a class="headerlink" href="#overlap-of-vectors" title="Link to this heading">#</a></h4>
-</section>
-<section id="id2">
-<h4>Orthogonality<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<h3>Overlap of vectors<a class="headerlink" href="#overlap-of-vectors" title="Link to this heading">#</a></h3>
+<p>In an inner product space, the inner product of two vectors <span class="math notranslate nohighlight">\(\langle v_1, v_2\rangle\)</span> is interpreted as overlap of two vectors. If the two vectors are normal, then the overlap is solely attributed to how apart the two vectors are in direction.</p>
 </section>
 <section id="orthonormal-basis">
-<h4>Orthonormal basis<a class="headerlink" href="#orthonormal-basis" title="Link to this heading">#</a></h4>
+<h3>Orthonormal basis<a class="headerlink" href="#orthonormal-basis" title="Link to this heading">#</a></h3>
+<p>A basis of an inner product space, in which every vector is normal, and all the vectors are orthogonal to one another, is called an orthonormal basis. It is the basis most convenient to work with in a vector space.</p>
+<p>Consider a basis <span class="math notranslate nohighlight">\(B={v_1, v_2, \dots, v_n}\)</span> that is orthonormal. This means <span class="math notranslate nohighlight">\(\langle v_i, v_j\rangle = 0\)</span> if <span class="math notranslate nohighlight">\(i\ne j\)</span>, and <span class="math notranslate nohighlight">\(\langle v_i, v_i\rangle = 1\)</span> for all <span class="math notranslate nohighlight">\(1\le i, j\le n\)</span>. With these properties in mind, let’s compute the inner product of two arbitrary vectors <span class="math notranslate nohighlight">\(u, v\)</span>. We first express them in the basis B.</p>
+<div class="math notranslate nohighlight">
+\[
+u=\sum_i a_i v_i = a_1v_1 + a_2v_2 +\dots, a_nv_n, \quad\text{and}\quad v=\sum_i b_i v_i = b_1v_1 + b_2v_2 +\dots, b_nv_n
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(a_1, a_2,\dots, a_n\)</span> and <span class="math notranslate nohighlight">\(b_1, b_2, \dots, b_n\)</span> are coordinates of vectors <span class="math notranslate nohighlight">\(u, v\)</span> respectively in the basis B. So now the inner product can be written as following, assuming <span class="math notranslate nohighlight">\({\bf a}  = (a_1, a_2, \dots, a_n)^T\)</span>
+and <span class="math notranslate nohighlight">\({\bf b}  = (b_1, b_2, \dots, b_n)^T\)</span> are coordinate representation of vectors <span class="math notranslate nohighlight">\(u, v\)</span> as column vectors -</p>
+<div class="math notranslate nohighlight">
+\[
+\langle u, v\rangle = \left\langle\sum_i a_i v_i, \sum_j b_j v_j \right\rangle
+= \sum_{ij} a_i^*b_j \langle v_i, v_j\rangle = \sum_i a_i^* b_i = {\bf a^{\dagger}b}
+\]</div>
+<p>where we utilised the linearity of the inner product and the fact that the basis vectors are orthonormal.
+This shows that in the orthonormal basis, the inner product of the two vectors becomes the usual complex dot product of the corresponding coordinate vectors.</p>
+<p>Another advantage one can quickly see that if the basis vectors were not orthonormal, the double summation will not simplify to single summation, and there will be <span class="math notranslate nohighlight">\(i\ne j\)</span> terms, makding computing of inner product more computationally expensive.</p>
+<p>So from now on, when we refer to a basis, it will be orthonormal basis, unless stated otherwise.</p>
 </section>
-</section>
-<section id="dirac-notation">
-<h3>Dirac Notation<a class="headerlink" href="#dirac-notation" title="Link to this heading">#</a></h3>
+<section id="changing-basis">
+<h3>Changing basis<a class="headerlink" href="#changing-basis" title="Link to this heading">#</a></h3>
+<p>A basis works as a reference in a vector space. When we write a vector as linear combination of basis elements, the coefficients, or coordinates basically tell us how much each of the basis vector needs to scale so that the added resulting vector is the desired one.</p>
+<p>Depending on what system the vector space describes, a specific basis can mean a specific orientation of the system, a specific frame of reference, or specific type of measurement system. One often changes the orientation, reference, or type of measurement. This means choosing a different basis.</p>
+<p>So here we will see how a vector transforms when we change the basis. Consider a basis <span class="math notranslate nohighlight">\(B={v_1, v_2, \dots, v_n}\)</span>, and another basis <span class="math notranslate nohighlight">\(B'={v'_1, v'_2, \dots, v'_n}\)</span>. We need to know how <span class="math notranslate nohighlight">\(B'\)</span> is related to <span class="math notranslate nohighlight">\(B\)</span>. Say <span class="math notranslate nohighlight">\(B\)</span> is our original basis, so we try expressing vectors of <span class="math notranslate nohighlight">\(B'\)</span> in terms of <span class="math notranslate nohighlight">\(B\)</span>. We write, for every <span class="math notranslate nohighlight">\(1\le j \le n\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+v_j = \sum_i T_{ij} v_i'
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(T_{ij}\)</span> are linear coefficients for each <span class="math notranslate nohighlight">\(j\)</span>. Now an arbitrary vector <span class="math notranslate nohighlight">\(v=\sum_j a_j v_j\)</span> can be expressed follows</p>
+<div class="math notranslate nohighlight">
+\[
+v = \sum_j a_j v_j = \sum_j a_j \left(\sum_i T_{ij}v_i'\right)
+=\sum_i
+\left(
+\sum_j T_{ij}a_j
+\right)v_i'
+=\sum_i({\bf Ta})_i v_i'=\sum_i a_i'v_i'
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(a_i'=({\bf Ta})_i\)</span>. Thus the coordinates <span class="math notranslate nohighlight">\({\bf a}=(a_1, a_2, \dots, a_n)\)</span> of vector <span class="math notranslate nohighlight">\(v\)</span> in basis <span class="math notranslate nohighlight">\(B\)</span> become <span class="math notranslate nohighlight">\({\bf a'}=(a_1', a_2', \dots, a_n')\)</span> in the new basis <span class="math notranslate nohighlight">\(B'\)</span>. And since <span class="math notranslate nohighlight">\(a_i'=({\bf Ta})_i\)</span>, the coordinates are related as <span class="math notranslate nohighlight">\({\bf a'=Ta}\)</span> in the usual matrix multiplication sense.</p>
 </section>
 </section>
 <section id="special-operators">
 <h2>Special operators<a class="headerlink" href="#special-operators" title="Link to this heading">#</a></h2>
+<p>Consider a set of all linear operators on a vector space <span class="math notranslate nohighlight">\(L_v=\{L| L:V\to V\text{~is a linear operator}\}\)</span>. This set itself has interesting structure, with various operators that are of particular importance. Let’s see below.</p>
+<ul class="simple">
+<li><p>Sum of two linear operators is defined as follows. If <span class="math notranslate nohighlight">\(L_1, L_2 \in L_v\)</span> are linear operators, then their sum <span class="math notranslate nohighlight">\(L=L_1 + L_2\)</span> is a linear operator such that <span class="math notranslate nohighlight">\(L(v) = L_1(v) + L_2(v)\)</span> for every <span class="math notranslate nohighlight">\(v\in V\)</span>.</p></li>
+<li><p>Scalar multiplication to a linear operator is defined through <span class="math notranslate nohighlight">\(L=a_1L_1\implies L(v) = a_1 L_1(v)\)</span></p></li>
+<li><p>The <strong>zero operator</strong>, or map is <span class="math notranslate nohighlight">\(O:V \longrightarrow V\)</span>, that maps every vector <span class="math notranslate nohighlight">\(v\)</span> to zero vector, <span class="math notranslate nohighlight">\(O(v)=0\)</span>.</p></li>
+</ul>
+<p>With the above, it is easy to see that the set <span class="math notranslate nohighlight">\(L_v\)</span> of all the linear maps forms a vector space itself.</p>
+<ul class="simple">
+<li><p>The <strong>Identity operator</strong>, <span class="math notranslate nohighlight">\(I:V\longrightarrow V\)</span> maps every vector to itself, <span class="math notranslate nohighlight">\(I(v) = v\)</span>.</p></li>
+</ul>
+<p>Linear operators can be combined, or ‘multiplied’ in the following way. If <span class="math notranslate nohighlight">\(L_1, L_2\)</span> are two linear operators, then their product, is defined as <span class="math notranslate nohighlight">\(L=L_1L_2\)</span>, such that <span class="math notranslate nohighlight">\(L(v)=L_1(L_2(v))\)</span>. It is easy to see that if <span class="math notranslate nohighlight">\({\bf L_1, L_2}\)</span> are matrix representations of the operators <span class="math notranslate nohighlight">\(L_1, L_2\)</span>, then <span class="math notranslate nohighlight">\(L\)</span> is represented by the matrix multiplication <span class="math notranslate nohighlight">\({\bf L=L_1L_2}\)</span>.</p>
+<ul class="simple">
+<li><p><strong>Invertable operators</strong>: Operators are map, and if they are bijective maps, they can be inverted. The inverse of an operator <span class="math notranslate nohighlight">\(L\)</span> is an operator denoted as <span class="math notranslate nohighlight">\(L^{-1}\)</span> such that <span class="math notranslate nohighlight">\(L^{-1}L = I, i.e., L^{-1}(L(v))=L^{-1}L(v)=I(v)=v\)</span> for every <span class="math notranslate nohighlight">\(v\in V\)</span>.</p></li>
+</ul>
+<section id="adjoint-operator">
+<h3>Adjoint operator<a class="headerlink" href="#adjoint-operator" title="Link to this heading">#</a></h3>
+<p>Adjoint operator is an operator related to another operator. For a given operator in an inner product space, it’s adjoint operator is defined best with help of the inner product, as follows. If <span class="math notranslate nohighlight">\(A\)</span> is an operator, it’s adjoint operator is defined as an operator denoted as <span class="math notranslate nohighlight">\(A^{\dagger}\)</span> such that, for any two vectors <span class="math notranslate nohighlight">\(v_1, v_2\)</span>, the following is always true-</p>
+<div class="math notranslate nohighlight">
+\[
+\langle A^{\dagger}v_1, v_2\rangle = \langle v_1, Av_2\rangle \quad\text{or equivalently}\quad \langle v_1, Av_2 \rangle = \langle v_2, A^{\dagger}v_1\rangle^* 
+\]</div>
+<p>So if we swap the two vectors, and conjugate the inner product, then the adjoint operator gives the same scalar as the given operator <span class="math notranslate nohighlight">\(A\)</span>. In this sense, the adjoint operator is conjugate transpose of  the given vector.</p>
+</section>
 <section id="hermitian-operators">
 <h3>Hermitian operators<a class="headerlink" href="#hermitian-operators" title="Link to this heading">#</a></h3>
+<p>Hermitian operators are of vital importance in linear algebra, vector spaces, and in quantum science. These are operators that are adjoint of themselves. That is, an operator <span class="math notranslate nohighlight">\(A\)</span> is called Hermitian if <span class="math notranslate nohighlight">\(A^{\dagger} = A\)</span>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The matrix representation of a Hermitian operator is conjugate symmetric, i.e., <span class="math notranslate nohighlight">\({\bf A^{\dagger}_{ij} = A^*_{ji}}\)</span>.</p>
+</div>
 </section>
 <section id="unitary-opertors">
 <h3>Unitary opertors<a class="headerlink" href="#unitary-opertors" title="Link to this heading">#</a></h3>
+<p>Unitary operators are special type of invertable operators, such that their adjoint is their inverse, i.e., <span class="math notranslate nohighlight">\(A^{\dagger}=A^{-1}\)</span>, and equivalently <span class="math notranslate nohighlight">\(A^{\dagger}A = AA^{\dagger} = I\)</span>.</p>
+<p>They are also of vital importance in quantum science, as well as linear algebra. To see why, let us see what happens to the norm of a vector that is transformed by a unitary operator. Say <span class="math notranslate nohighlight">\(U\)</span> is a unitary operator, and <span class="math notranslate nohighlight">\(v\)</span> an arbitrary vector. If <span class="math notranslate nohighlight">\(v'=Uv\)</span>, then</p>
+<div class="math notranslate nohighlight">
+\[
+\langle v', v'\rangle = \langle Uv, Uv\rangle =  \langle v, U^{\dagger}Uv\rangle = \langle v, Iv\rangle = \langle v, v\rangle
+\]</div>
+<p>That is, norm of a vector does not change under the effect of unitary operator. That is why, the act of unitary operator on vectors is interpreted as ‘rotation’ of vectors, and is called unitary rotation.</p>
+</section>
+<section id="dirac-notation">
+<h3>Dirac Notation<a class="headerlink" href="#dirac-notation" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+{\Huge
+\left\langle
+     \text{Bra}| \text{Operator}| \text{Ket}
+\right\rangle = \text{Number}
+}\]</div>
+<p>The Dirac notation, also called Bra-Ket notation, is a notation used in Quantum Physics to express vector operations, and inner product.
+It makes interpretation of state, observations and inner product easier.</p>
 <ul class="simple">
-<li><p>Probability conservation</p></li>
+<li><p>It uses angular brackets <span class="math notranslate nohighlight">\(\langle , \rangle\)</span> and vertical bar <span class="math notranslate nohighlight">\(|\)</span>.</p></li>
+<li><p>A Ket is a vector of the Hilbert space denoted as <span class="math notranslate nohighlight">\(|v\rangle\)</span>, and represents state of a quantum system.</p></li>
+<li><p>Action of linear operator <span class="math notranslate nohighlight">\(A\)</span> on a ket is expressed as <span class="math notranslate nohighlight">\(A|v\rangle\)</span>.</p></li>
+<li><p>A Bra is of the form <span class="math notranslate nohighlight">\(\langle f|\)</span>. It is a map <span class="math notranslate nohighlight">\(f: V\longrightarrow C\)</span>, i.e., it maps a vector to a number, usually complex number.</p></li>
+<li><p>With an inner product <span class="math notranslate nohighlight">\(\langle , \rangle\)</span> defined on vector space, each ket has a unique corresponding bra <span class="math notranslate nohighlight">\(\langle v, ~ \rangle \equiv \langle v|\)</span></p></li>
+<li><p>Basically a bra is a map that is literally parameterised by the vector of Hilbert space, and its action on a vector is governed by the defined inner product.</p></li>
+<li><p>The inner product then is equivalently expressed more conveniently as</p></li>
 </ul>
+<div class="math notranslate nohighlight">
+\[
+\langle v_1, v_2 \rangle \equiv \langle v_1 | v_2 \rangle , \quad\text{and for some operator, }A\quad \langle v_1, A v_2\rangle \equiv \langle v_1|A|v_2\rangle
+\]</div>
+<ul class="simple">
+<li><p>The set of all Bra is called dual space of vector space, and both can be used to represent the state.</p></li>
+<li><p>One also defines outer product, of two vectors as <span class="math notranslate nohighlight">\(L=|v_1\rangle \langle v_2|\)</span>, which acts as an operator
+<span class="math notranslate nohighlight">\(L(v)\equiv L|v\rangle = |v_1\rangle\langle v_2|v\rangle = \langle v_2|v\rangle|v_1\rangle\)</span>.
+Here applying <span class="math notranslate nohighlight">\(L\)</span> on <span class="math notranslate nohighlight">\(|v\rangle\)</span> gives the state <span class="math notranslate nohighlight">\(|v_1\rangle\)</span> multiplied by scalar <span class="math notranslate nohighlight">\(\langle v_2|v \rangle\)</span>.</p></li>
+<li><p>For a basis <span class="math notranslate nohighlight">\(\{|v_1\rangle, |v_2\rangle, \dots, |v_n\rangle \}\)</span> there is a corresponding basis for dual space, a basis of bra’s <span class="math notranslate nohighlight">\(\{\langle v_1|, \langle v_2|, \dots, \langle v_n|\}\)</span></p></li>
+<li><p>The linear combination for a ket is simply expressed as <span class="math notranslate nohighlight">\(|v\rangle = \sum_i a_i |v_i\rangle\)</span>, however, for the corresponding bra <span class="math notranslate nohighlight">\(\langle v|\)</span> has conjugate coefficients.</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\langle v| = \sum_i a_i^*\langle v_i|
+\]</div>
 </section>
 </section>
 <section id="states-and-operators">
 <h2>States and Operators<a class="headerlink" href="#states-and-operators" title="Link to this heading">#</a></h2>
+<p>Here we will recall the fundamental notions of quantum mechanics we use when we setup the mathematical framework for a given quantum system.</p>
+<p>To describe or study a quantum system, we first start with a set of states that are mutually exclusive with respect to an observation or measurement.
+Classically, a system and observations are two distinct things without their interplay. Since classically when we observe something, for example a moving car, or a passing meteor, our ‘observation’ does not affect the dynamics or behaviour of the system in question. It is because the interaction of the observer and the system is usually so weak that there is no effect of the presence of observer on the system.</p>
+<p>But within the quantum realm, this is not the case. In the strict sense, any observation in quantum realm is result of a measurement, which itself is associated with the property of the system, such as position, momentum, or energy of the system. Secondly, in the quantum realm, properties are quantised, that is, instead of any possible value, there exist descrete values or outcomes that individual measurement can result in. For example, in case of a qubit, the measurement of the state result in either <span class="math notranslate nohighlight">\(|0\rangle\)</span> or <span class="math notranslate nohighlight">\(|1\rangle\)</span>.</p>
+<p>So when there is an observation we think of, and the decrete set of state the system is in, and these state are mutually exlusive in the sense of possibility.</p>
+<p>If the system is found in one of those state, and the corresponding measurement is done, it will always be found in that state. We choose this set as our basis. Imagine there are <span class="math notranslate nohighlight">\(n\)</span> possible states, then basis may be expressed as <span class="math notranslate nohighlight">\(B=\{|1\rangle, |2\rangle, |3\rangle, \dots, |n\rangle\}\)</span>. Here the states are symbolically expressed by the outcome labels <span class="math notranslate nohighlight">\(1, 2, \dots, n\)</span>. The Hilbert space for the quantum system is then the linear span of these states -</p>
+<div class="math notranslate nohighlight">
+\[
+H_b = \left\{|s\rangle =\sum_{l=1}^n c_l|l\rangle: \text{where } c_l\in \mathbb{C}\right\}
+\]</div>
+<p>Each vector in this Hilbert space is a possible state. This is because of the <strong>superposition principle</strong> which states that If a quantum system can exist in two states (or more), it can exist in all possible superpositions of the two (or more of those) states. Let’s see below what this superposition means in connection with a quantum system.</p>
 <section id="connection-with-experiment">
 <h3>Connection with Experiment<a class="headerlink" href="#connection-with-experiment" title="Link to this heading">#</a></h3>
+<p>We have the following probabilistic interpretation of a general state in the Hilbert space.</p>
+<div class="tip admonition">
+<p class="admonition-title">Probabilistic interpretation of superposition</p>
+<p>A quantum state <span class="math notranslate nohighlight">\(|s\rangle = c_1|1\rangle + c_2|2\rangle  + \dots c_n|n\rangle \)</span> is a state, in which possibilities of being measured in each one of the basis states <span class="math notranslate nohighlight">\(|l\rangle\)</span> coexist simultaneously, untill the measurement is done.</p>
+</div>
+<p>The coefficients <span class="math notranslate nohighlight">\(c_l\)</span> are complex probability amplitudes for each state <span class="math notranslate nohighlight">\(|l\rangle\)</span>, and the actual probability of measurement outcome being in the state <span class="math notranslate nohighlight">\(|l\rangle\)</span> is <span class="math notranslate nohighlight">\(|c_l|^2\)</span>. Since sum of all the probabilities must add to 1, we must have -</p>
+<div class="math notranslate nohighlight">
+\[
+1 = \sum_{l=1}^n |c_l|^2 = |c_1|^2 + |c_2|^2 + \dots +|c_n|^2
+\]</div>
+<div class="admonition-overlap-of-probability admonition">
+<p class="admonition-title">Overlap of probability</p>
+<p>The inner product of the two states <span class="math notranslate nohighlight">\(\langle s, s'\rangle \equiv \langle s|s'\rangle\)</span> gives the overlap of probabilities of the two states.</p>
+</div>
+<p>For mutually exclusive states this overlap is zero, hence the mutually exclusive states should be orthogonal to each other. That is why we impose that the basis above is orthogonal, i.e., <span class="math notranslate nohighlight">\(\langle l|l'\rangle = 0\)</span> for <span class="math notranslate nohighlight">\(l\ne l'\)</span> and normal <span class="math notranslate nohighlight">\(\langle l|l\rangle = 1\)</span>.</p>
+<p>Further, lets compute the norm of the above generic state <span class="math notranslate nohighlight">\(|s\rangle\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+\langle s|s\rangle = \sum_l c_l^*\langle l| \sum_{l'} c_{l'}|l'\rangle  = \sum_{l,l'} c_l^*c_{l'}\langle l|l'\rangle = \sum_{l} |c_l|^2
+\]</div>
+<p>But the probability argument implied that the last summation equals 1, so <span class="math notranslate nohighlight">\(\langle s|s'\rangle = 1\)</span>, that is the norm of the state must also be 1. That is why in quantum system, a state is represented by a unit vector of the Hilbert space.</p>
 <p><a class="reference external" href="https://youtube.com/clip/Ugkxh9W3xafNSWAP-VU9LCrRXkx9kgUH0mY8?si=MVsRsDUeJld5fV9_">youtube</a></p>
 </section>
 <section id="representation-theory">
 <h3>Representation theory<a class="headerlink" href="#representation-theory" title="Link to this heading">#</a></h3>
 <hr class="footnotes docutils" />
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id3" role="doc-footnote">
+<aside class="footnote brackets" id="id2" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
 <p>See the <a class="reference external" href="https://en.wikipedia.org/wiki/Set_(mathematics)">Wikipedia article on set</a> for more details.</p>
 </aside>
@@ -1478,6 +1635,7 @@ their inner product is zero, i.e., <span class="math notranslate nohighlight">\(
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-operations">Binary operations</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#group">Group</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#subgroups">Subgroups</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#field">Field</a></li>
@@ -1485,10 +1643,8 @@ their inner product is zero, i.e., <span class="math notranslate nohighlight">\(
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-space">Vector Space</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-sub-space">Vector Sub-space</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-combination">Linear combination</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-independence">Linear independence</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-combination">Linear combination</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-independence">Linear independence</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basis">Basis</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-operators">Linear Operators</a></li>
 </ul>
@@ -1496,20 +1652,21 @@ their inner product is zero, i.e., <span class="math notranslate nohighlight">\(
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inner-product-space">Inner product space</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#norm-of-a-vector">Norm of a vector</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#caucy-schwarz-inequality">Caucy-Schwarz inequality</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hilbert-space">Hilbert space</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#normality">Normality</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#orthogonality">Orthogonality</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#overlap-of-vectors">Overlap of vectors</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Orthogonality</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#orthonormal-basis">Orthonormal basis</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dirac-notation">Dirac Notation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hilbert-space">Hilbert space</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normality">Normality</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#orthogonality">Orthogonality</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overlap-of-vectors">Overlap of vectors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#orthonormal-basis">Orthonormal basis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-basis">Changing basis</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#special-operators">Special operators</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adjoint-operator">Adjoint operator</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hermitian-operators">Hermitian operators</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unitary-opertors">Unitary opertors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dirac-notation">Dirac Notation</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#states-and-operators">States and Operators</a><ul class="nav section-nav flex-column">
