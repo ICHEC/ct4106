@@ -399,14 +399,20 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adjoint-operator">Adjoint operator</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hermitian-operators">Hermitian operators</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unitary-opertors">Unitary opertors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvalues-and-eigenvectors">Eigenvalues, and Eigenvectors</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dirac-notation">Dirac Notation</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#states-and-operators">States and Operators</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connection-with-experiment">Connection with Experiment</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#representation-theory">Representation theory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connection-with-experiment">Connection with Experiment</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#probabilistic-interpretation">Probabilistic interpretation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation-of-measurement">Interpretation of measurement</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-interpretation">Mathematical interpretation</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hilbert-space-of-qubits">Hilbert space of Qubits</a></li>
 </ul>
             </nav>
         </div>
@@ -1461,6 +1467,35 @@ v = \sum_j a_j v_j = \sum_j a_j \left(\sum_i T_{ij}v_i'\right)
 \]</div>
 <p>That is, norm of a vector does not change under the effect of unitary operator. That is why, the act of unitary operator on vectors is interpreted as ‘rotation’ of vectors, and is called unitary rotation.</p>
 </section>
+<section id="eigenvalues-and-eigenvectors">
+<h3>Eigenvalues, and Eigenvectors<a class="headerlink" href="#eigenvalues-and-eigenvectors" title="Link to this heading">#</a></h3>
+<p>The concept eigenvalues and eigenvectors has rather wide range of applications in physics, as well as technology.</p>
+<p>In a vector space, eigenvalues and eigenvector are attributes associated with a linear map or operator. We all know that linear operators map a vector to another vector. Say <span class="math notranslate nohighlight">\(L\)</span> is a linear operator, then for a given arbitrary vector <span class="math notranslate nohighlight">\(v\)</span>, <span class="math notranslate nohighlight">\(v'=L(v)\)</span> is in general another vector.</p>
+<p>If it so happens that for a particular vector <span class="math notranslate nohighlight">\(v_e\)</span>, the transformation via <span class="math notranslate nohighlight">\(L\)</span> does not change the direction, i.e., <span class="math notranslate nohighlight">\(L(v_e)\)</span> is in the same direction. But then we can write <span class="math notranslate nohighlight">\(L(v_e) = \lambda v_e\)</span>, where <span class="math notranslate nohighlight">\(\lambda\)</span> is a scalar. Such a vector is called eigenvector of the operator, and the associated scalar <span class="math notranslate nohighlight">\(\lambda\)</span> is called an eigenvalue of the operator.</p>
+<div class="tip admonition">
+<p class="admonition-title">Definition</p>
+<p>For a given operator <span class="math notranslate nohighlight">\(L\)</span>, a vector <span class="math notranslate nohighlight">\(v\)</span> is called an <strong>eigenvector</strong> if the vector gets mapped to a vector parallel to itself, i.e.,</p>
+<div class="math notranslate nohighlight">
+\[
+L(v) = \lambda v
+\]</div>
+<p>The corresponding number <span class="math notranslate nohighlight">\(\lambda\)</span> with which the eigenvector get scaled is called the <strong>eigenvalue</strong>.</p>
+</div>
+<p>One can ask the following, how many eigenvalues and/or eigenvectors can a linear operator have?</p>
+<p>To answer it, and to also understand the nature and purpose of eigenvalues and eigenvectors, let’s work with the matrix representation of the linear operator and vectors. Consider a basis <span class="math notranslate nohighlight">\(B=\{v_1, v_2,\dots, v_n\}\)</span> in which the coordinates of a vector <span class="math notranslate nohighlight">\(v\)</span> are <span class="math notranslate nohighlight">\({\bf X}=(x_1, x_2, \dots, x_n)\)</span>, and the matrix representation of the operator <span class="math notranslate nohighlight">\(L\)</span> is <span class="math notranslate nohighlight">\({\bf L}\)</span>. Then if <span class="math notranslate nohighlight">\(v\)</span> is an eigenvector of <span class="math notranslate nohighlight">\(L\)</span> with eigenvalue <span class="math notranslate nohighlight">\(\lambda\)</span>, then <span class="math notranslate nohighlight">\(L(v) = \lambda v\)</span> is equivalent to the following matrix expression</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf LX} = \lambda{\bf X}, \quad\text{or, equivalently}\quad ({\bf L}-\lambda {\bf I})X = 0
+\]</div>
+<p>where <span class="math notranslate nohighlight">\({\bf I}\)</span> is identity matrix. Since <span class="math notranslate nohighlight">\({\bf X}\)</span> is in general non-zero, the equation <span class="math notranslate nohighlight">\(({\bf L}-\lambda {\bf I})X = 0\)</span> can only be true if the <a class="reference external" href="https://en.wikipedia.org/wiki/Determinant">determinant</a> of the matrix <span class="math notranslate nohighlight">\({\bf L_\lambda= L}-\lambda {\bf I}\)</span> is zero.</p>
+<p>Determinant of a square matrix is a scalar function, expressed as <span class="math notranslate nohighlight">\(Det(L_\lambda)\)</span>. Computing the <span class="math notranslate nohighlight">\(Det({\bf L}-\lambda {\bf I})=0\)</span> gives a polynomial equation in <span class="math notranslate nohighlight">\(\lambda\)</span> of degree <span class="math notranslate nohighlight">\(n\)</span>. This equation will have <span class="math notranslate nohighlight">\(n\)</span> solutions for <span class="math notranslate nohighlight">\(\lambda\)</span>. These <span class="math notranslate nohighlight">\(n\)</span> values are the set of eigenvalues associated with the operator.</p>
+<p>If we label the <span class="math notranslate nohighlight">\(n\)</span> eigenvalues as <span class="math notranslate nohighlight">\(\lambda_i\)</span>, then by solving the linear equation <span class="math notranslate nohighlight">\({\bf L}X = \lambda_i X\)</span> for vector <span class="math notranslate nohighlight">\(X\)</span>, we get the coordinates of the corresponding eigenvectors.</p>
+<div class="tip admonition">
+<p class="admonition-title">Property</p>
+<p>Eigenvectors corresponding to two distinct eigenvalues are linearly independent.</p>
+</div>
+<p>In fact, if we have a matrix with all distinct eigenvalues, the corresponding eigenvectors form a Basis of the vector space, called <em><strong>eigenbasis</strong></em>.</p>
+</section>
 <section id="dirac-notation">
 <h3>Dirac Notation<a class="headerlink" href="#dirac-notation" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
@@ -1515,6 +1550,8 @@ H_b = \left\{|s\rangle =\sum_{l=1}^n c_l|l\rangle: \text{where } c_l\in \mathbb{
 <section id="connection-with-experiment">
 <h3>Connection with Experiment<a class="headerlink" href="#connection-with-experiment" title="Link to this heading">#</a></h3>
 <p>We have the following probabilistic interpretation of a general state in the Hilbert space.</p>
+<section id="probabilistic-interpretation">
+<h4>Probabilistic interpretation<a class="headerlink" href="#probabilistic-interpretation" title="Link to this heading">#</a></h4>
 <div class="tip admonition">
 <p class="admonition-title">Probabilistic interpretation of superposition</p>
 <p>A quantum state <span class="math notranslate nohighlight">\(|s\rangle = c_1|1\rangle + c_2|2\rangle  + \dots c_n|n\rangle \)</span> is a state, in which possibilities of being measured in each one of the basis states <span class="math notranslate nohighlight">\(|l\rangle\)</span> coexist simultaneously, untill the measurement is done.</p>
@@ -1535,10 +1572,52 @@ H_b = \left\{|s\rangle =\sum_{l=1}^n c_l|l\rangle: \text{where } c_l\in \mathbb{
 \langle s|s\rangle = \sum_l c_l^*\langle l| \sum_{l'} c_{l'}|l'\rangle  = \sum_{l,l'} c_l^*c_{l'}\langle l|l'\rangle = \sum_{l} |c_l|^2
 \]</div>
 <p>But the probability argument implied that the last summation equals 1, so <span class="math notranslate nohighlight">\(\langle s|s'\rangle = 1\)</span>, that is the norm of the state must also be 1. That is why in quantum system, a state is represented by a unit vector of the Hilbert space.</p>
-<p><a class="reference external" href="https://youtube.com/clip/Ugkxh9W3xafNSWAP-VU9LCrRXkx9kgUH0mY8?si=MVsRsDUeJld5fV9_">youtube</a></p>
 </section>
-<section id="representation-theory">
-<h3>Representation theory<a class="headerlink" href="#representation-theory" title="Link to this heading">#</a></h3>
+<section id="interpretation-of-measurement">
+<h4>Interpretation of measurement<a class="headerlink" href="#interpretation-of-measurement" title="Link to this heading">#</a></h4>
+<p>Let us try to illustrate how quantum measurement works.
+When we measure a property of a quantum system, the outcome of the measurement should yield a value.</p>
+<p>Let’s assume the quantum system imagined in the previous section, the states are <span class="math notranslate nohighlight">\(|l\rangle\)</span> with <span class="math notranslate nohighlight">\(l=1,2,\dots n\)</span>. If the system is already in one of these states, then it stays in it, and the outcome of the measurement is, say <span class="math notranslate nohighlight">\(a_l\)</span> corresponding to the state <span class="math notranslate nohighlight">\(|l\rangle\)</span>.</p>
+<p>This observation, against our intuition of uncertainty in quantum system, is actually definite. Is there something special about the system being in state <span class="math notranslate nohighlight">\(|l\rangle\)</span> ? Yes, it is so because these state are by construction mutually exclusive with respect to observation, as discussed in section <a class="reference internal" href="#states-and-operators"><code class="xref myst docutils literal notranslate"><span class="pre">states-and-operators</span></code></a>.</p>
+<p>The uncertainty comes if before the measurement system was in a superposition state <span class="math notranslate nohighlight">\(|s\rangle = c_1|1\rangle + c_2|2\rangle  + \dots c_n|n\rangle\)</span>. In this case, the system is in a state where the possibility of being in any one of the <span class="math notranslate nohighlight">\(|l\rangle\)</span> state coexist until the measurement.</p>
+<p>Once we observe the system, or measure it, the system collapses into one of the <span class="math notranslate nohighlight">\(|l\rangle\)</span> states with probability <span class="math notranslate nohighlight">\(|c_l|^2\)</span>. In this situation the outcome is not definite, but probabilistic, and if we repeat the above experiment, we get a probability averaged outcome, called <strong>expectation value</strong>. It is denoted as <span class="math notranslate nohighlight">\(\langle a \rangle\)</span> and is given by the weighted average of the probabilities -</p>
+<div class="math notranslate nohighlight">
+\[
+\langle a \rangle = \sum_{l=1}^n |c_l|^2 a_l
+\]</div>
+</section>
+<section id="mathematical-interpretation">
+<h4>Mathematical interpretation<a class="headerlink" href="#mathematical-interpretation" title="Link to this heading">#</a></h4>
+<p>Mathematically, the above measurement is interpreted as following.</p>
+<p>Every physically measurable quantity is called an observable, and for every observable, there is a Hermitian operator, say <span class="math notranslate nohighlight">\(A\)</span> that acts on a state.
+If the state is <span class="math notranslate nohighlight">\(l\rangle\)</span>, the result of the action is <span class="math notranslate nohighlight">\(A|l\rangle=a_l|l\rangle\)</span>, and if the state is in superposition <span class="math notranslate nohighlight">\(|s\rangle\)</span>, the state changes to <span class="math notranslate nohighlight">\(A|s\rangle\)</span>.</p>
+<p>The overlap, or inner product of the resulting state with initial state gives the outcome of the measurement. The outcome, which is also called the expectation value, is expressed as <span class="math notranslate nohighlight">\(\langle s, As\rangle\)</span> or <span class="math notranslate nohighlight">\(\langle s|A|s\rangle\)</span> in the Dirac notation.</p>
+<ul class="simple">
+<li><p>For the <span class="math notranslate nohighlight">\(|l\rangle\)</span> state, the outcome is <span class="math notranslate nohighlight">\(\langle l|A|l\rangle = a_l\langle l|l\rangle = a_l\)</span>, and if definite.</p></li>
+<li><p>For the superposition state, the outcome is probabilistic with expectation value</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\langle a \rangle &amp;= \langle s|A|s \rangle =
+\left(
+    \sum_{l'}c_{l'}^*\langle l'|
+\right)A
+\left(
+\sum_l c_l|l\rangle
+\right)\\
+&amp;=
+\sum_{l,l'}c_{l'}^*c_l a_l\langle l'|l \rangle
+= \sum_l a_l|c_l|^2
+\end{align}
+\end{split}\]</div>
+<p>which is same as one interpreted as measurement outcome in the previous section.</p>
+</section>
+</section>
+</section>
+<section id="hilbert-space-of-qubits">
+<h2>Hilbert space of Qubits<a class="headerlink" href="#hilbert-space-of-qubits" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://youtube.com/clip/Ugkxh9W3xafNSWAP-VU9LCrRXkx9kgUH0mY8?si=MVsRsDUeJld5fV9_">youtube</a></p>
 <hr class="footnotes docutils" />
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="id2" role="doc-footnote">
@@ -1546,7 +1625,6 @@ H_b = \left\{|s\rangle =\sum_{l=1}^n c_l|l\rangle: \text{where } c_l\in \mathbb{
 <p>See the <a class="reference external" href="https://en.wikipedia.org/wiki/Set_(mathematics)">Wikipedia article on set</a> for more details.</p>
 </aside>
 </aside>
-</section>
 </section>
 </section>
 
@@ -1666,14 +1744,20 @@ H_b = \left\{|s\rangle =\sum_{l=1}^n c_l|l\rangle: \text{where } c_l\in \mathbb{
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adjoint-operator">Adjoint operator</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hermitian-operators">Hermitian operators</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unitary-opertors">Unitary opertors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvalues-and-eigenvectors">Eigenvalues, and Eigenvectors</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dirac-notation">Dirac Notation</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#states-and-operators">States and Operators</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connection-with-experiment">Connection with Experiment</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#representation-theory">Representation theory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connection-with-experiment">Connection with Experiment</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#probabilistic-interpretation">Probabilistic interpretation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation-of-measurement">Interpretation of measurement</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-interpretation">Mathematical interpretation</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hilbert-space-of-qubits">Hilbert space of Qubits</a></li>
 </ul>
   </nav></div>
 
