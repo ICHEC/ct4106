@@ -61,8 +61,14 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
-    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs"></script>
+    <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";import elkLayouts from "https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs";mermaid.registerLayoutLoaders(elkLayouts);mermaid.initialize({startOnLoad:false});</script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+    <script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";
+window.addEventListener("load", () => mermaid.run());
+</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'lecture-04/math-for-qc';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -412,7 +418,16 @@ document.write(`
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hilbert-space-of-qubits">Hilbert space of Qubits</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hilbert-space-of-qubits">Hilbert space of Qubits</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#single-qubit">Single Qubit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-qubits">Multiple Qubits</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pure-vs-mixed-states">Pure vs Mixed States</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pure-state">Pure state</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mixed-state">Mixed state</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -521,8 +536,8 @@ the process of <code class="docutils literal notranslate"><span class="pre">meas
 <h2>Mathematica Structure<a class="headerlink" href="#mathematica-structure" title="Link to this heading">#</a></h2>
 <p>Here we discuss in bravety the necessary mathematical structures upon which the formulation of quantum mechanics relies on.
 It progressively goes as follows -</p>
-<div class="mermaid">
-            mindmap
+<pre  class="mermaid">
+        mindmap
 root(Mathematical Framework)
     Vector Space, Hilbert Space
         Scalar vs Vector
@@ -537,7 +552,7 @@ root(Mathematical Framework)
         Special operators: Unitary, Hermitian, ...
         Probability conservation
     Representation theory
-        </div><section id="scalar-vs-vector">
+    </pre><section id="scalar-vs-vector">
 <h3>Scalar vs Vector<a class="headerlink" href="#scalar-vs-vector" title="Link to this heading">#</a></h3>
 <p>Any quantity that can be described by a single numerical value, usually with real, and sometimes with complex numbers is a scalar.
 The common examples of scalars are volume, density, speed, energy, mass and time.</p>
@@ -682,15 +697,14 @@ A\times B = \{(a, x), (a, y), (a, z),
 <ul class="simple">
 <li><p>Maps can be combined. Instead of exploring general consequences, consider two bijective maps <span class="math notranslate nohighlight">\(f, g\)</span> from a set X to itself. If <span class="math notranslate nohighlight">\(f\)</span> maps an arbitrary element <span class="math notranslate nohighlight">\(a\)</span> in X to <span class="math notranslate nohighlight">\(b=f(a)\)</span>, and <span class="math notranslate nohighlight">\(g\)</span> maps <span class="math notranslate nohighlight">\(b\)</span> to <span class="math notranslate nohighlight">\(c=g(b)\)</span>, then the the <strong>combination, or composition</strong> of the two maps <span class="math notranslate nohighlight">\(fog\)</span> maps <span class="math notranslate nohighlight">\(a\)</span> to <span class="math notranslate nohighlight">\(fog(a) = f(g(a))\)</span>.</p></li>
 </ul>
-<div align="center" class="mermaid align-center">
-            graph LR
+<pre align="center" class="mermaid align-center">
+        graph LR
 a([&quot;X&quot;])
 b([&quot;X&quot;])
 c([&quot;X&quot;])
 a --f--&gt; b --g--&gt; c
 a --fog--&gt; c
-        </div>
-        </section>
+    </pre></section>
 <section id="binary-operations">
 <h3>Binary operations<a class="headerlink" href="#binary-operations" title="Link to this heading">#</a></h3>
 <p>Binary operations, as the name suggests are operations that take two objects and combine them to give (usually) one unique object.</p>
@@ -1617,6 +1631,106 @@ If the state is <span class="math notranslate nohighlight">\(l\rangle\)</span>, 
 </section>
 <section id="hilbert-space-of-qubits">
 <h2>Hilbert space of Qubits<a class="headerlink" href="#hilbert-space-of-qubits" title="Link to this heading">#</a></h2>
+<p>Let us finally come to example of quantum systems that are useful for quantum computing.</p>
+<section id="single-qubit">
+<h3>Single Qubit<a class="headerlink" href="#single-qubit" title="Link to this heading">#</a></h3>
+<p>A <strong>Qubit</strong> is a quantum system with two state basis. A single qubit is one of the simplest quantum system of 2-dimensional Hilbert space.</p>
+<p>A qubit is an abstraction of a quantum system with two dimensional Hilbert space, with a basis <span class="math notranslate nohighlight">\(\{|0\rangle, |1\rangle\}\)</span>. The Hilbert space then looks like</p>
+<div class="math notranslate nohighlight">
+\[
+H_1 = {|s\rangle = c_0|0\rangle + c_1|1\rangle: c_0, c_1 \in \mathbb{C}}
+\]</div>
+<p>Note that in order to represent a quantum state, the kets <span class="math notranslate nohighlight">\(|s\rangle\)</span> need to be normal, which means</p>
+<div class="math notranslate nohighlight">
+\[
+|c_0|^2 + |c_1|^2 = 1
+\]</div>
+<p>Since the Hilbert space is two dimensional, all the operator on it can be
+represented as <span class="math notranslate nohighlight">\(2\times 2\)</span> complex matrices.</p>
+<p>Noteworthy operators are the following -</p>
+<ul class="simple">
+<li><p>Identity <span class="math notranslate nohighlight">\(I\)</span>, and Hadamard <span class="math notranslate nohighlight">\(H\)</span> operators. Their matrix representation is following -</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+I = \begin{pmatrix} 1 &amp; 0\\0 &amp; 1 \end{pmatrix};
+H = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 &amp; 1\\1 &amp; -1 \end{pmatrix}
+\end{split}\]</div>
+<ul class="simple">
+<li><p>Pauli <span class="math notranslate nohighlight">\(X, Y, Z\)</span> operators. Their matrix representation is following -
+$<span class="math notranslate nohighlight">\(
+X = \begin{pmatrix} 0 &amp; 1\\1 &amp; 0 \end{pmatrix}; 
+Y = \begin{pmatrix} 0 &amp; -i\\i &amp; 0 \end{pmatrix}; 
+Z = \begin{pmatrix} 1 &amp; 0\\0 &amp; -1 \end{pmatrix};
+\)</span>$</p></li>
+</ul>
+<p>One assumes a coordinate system with <span class="math notranslate nohighlight">\(x,y\)</span> and <span class="math notranslate nohighlight">\(z\)</span> axis, and a basis
+that is eigenstate of Pauli z operators.</p>
+</section>
+<section id="multiple-qubits">
+<h3>Multiple Qubits<a class="headerlink" href="#multiple-qubits" title="Link to this heading">#</a></h3>
+<p>In general, when we combine two quantum systems, the Hilbert space of the
+combined system is constructed from the cartesian product of the basis of
+component systems.</p>
+<p>Let us first consider a system of two qubits, if the basis for one qubit is
+<span class="math notranslate nohighlight">\(B_1 = \{|0\rangle, |1\rangle\}\)</span>, then the basis for the two qubit system is</p>
+<div class="math notranslate nohighlight">
+\[
+B_2 = B_1\times B_1 = {(|0\rangle, |0\rangle), (|0\rangle, |1\rangle),
+(|1\rangle, |0\rangle), (|1\rangle, |1\rangle)}
+\]</div>
+<p>Where the order of the states in ordered pair follows the qubit label.
+For example, <span class="math notranslate nohighlight">\((|0\rangle, |1\rangle)\)</span> represents a state in which first
+qubit is in 0 state, and second qubit is in 1 state.</p>
+<p>If we have more qubits, the Hilbert space will grow as <span class="math notranslate nohighlight">\(B_3 = B_1\times B_1\times B_1\)</span>, and so on.
+The ordered pair notation becomes combersome, so one puts the individual state labels inside the
+angular brackets. In this way, the basis for two and three qubits looks like following -</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+B_2 = &amp;\{|00\rangle, |01\rangle, |10\rangle, |11\rangle\}\\
+B_3 = &amp;\{|000\rangle, |001\rangle, |010\rangle, |011\rangle, |100\rangle, |101\rangle, |110\rangle, |111\rangle\}\\
+B_4 = &amp;\{
+    |0000\rangle, |0001\rangle, |0010\rangle, |0011\rangle,\\
+    &amp;|0100\rangle, |0101\rangle, |0110\rangle, |0111\rangle,\\
+    &amp;|1000\rangle, |1001\rangle, |1010\rangle, |1011\rangle,\\
+    &amp;|1100\rangle, |1101\rangle, |1110\rangle, |1111\rangle
+\}
+\end{align}
+\end{split}\]</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The size of the basis, and hence the dimension of the Hilbert space of <span class="math notranslate nohighlight">\(n\)</span> qubits is <span class="math notranslate nohighlight">\(2^n\)</span></p>
+</div>
+</section>
+<section id="pure-vs-mixed-states">
+<h3>Pure vs Mixed States<a class="headerlink" href="#pure-vs-mixed-states" title="Link to this heading">#</a></h3>
+<section id="pure-state">
+<h4>Pure state<a class="headerlink" href="#pure-state" title="Link to this heading">#</a></h4>
+<p>The quantum state we referred to so far are what one calls pure states, and they are represented by a normalised vector in a complex Hilbert space. In the Dirac notation, they are described as a ket <span class="math notranslate nohighlight">\(|v\rangle\)</span> or a bra <span class="math notranslate nohighlight">\(\langle v|\)</span>.</p>
+<p>There is another way to describe the state of quantum system which can be generalised to mixed states (defined below), and the is through <strong>density operator</strong>. For a system in pure quantum state <span class="math notranslate nohighlight">\(|v\rangle\)</span>, the density operator is defined as
+$<span class="math notranslate nohighlight">\(
+{\Huge
+\rho = |v\rangle \langle v|
+}
+\)</span>$</p>
+<ul class="simple">
+<li><p>It is easy to see that trace of the density operator is 1, i.e., <span class="math notranslate nohighlight">\(\text{Tr}(\rho)=1\)</span>.</p></li>
+<li><p>For a pure state, <span class="math notranslate nohighlight">\(\rho^2 = \rho\)</span>, so <span class="math notranslate nohighlight">\(\text{Tr}(\rho^2)=1\)</span></p></li>
+</ul>
+</section>
+<section id="mixed-state">
+<h4>Mixed state<a class="headerlink" href="#mixed-state" title="Link to this heading">#</a></h4>
+<p>Suppose we have a quantum system, and wish to prepare it in a state <span class="math notranslate nohighlight">\(|l\rangle\)</span> out of, say <span class="math notranslate nohighlight">\(\{|1\rangle, |2\rangle, |3\rangle,\dots, |n\rangle\}\)</span>. If we could do it, then the system is in a pure state. But on the other hand, due to some difficulty, experimental or otherwise of physical nature, when we try to prepare it in <span class="math notranslate nohighlight">\(|l\rangle\)</span>, each time we get the system prepared in a different state. We can repeat the attempt of preparing the state several times, and compute the statistical <em>weight</em> <span class="math notranslate nohighlight">\(w_l\)</span> of having prepared the system in the expected state <span class="math notranslate nohighlight">\(|l\rangle\)</span>. This adds another uncertainty, which is classical in nature on any measurement on the system in such a state, and any outcome of quantum measurement will be an ensemble average of these weights. Such a state is called a <strong>mixed state</strong>.</p>
+<p>What mathematical object should we use to represent such a state? Clearly a single vector does not suffice, so we need something that depends on the weights <span class="math notranslate nohighlight">\(w_l\)</span> and the state <span class="math notranslate nohighlight">\(|l\rangle\)</span> for all values of <span class="math notranslate nohighlight">\(l\)</span>.</p>
+<p>Such state are represented by the following</p>
+<div class="math notranslate nohighlight">
+\[
+\rho = \sum_l w_l |l\rangle \langle l|
+\]</div>
+<ul class="simple">
+<li><p>For a mixed state, <span class="math notranslate nohighlight">\(\rho^2 \ne \rho\)</span>, and <span class="math notranslate nohighlight">\(\text{Tr}(\rho) &lt;1\)</span>.</p></li>
+</ul>
 <p><a class="reference external" href="https://youtube.com/clip/Ugkxh9W3xafNSWAP-VU9LCrRXkx9kgUH0mY8?si=MVsRsDUeJld5fV9_">youtube</a></p>
 <hr class="footnotes docutils" />
 <aside class="footnote-list brackets">
@@ -1625,6 +1739,8 @@ If the state is <span class="math notranslate nohighlight">\(l\rangle\)</span>, 
 <p>See the <a class="reference external" href="https://en.wikipedia.org/wiki/Set_(mathematics)">Wikipedia article on set</a> for more details.</p>
 </aside>
 </aside>
+</section>
+</section>
 </section>
 </section>
 
@@ -1757,7 +1873,16 @@ If the state is <span class="math notranslate nohighlight">\(l\rangle\)</span>, 
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hilbert-space-of-qubits">Hilbert space of Qubits</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hilbert-space-of-qubits">Hilbert space of Qubits</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#single-qubit">Single Qubit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-qubits">Multiple Qubits</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pure-vs-mixed-states">Pure vs Mixed States</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pure-state">Pure state</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mixed-state">Mixed state</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

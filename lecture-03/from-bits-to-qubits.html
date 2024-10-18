@@ -61,8 +61,14 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
-    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs"></script>
+    <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";import elkLayouts from "https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs";mermaid.registerLayoutLoaders(elkLayouts);mermaid.initialize({startOnLoad:false});</script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+    <script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";
+window.addEventListener("load", () => mermaid.run());
+</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'lecture-03/from-bits-to-qubits';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -408,27 +414,25 @@ document.write(`
 <section id="binary-data">
 <h2>Binary Data<a class="headerlink" href="#binary-data" title="Link to this heading">#</a></h2>
 <p>Most algorithms require an input in some form, which is required to feed into the algorithm, and we get result in the end. For example, <em>addition</em> is an algorithm, that requires input of two numbers, and gives the result, that is sum of two numbers.</p>
-<div align="center" class="mermaid align-center">
-            graph LR;
+<pre align="center" class="mermaid align-center">
+        graph LR;
 A(Input) --&gt; |Feed into| B{Algorithm} --&gt; |Computation finished| C(Result)
 
 a(12) &amp; b(15) --&gt; add{Addition} --&gt; sum(27)
-        </div>
-        <p>The input information, can in principle be anything, however over the decades we have learn to represent it in some standardised format which is easily understood by computers. For most applications, the input can be broken down to a list or collection of simpler object, and the simpler object are either a number, or a text. The numbers themselves can be integers, or real numbers. The text can be english, or any other language, and within each language, a text is an ordered sequence of characters of alphabets and symbols.</p>
+    </pre><p>The input information, can in principle be anything, however over the decades we have learn to represent it in some standardised format which is easily understood by computers. For most applications, the input can be broken down to a list or collection of simpler object, and the simpler object are either a number, or a text. The numbers themselves can be integers, or real numbers. The text can be english, or any other language, and within each language, a text is an ordered sequence of characters of alphabets and symbols.</p>
 </section>
 <section id="bit">
 <h2>Bit<a class="headerlink" href="#bit" title="Link to this heading">#</a></h2>
 <p>The smallest unit of input, logically for us, and also for computer, is something called <strong>bit</strong> that is mapped to <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>. This minimalistic information exist as one of the two mutually exclusive possibility. Below are some more examples of such pair of possible ‘states’.</p>
-<div align="center" class="mermaid align-center">
-            graph TD;
+<pre align="center" class="mermaid align-center">
+        graph TD;
 True &lt;---&gt; False;
 Head &lt;---&gt; Tail;
 Yes &lt;---&gt; No;
 Good &lt;---&gt; Bad;
 Like &lt;---&gt; Dislike;
 1 &lt;---&gt; 0;
-        </div>
-        </section>
+    </pre></section>
 <section id="physical-representation-and-why-quantum">
 <h2>Physical Representation and why Quantum<a class="headerlink" href="#physical-representation-and-why-quantum" title="Link to this heading">#</a></h2>
 <p>The above are some of the daily life anologies of properties/informations that can be described by choosing one of the two possibilities. We say that such properties have 1 bit of information, and the two states are usually represented as 0 and 1. More and complex information can be represented by multitude of such bits, and is usually stored in computers, or other forms of modern storage using technologies which can (i) prepare an object in one of two clearly distinguishable physical states, and (ii) have tools available that can detect in which of the two states the object is in. Typical examples include -</p>
@@ -493,14 +497,13 @@ Recall the lecture where we use the example of tossing coins as a means of conve
 <li><p>1 + 0 = Sum : 1, Carry:0</p></li>
 <li><p>1+ 1 = Sum : 0, Carry:1</p></li>
 </ul>
-<div align="center" class="mermaid align-center">
-            graph LR;
+<pre align="center" class="mermaid align-center">
+        graph LR;
 a --&gt; s(sum = a or b);
 a --&gt; c(carry = a and b);
 b --&gt; s;
 b --&gt; c
-        </div>
-        </section>
+    </pre></section>
 <section id="gates-and-operations-in-binary">
 <h2>Gates and Operations in Binary<a class="headerlink" href="#gates-and-operations-in-binary" title="Link to this heading">#</a></h2>
 <ul class="simple">

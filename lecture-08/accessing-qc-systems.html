@@ -61,8 +61,14 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
-    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs"></script>
+    <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";import elkLayouts from "https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs";mermaid.registerLayoutLoaders(elkLayouts);mermaid.initialize({startOnLoad:false});</script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+    <script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";
+window.addEventListener("load", () => mermaid.run());
+</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'lecture-08/accessing-qc-systems';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -422,7 +428,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/142f525a1c372d2683d55c738d23f43aa3dfc17f0f3834ff71fccd04898602cd.png" src="../_images/142f525a1c372d2683d55c738d23f43aa3dfc17f0f3834ff71fccd04898602cd.png" />
+<img alt="../_images/49a31f021b1368ef172e5634d87908515d5c25262c7f1222956579054a78d1da.png" src="../_images/49a31f021b1368ef172e5634d87908515d5c25262c7f1222956579054a78d1da.png" />
 </div>
 </div>
 <p>The small piece of code above is a <code class="docutils literal notranslate"><span class="pre">program</span></code> written in Python programming language and uses the popular scientific library <code class="docutils literal notranslate"><span class="pre">Numpy</span></code>. The first line imports the module<a class="footnote-reference brackets" href="#lib" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>/library, and the second line imports the famous plotting library <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>.
@@ -486,7 +492,7 @@ Next we add measurement instruction for each qubit <span class="math notranslate
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f8eb501c627fd1ac16b2c8f03716a3fb7af20eb0e3c1498322f0424b5aea9ae3.png" src="../_images/f8eb501c627fd1ac16b2c8f03716a3fb7af20eb0e3c1498322f0424b5aea9ae3.png" />
+<img alt="../_images/06d86a2d1832054629c11019ce74eea737702ff1ac1e230d5e6e60f29b9cb64d.png" src="../_images/06d86a2d1832054629c11019ce74eea737702ff1ac1e230d5e6e60f29b9cb64d.png" />
 </div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">Aer</span></code> module is part of qiskit software ecosystem, and provides us with a few backend software simulators for quantum computing. The line <code class="docutils literal notranslate"><span class="pre">sim</span> <span class="pre">=</span> <span class="pre">Aer.get_backend('aer_simulator')</span></code> defines a simulator object based on Aer’s ‘aer_simulator backend’.
@@ -501,8 +507,8 @@ Next we extract the results through <code class="docutils literal notranslate"><
 <section id="executing-quantum-programs-on-quantum-hardware">
 <h2>Executing quantum programs on quantum hardware<a class="headerlink" href="#executing-quantum-programs-on-quantum-hardware" title="Link to this heading">#</a></h2>
 <p>Below are some comparative comments on the pros and cons of real quantum hardware.</p>
-<div class="mermaid">
-            mindmap
+<pre  class="mermaid">
+        mindmap
     root(Quantum programming)
         Advantages
             Access the full potential of QC
@@ -515,7 +521,7 @@ Next we extract the results through <code class="docutils literal notranslate"><
                 Low circuit depths
             Remote access only
             Availability
-        </div><p>The previous slide begs the question, if we can simulate quantum programs on classical machine then what is the point in using quantum hardware. Lets take a look at some advantages and disadvantages of using quantum hardware.​
+    </pre><p>The previous slide begs the question, if we can simulate quantum programs on classical machine then what is the point in using quantum hardware. Lets take a look at some advantages and disadvantages of using quantum hardware.​
 ​​</p>
 <div class="tip admonition">
 <p class="admonition-title">Noise</p>
@@ -609,8 +615,8 @@ g { color: Green }
 </div>
 <p>This poses a fundamental limitation of classical methods due to exponentially increasing resource requirements such as memory, storage and CPU time in many algorithms.​</p>
 <p>But it’s that this limitation, even though quite severe, makes the QCSS completely useless. There is plenty we can do and learn through it. See a comparative chart below</p>
-<div align="center" class="mermaid align-center">
-            %%{ init: { 'flowchart': { 'curve': 'stepAfter' } } }%%
+<pre align="center" class="mermaid align-center">
+        %%{ init: { 'flowchart': { 'curve': 'stepAfter' } } }%%
 flowchart TD
 subgraph Local[&quot;`**Local**`&quot;]
 direction LR
@@ -629,8 +635,7 @@ direction LR
 end
 a[&quot;`Quantum computing
 software simulators`&quot;]---&gt;Local &amp; Remote
-        </div>
-        <p>There are several aspects of learning QC on QCSS. QCSS are essentially just a software layer on top of a powerful machine, and so they are a lot easier to procure and maintain compared to an actual quantum device, which requires complex experimental setup and careful monitoring/maintenance.</p>
+    </pre><p>There are several aspects of learning QC on QCSS. QCSS are essentially just a software layer on top of a powerful machine, and so they are a lot easier to procure and maintain compared to an actual quantum device, which requires complex experimental setup and careful monitoring/maintenance.</p>
 <p>On the other hand, for learning the QC, and testing feasibility of a quantum algorithm one does not necessarily need large qubit size. In fact most concepts for learning purpose can be illustrated with 4-6 qubits at most, where one can deploy a QCSS on machines ranging from laptops to HPC machines.</p>
 <p>The QCSS, can be used either on your local machine or on a remote computer. The advantages of using them locally are that you have complete control over the execution and there in no need to wait in any queues to execute your program. We are subject to some disadvantages when running your programs locally, we care limited to a small number of qubits, around 25, and also we must use low circuit depths as the alternative is too computationally expensive. This results in high compute and memory requirements.​</p>
 <p>​Similarly there are advantages and disadvantages to using a remote computer for the simulation of quantum programs. The main advantage is larger circuit depths and qubit counts relative to a local execution, while the disadvantages are the availability of the computer, waiting times can be significant and disruptive. Keep in mind that remote executions are still limited in scalability, with fifty qubits being an approximate limit.​</p>
@@ -746,8 +751,8 @@ Memory Capacity and time grow exponentially with the number of qubits, so</p></l
 <p>IBM Quantum is one the popular emerging provider for software and hardware stacks for quantum computing. Lets take a closer look at IBM Quantum and what they offer.</p>
 <p>Firstly, we have <a class="reference external" href="https://www.ibm.com/quantum/qiskit">Qiskit</a>, the quantum computing software library which serves as a complete quantum computing software library. Using Qiskit, one can develop quantum circuit based algorithms an applications, simulate these programs on Qiskits Aer backend simulator or run the program on IBMs quantum hardware. The maximum qubit IBM had reached till last year was 433, <a class="reference external" href="https://www.allaboutcircuits.com/news/exclusive-ibm-shares-details-of-its-400-plus-qubit-quantum-processor/">Osprey</a> quantum processor. <a class="reference external" href="https://openqasm.com/">OpenQASM</a> serves as Qiskit’s Quantum Assembly language, which is an intermediate between the qiskit and the classical or quantum hardware. Secondly, IBM also offer a quantum computing cloud environment called IBM quantum lab, in which you can develop and run qiskit based programs on simulators or quantum hardware.</p>
 <p>IBM also offer a unique Quantum Composer tool, which allows you to build quantum algorithms using a quantum circuit interface interface. You can easily install qiskit and run simulations on your local machine. Or you can sign up for free for an IBM quantum account and gain access to quantum hardware, the quantum lab and the quantum composer.  ​</p>
-<div class="mermaid">
-            mindmap
+<pre  class="mermaid">
+        mindmap
 Current capabilities​
     Software Stack:​
         Qiskit​
@@ -760,7 +765,7 @@ Current capabilities​
         Number of Qubits: 433
         Quantum simulators – up to XXX qubits​
     IBM Quantum Eagle​
-        </div><p>Here we see a preview of the (Initially called IBM Quantum Lab, and renamed, restructured into) <a class="reference external" href="https://quantum.ibm.com">IBM Quantum Platform</a> is IBM’s cloud computing service. Earlier, they provided jupyter notebook running facility through the browser, but that service has been discontinued.</p>
+    </pre><p>Here we see a preview of the (Initially called IBM Quantum Lab, and renamed, restructured into) <a class="reference external" href="https://quantum.ibm.com">IBM Quantum Platform</a> is IBM’s cloud computing service. Earlier, they provided jupyter notebook running facility through the browser, but that service has been discontinued.</p>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
@@ -779,8 +784,8 @@ IBM Quantum Platform</div>
 <h3>Xanadu<a class="headerlink" href="#xanadu" title="Link to this heading">#</a></h3>
 <img alt="../_images/xanadu-cl.svg" class="drawio align-center" src="../_images/xanadu-cl.svg" />
 <p>Lets now move on to <a class="reference external" href="https://www.xanadu.ai/">Xanadu</a>. Xanadu provides photonics based quantum computing hardware, and has pretty impressive and actively maintained software stack. Pennylane is Xanadu’s programming platform, and software library. Using Pennylane we can develop circuit based algorithms and applications and run these programs on the lightning simulator or Xanadu’s quantum photonics hardware like borealis. Xanadu also offers a cloud computing service in which we can similarly develop and run quantum programs.​</p>
-<div class="mermaid">
-            mindmap
+<pre  class="mermaid">
+        mindmap
 Current capabilities​
     Software Stack:​
     Strawberry Fields: Photonic Circuit Programming​
@@ -795,7 +800,7 @@ Current capabilities​
     Pennylane​
     Strawberry Fields​
     The Walrus​
-        </div><div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+    </pre><div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
 Xanadu</div>
@@ -950,8 +955,8 @@ Quantum Computing in Ireland (QCoIr) Project</div>
 <h3>European HPC Quantum Systems<a class="headerlink" href="#european-hpc-quantum-systems" title="Link to this heading">#</a></h3>
 <p>Several European HPC centres have quantum initiatives​, with rather diverse activities.
 Most of them provide access to high performance quantum simulators or emulators. Atos QLM seems to be a popular choice.​</p>
-<div class="mermaid">
-            mindmap
+<pre  class="mermaid">
+        mindmap
 root(&quot;European HPC Quantum Systems&quot;)
     nl[&quot;The Netherlands&quot;]
         (&quot;Quantum Inspire&quot;)
@@ -979,7 +984,7 @@ root(&quot;European HPC Quantum Systems&quot;)
         CEA
             Atos QLM
             Quantum Simulators on HPC
-        </div><p>A small number have real quantum hardware or a in the process of procuring or internally developing one​. Many also offer various education programs.</p>
+    </pre><p>A small number have real quantum hardware or a in the process of procuring or internally developing one​. Many also offer various education programs.</p>
 <hr class="footnotes docutils" />
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="lib" role="doc-footnote">

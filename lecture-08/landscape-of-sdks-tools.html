@@ -59,8 +59,14 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
-    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs"></script>
+    <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";import elkLayouts from "https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs";mermaid.registerLayoutLoaders(elkLayouts);mermaid.initialize({startOnLoad:false});</script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+    <script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";
+window.addEventListener("load", () => mermaid.run());
+</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'lecture-08/landscape-of-sdks-tools';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -398,8 +404,8 @@ document.write(`
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Solution_stack">Software Stack</a> is basically a set of software subsystems or components needed to create a complete platform to build and run a certain type of program. For example, to write a simple python code and execute it, you need (i) a python interpreter, (ii) a convenient text editor to write python code, (iii) a file manager to save and organize file, and (iv) a terminal to sometime configure, install or manage python interpreter. So the collection of these four will be required to develop python software. Such collection is often referred to as <strong>full-stack</strong>.</p></li>
 </ul>
 <p>Then we’ll introduce the notion of the quantum programming stack, which overlaps the lower two layers of the Quantum Stack. This encapsulates the idea that these two layers are tightly connected and in order to build a functioning quantum programming stack, one must carefully select the compatible components from the two constituting layers. Alternatively a number of big vendors provide pre-integrated quantum programming stacks as a service, deployed in a cloud environment, some components of which could also be used locally. Another approach are the so called Quantum Orchestrators which are very similar to the QPSaaS, but they are generally provided by smaller, independent quantum software companies. The Quantum Orchestrators are generally bespoke and more flexible and could be deployed either on-prem or in the cloud. ​</p>
-<div class="mermaid">
-             graph LR;
+<pre  class="mermaid">
+         graph LR;
     linkStyle default fill-opacity:0.0,stroke-width:0px,stroke-opacity:0.0
     subgraph qp [Quantum Programming Stack]
     subgraph soft [Quantum Software]
@@ -409,7 +415,7 @@ document.write(`
     3(Circuit Based) --- 4(Anolog)   
     end
 end
-        </div></section>
+    </pre></section>
 <section id="high-level-quantum-software">
 <h2>High-Level Quantum Software<a class="headerlink" href="#high-level-quantum-software" title="Link to this heading">#</a></h2>
 <p>### Quantum programming languages</p>

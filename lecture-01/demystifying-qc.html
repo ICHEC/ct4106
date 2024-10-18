@@ -59,8 +59,14 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
-    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs"></script>
+    <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";import elkLayouts from "https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs";mermaid.registerLayoutLoaders(elkLayouts);mermaid.initialize({startOnLoad:false});</script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+    <script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";
+window.addEventListener("load", () => mermaid.run());
+</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'lecture-01/demystifying-qc';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -586,8 +592,8 @@ A complementary approach to parallelization using multiple cores evolved into th
 <section id="the-quantum-computing-ecosystem">
 <h3>The Quantum Computing Ecosystem<a class="headerlink" href="#the-quantum-computing-ecosystem" title="Link to this heading">#</a></h3>
 <p>Here is an initial sketch of the ecosystem.</p>
-<div class="mermaid">
-            %%{init: {'theme':'base', 'fontSize': '11', 'securityLevel': &quot;loose&quot;}}%%
+<pre  class="mermaid">
+        %%{init: {'theme':'base', 'fontSize': '11', 'securityLevel': &quot;loose&quot;}}%%
 mindmap
     root[&quot;Quantum Computing Ecosystem&quot;]
         prv((&quot;Providers&quot;))
@@ -610,7 +616,7 @@ mindmap
         inv(&quot;Investors&quot;)
             [Government]
             [Industry]
-        </div></section>
+    </pre></section>
 <section id="appendix">
 <h3>Appendix<a class="headerlink" href="#appendix" title="Link to this heading">#</a></h3>
 <blockquote>
