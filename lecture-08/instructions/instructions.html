@@ -324,8 +324,14 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Installing Anaconda</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#instructions-for-installing-julia-for-yao">Instructions for installing Julia for YAO</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Installing Anaconda</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instructions-for-installing-julia-for-yao">Instructions for installing Julia for YAO</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-conda">Using Conda</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#system-level-installation">system level installation</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#instructions-for-installing-q">Instructions for installing Q#</a></li>
 </ul>
 
@@ -344,10 +350,11 @@
 <p>We will use anaconda installation for installing anything that we require for all of the notebook exercises.
 Anaconda is self contained package manager to install softwares without interfering with operating system.
 The link to install annaconda and installation instruction can be found <a class="reference external" href="https://www.anaconda.com/products/distribution#Downloads">here</a>.</p>
-</section>
 <hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="instructions-for-installing-julia-for-yao">
-<h1>Instructions for installing Julia for YAO<a class="headerlink" href="#instructions-for-installing-julia-for-yao" title="Link to this heading">#</a></h1>
+<section id="instructions-for-installing-julia-for-yao">
+<h2>Instructions for installing Julia for YAO<a class="headerlink" href="#instructions-for-installing-julia-for-yao" title="Link to this heading">#</a></h2>
+<section id="using-conda">
+<h3>Using Conda<a class="headerlink" href="#using-conda" title="Link to this heading">#</a></h3>
 <ol class="arabic">
 <li><p>Create an environment in conda each for julia</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>julia-env<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span><span class="w"> </span>notebook
@@ -371,12 +378,23 @@ The link to install annaconda and installation instruction can be found <a class
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>julia
 </pre></div>
 </div>
-<p>If you want a separate julia installation other than conda, you can download from official julia download pare <a class="reference external" href="https://julialang.org/downloads/">here</a>.</p>
 </li>
 </ol>
+<p>If you want a separate julia installation other than conda, you can download from official julia download pare <a class="reference external" href="https://julialang.org/downloads/">here</a>, or use your operating system’s package manager as bellow.</p>
+</section>
+<section id="system-level-installation">
+<h3>system level installation<a class="headerlink" href="#system-level-installation" title="Link to this heading">#</a></h3>
+<p>Since Julia has it’s own package management, one may also just want to install at system level.</p>
+<p>On linux, most package managers have julia included, such as on Ubuntu you can install it by following terminal command -</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>julia
+</pre></div>
+</div>
+<p>On MacOS one can install via <code class="docutils literal notranslate"><span class="pre">Homebrew</span></code></p>
+<div class="highlight-zsh notranslate"><div class="highlight"><pre><span></span>brew<span class="w"> </span>install<span class="w"> </span>julia
+</pre></div>
+</div>
 <hr class="docutils" />
-<ol class="arabic" start="4">
-<li><p>Now we need to install julia kernel to be able to use them in python notebook. Julia does it’s own package management, so we need to install the kernel through julia. Let’s first launch julia by simply typing following in the terminal -</p>
+<p>Once we have julia installed, we need to install julia kernel to be able to use them in python notebook. Julia does it’s own package management, so we need to install the kernel through julia. Let’s first launch julia by simply typing following in the terminal -</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>julia
 </pre></div>
 </div>
@@ -391,13 +409,11 @@ The link to install annaconda and installation instruction can be found <a class
 </pre></div>
 </div>
 <p>The <em>installkernel</em> command is taking two arguments, first is a string, that is name of the kernel (visible when choosing a kernel in vscode/jupyter notebook) and next one defines a variable JULIA_NUM_THREADS which tells julia kernel how many cpu threads it can use. We choose 4, but it can be any positive number ≤ total number of cpu threads on your machine (laptop/desktop).</p>
-</li>
-</ol>
 <hr class="docutils" />
-<ol class="arabic simple" start="5">
-<li><p>We just setup a functioning julia kernel. When you open any notebook, it shows an option in top right corner to <em>select a kernel</em>. So now you can go ahead and open a julia notebook in vscode. You should be able to see “Julia 4 cpu” (or whichever name you chose) as a julia kernel from the list of jupyter kernels. Select it, and run any julia code in the cell. Happy coding!</p></li>
-</ol>
+<p>We just setup a functioning julia kernel. When you open any notebook, it shows an option in top right corner to <em>select a kernel</em>. So now you can go ahead and open a julia notebook in vscode. You should be able to see “Julia 4 cpu” (or whichever name you chose) as a julia kernel from the list of jupyter kernels. Select it, and run any julia code in the cell. Happy coding!</p>
 <p><img alt="Julia Kernel" src="../../_images/julia-kernel.png" /></p>
+</section>
+</section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="instructions-for-installing-q">
 <h1>Instructions for installing Q#<a class="headerlink" href="#instructions-for-installing-q" title="Link to this heading">#</a></h1>
@@ -484,8 +500,14 @@ The link to install annaconda and installation instruction can be found <a class
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Installing Anaconda</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#instructions-for-installing-julia-for-yao">Instructions for installing Julia for YAO</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Installing Anaconda</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instructions-for-installing-julia-for-yao">Instructions for installing Julia for YAO</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-conda">Using Conda</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#system-level-installation">system level installation</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#instructions-for-installing-q">Instructions for installing Q#</a></li>
 </ul>
 
