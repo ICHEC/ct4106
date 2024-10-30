@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Lecture 9: Heterogeneous Quantum Computing &#8212; Lecture Notes for CT4106</title>
+    <title>Lecture 9: Heterogeneous Quantum Computing on AWS with Amazon Braket &#8212; Lecture Notes for CT4106</title>
   
   
   
@@ -180,7 +180,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../lecture-07/qc-hardwares.html">Lecture 7: Hardwares for Quantum Computing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lecture-08/accessing-qc-systems.html">Lecture 8a: Accessing Quantum Computing Systems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lecture-08/landscape-of-sdks-tools.html">Lecture 8b: Landscape of Quantum SDK’s and Tools</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lecture 9: Heterogeneous Quantum Computing</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lecture 9: Heterogeneous Quantum Computing on AWS with Amazon Braket</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lecture-10/quantum-algorithms-1.html">Lecture 10: Quantum Algorithms - I</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lecture-11/quantum-algorithms-2.html">Lecture 11: Quantum Algorithms - II</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lecture-12/quantum-activity-in-ichec.html">Lecture 12: Quantum Activities in ICHEC</a></li>
@@ -301,7 +301,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -312,11 +314,19 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Lecture 9: Heterogeneous Quantum Computing</h1>
+    <h1>Lecture 9: Heterogeneous Quantum Computing on AWS with Amazon Braket</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-the-guest">About the guest</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -326,12 +336,35 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="lecture-9-heterogeneous-quantum-computing">
-<span id="lecture-9"></span><h1>Lecture 9: Heterogeneous Quantum Computing<a class="headerlink" href="#lecture-9-heterogeneous-quantum-computing" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="lecture-9-heterogeneous-quantum-computing-on-aws-with-amazon-braket">
+<span id="lecture-9"></span><h1>Lecture 9: Heterogeneous Quantum Computing on AWS with Amazon Braket<a class="headerlink" href="#lecture-9-heterogeneous-quantum-computing-on-aws-with-amazon-braket" title="Link to this heading">#</a></h1>
 <div class="tip admonition">
 <p class="admonition-title">Overview</p>
 <p>This is a placeholder for the Guest Lecture. It will be populated in due time with necessary prerequisits, and supplementary content on Heterogeneous Quantum Computing.</p>
 </div>
+<section id="about-the-guest">
+<h2>About the guest<a class="headerlink" href="#about-the-guest" title="Link to this heading">#</a></h2>
+<div class="admonition-the-speaker-dr-sebastian-stern admonition">
+<p class="admonition-title">The Speaker: Dr. Sebastian Stern</p>
+<p>Dr. Sebastian Stern is a Senior Specialist Solutions Architect for Quantum Computing at <a class="reference external" href="https://aws.amazon.com/">Amazon Web Services</a> (AWS). In his role, he works with AWS customers to explore and build quantum computing solutions in the cloud, with a focus on <a class="reference external" href="https://aws.amazon.com/braket">Amazon Braket</a>, the quantum computing service of AWS. Sebastian studied Physics at the Technical University of Munich (TUM) and earned his PhD at the Max Planck Institute for Physics in Munich, Germany. He spent several years in academic research in the field of High Energy Physics and researched in the Higgs boson working group at the LHC at CERN. Later, he has been working in several tech industry roles, accelerating enterprises and public sector organizations in their adoption of emerging technologies. Sebastian joined AWS in 2019 and is affiliated with the wordwide Advanced Compute specialists team.</p>
+<p>LinkedIn profile: <a class="reference external" href="http://www.linkedin.com/in/sebastianstern">www.linkedin.com/in/sebastianstern</a></p>
+</div>
+<div class="admonition-lecture-summary admonition">
+<p class="admonition-title">Lecture Summary</p>
+<p>Join this guest lecture for a practical, demo-based overview of heterogeneous quantum computing capabilities on AWS. We will start with a technical introduction to Amazon Braket, the quantum computing cloud service of AWS, followed by a live demo of how to build a run quantum circuits on cloud-based simulators and real quantum processing units (QPUs). We then focus on hybrid quantum-classical computation and variational algorithms and explore in a demo how to run an entire quantum algorithm in the managed cloud environment provided by Amazon Braket. In the second part of the lecture we review an application for quantum computing. We explore together how we can solve a paradigmatic graph optimization problem with different quantum computing paradigms, implemented on QPUs available on Amazon Braket. Specifically, we will explore how to solve the Maximum Independent Set problem with the Quantum Approximate Optimization Algorithm (QAOA) on gate-based quantum computers and, alternatively, with Analog Hamiltonian Simulation on a Rydberg atom quantum computer.</p>
+</div>
+<div class="admonition-references admonition">
+<p class="admonition-title">References</p>
+<p>Students who are interested to immerse themselves in the topics we will cover during the lecture can review the following resources:</p>
+<ul class="simple">
+<li><p>The <a class="reference external" href="https://aws.amazon.com/braket/">Amazon Braket public website</a> is a good starting point to get a high-level overview of the service and its capabilities. The <a class="reference external" href="https://docs.aws.amazon.com/braket/latest/developerguide/what-is-braket.html">developer guide</a> provides more detailed information how to work with Braket.</p></li>
+<li><p>In the first demo, we explore how we can build a quantum circuit preparing a <a class="reference external" href="https://en.wikipedia.org/wiki/Greenberger%E2%80%93Horne%E2%80%93Zeilinger_state">GHZ state</a> with the open-source <a class="reference external" href="https://github.com/amazon-braket/amazon-braket-sdk-python">Amazon Braket Python SDK</a> and how we can run the circuit on simulators and QPUs available on Amazon Braket. We will also learn how we can run circuits built with third-party software like <a class="reference external" href="https://github.com/qiskit-community/qiskit-braket-provider">Qiskit</a> and <a class="reference external" href="https://github.com/amazon-braket/amazon-braket-pennylane-plugin-python">PennyLane</a> directly on Braket.</p></li>
+<li><p>After we have familiarized with Braket, we will run through two examples solutions for the <a class="reference external" href="https://www.quera.com/glossary/maximum-independent-set">Maximum Independent Set</a> graph optimization problem.</p></li>
+<li><p>The first example will use the <a class="reference external" href="https://arxiv.org/abs/1411.4028">Quantum Approximate Optimization Algorithm</a>, implemented with <a class="reference external" href="https://pennylane.ai/qml/">PennyLane</a>, an open-source library for differentiable programming of quantum computers, and executed with <a class="reference external" href="https://pennylane.ai/qml/demos/getting_started_with_hybrid_jobs/">Amazon Braket Hybrid Jobs</a></p></li>
+<li><p>The second example solution is realized with Analog Hamiltonian Simulation using Rydberg atom arrays (<a class="reference external" href="https://aws.amazon.com/blogs/quantum-computing/optimization-with-rydberg-atom-based-quantum-processor/">https://aws.amazon.com/blogs/quantum-computing/optimization-with-rydberg-atom-based-quantum-processor/</a>, <a class="reference external" href="https://arxiv.org/abs/2202.09372">https://arxiv.org/abs/2202.09372</a>).</p></li>
+</ul>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -388,6 +421,22 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-the-guest">About the guest</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
