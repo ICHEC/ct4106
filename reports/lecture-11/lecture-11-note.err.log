@@ -18,23 +18,46 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-#plt.xlim(0,30000)
-toprint = 'U=(' + ', '.join([str(i) for i in a]) + ')'
-plt.text(300, 12, toprint, fontsize=21)
-plt.xlabel('f(x)', fontsize=15)
-plt.ylabel('Degeneracy', fontsize=15)
-dd = plt.hist(dist, bins=30)
+import dimod
+
+# First initialize our own class qubo
+
+
+# ni = np.array([3, 4, 5, 6, 8, 12, 11, 15])
+# ni = np.array([1,2,3,4,5,6,7,8])
+
+# Define the set
+ni = np.random.randint(0, 31, size=60)
+ni[-1] = int(ni.mean()*15)
+
+qubofunc = qubo(ni=ni)     # initialise the function.
+
+# extract the quadratic term as dictionary
+qdict = {(i, j): 2*qubofunc.Q[i, j] for i in range(qubofunc.N) for j in range(qubofunc.N) if i>j}
+
+# extract the linear term as dictionary
+ldict = {i: qubofunc.V[i]+qubofunc.Q[i, i] for i in range(qubofunc.N)}
+# the constant
+constant = qubofunc.S**2
+
+print(qdict)
+print(ldict)
+print(constant)
+
 ------------------
 
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mNameError[0m                                 Traceback (most recent call last)
-Cell [0;32mIn[3], line 3[0m
-[1;32m      1[0m [38;5;66;03m#plt.xlim(0,30000)[39;00m
-[1;32m      2[0m toprint [38;5;241m=[39m [38;5;124m'[39m[38;5;124mU=([39m[38;5;124m'[39m [38;5;241m+[39m [38;5;124m'[39m[38;5;124m, [39m[38;5;124m'[39m[38;5;241m.[39mjoin([[38;5;28mstr[39m(i) [38;5;28;01mfor[39;00m i [38;5;129;01min[39;00m a]) [38;5;241m+[39m [38;5;124m'[39m[38;5;124m)[39m[38;5;124m'[39m
-[0;32m----> 3[0m [43mplt[49m[38;5;241m.[39mtext([38;5;241m300[39m, [38;5;241m12[39m, toprint, fontsize[38;5;241m=[39m[38;5;241m21[39m)
-[1;32m      4[0m plt[38;5;241m.[39mxlabel([38;5;124m'[39m[38;5;124mf(x)[39m[38;5;124m'[39m, fontsize[38;5;241m=[39m[38;5;241m15[39m)
-[1;32m      5[0m plt[38;5;241m.[39mylabel([38;5;124m'[39m[38;5;124mDegeneracy[39m[38;5;124m'[39m, fontsize[38;5;241m=[39m[38;5;241m15[39m)
+[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Cell [0;32mIn[11], line 1[0m
+[0;32m----> 1[0m [38;5;28;01mimport[39;00m [38;5;21;01mdimod[39;00m
+[1;32m      3[0m [38;5;66;03m# First initialize our own class qubo[39;00m
+[1;32m      4[0m 
+[1;32m      5[0m 
+[0;32m   (...)[0m
+[1;32m      8[0m 
+[1;32m      9[0m [38;5;66;03m# Define the set[39;00m
+[1;32m     10[0m ni [38;5;241m=[39m np[38;5;241m.[39mrandom[38;5;241m.[39mrandint([38;5;241m0[39m, [38;5;241m31[39m, size[38;5;241m=[39m[38;5;241m60[39m)
 
-[0;31mNameError[0m: name 'plt' is not defined
+[0;31mModuleNotFoundError[0m: No module named 'dimod'
 
