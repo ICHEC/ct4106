@@ -306,7 +306,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -322,6 +324,15 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure">Structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#developer-readme">Developer README</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -334,6 +345,8 @@
   <section class="tex2jax_ignore mathjax_ignore" id="ct4106">
 <h1>CT4106<a class="headerlink" href="#ct4106" title="Link to this heading">#</a></h1>
 <p><a class="reference external" href="https://github.com/ICHEC/CT4106/actions/workflows/publish.yml"><img alt="deploy-book" src="https://github.com/ICHEC/CT4106/actions/workflows/publish.yml/badge.svg" /></a></p>
+<section id="structure">
+<h2>Structure<a class="headerlink" href="#structure" title="Link to this heading">#</a></h2>
 <div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>graph LR
 Old(&quot;External&quot;) ==&gt; New([&quot;CT4106&quot;])
 1o(Lecture 1) ==&gt; 1n(Lecture 1)
@@ -349,6 +362,22 @@ new4(&quot;Guest 3&quot;) ==&gt; 9n(Lecture 9)
 new5(&quot;ICHEC&quot;) ==&gt; 12n(Lecture 12)
 </pre></div>
 </div>
+</section>
+<section id="developer-readme">
+<h2>Developer README<a class="headerlink" href="#developer-readme" title="Link to this heading">#</a></h2>
+<p>To locally render the HTML for the lecture notes:</p>
+<ol class="arabic simple">
+<li><p>Create a new environment</p></li>
+<li><p>Install the required packages from <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code></p></li>
+<li><p>Using homebrew, install drawio to render some of the diagrams in the notes:</p></li>
+</ol>
+<ol class="arabic simple" start="4">
+<li><p>Build the book by running the following in the root directory (where <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> and <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code> are located):</p></li>
+</ol>
+<ol class="arabic simple" start="5">
+<li><p>Copy and paste the generated link into a browser to view the notes.</p></li>
+</ol>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -387,6 +416,23 @@ new5(&quot;ICHEC&quot;) ==&gt; 12n(Lecture 12)
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure">Structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#developer-readme">Developer README</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
