@@ -16,22 +16,20 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
@@ -40,11 +38,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/style.css?v=fb429c44" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -79,7 +76,6 @@ window.addEventListener("load", () => mermaid.run());
     <link rel="prev" title="Lecture 2: Integrating Classical and Quantum Computing" href="../lecture-02/integrating-cc-and-qc.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -95,8 +91,19 @@ window.addEventListener("load", () => mermaid.run());
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -104,6 +111,7 @@ window.addEventListener("load", () => mermaid.run());
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -111,8 +119,8 @@ window.addEventListener("load", () => mermaid.run());
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -128,8 +136,7 @@ window.addEventListener("load", () => mermaid.run());
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -159,17 +166,21 @@ window.addEventListener("load", () => mermaid.run());
     
     
     <img src="../_static/logo.png" class="logo__image only-light" alt="Lecture Notes for CT4106 - Home"/>
-    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Lecture Notes for CT4106 - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Lecture Notes for CT4106 - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -202,14 +213,9 @@ window.addEventListener("load", () => mermaid.run());
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -306,16 +312,24 @@ window.addEventListener("load", () => mermaid.run());
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -471,7 +485,8 @@ Recall the lecture where we use the example of tossing coins as a means of conve
 \end{aligned}
 \end{split}\]</div>
 <p>The figure below show Base 10 to base 2 conversion by repeated division of 2.</p>
-<a class="reference internal image-reference" href="../_images/binary.png"><img alt="../_images/binary.png" class="align-center" src="../_images/binary.png" style="width: 720px;" /></a>
+<a class="reference internal image-reference" href="../_images/binary.png"><img alt="../_images/binary.png" class="align-center" src="../_images/binary.png" style="width: 720px;" />
+</a>
 </section>
 <section id="adding-in-binary">
 <h2>Adding in Binary<a class="headerlink" href="#adding-in-binary" title="Link to this heading">#</a></h2>
@@ -519,7 +534,8 @@ b --&gt; c
 </table>
 </div>
 <figure class="align-center">
-<a class="reference internal image-reference" href="../_images/NOT.png"><img alt="../_images/NOT.png" src="../_images/NOT.png" style="width: 200px;" /></a>
+<a class="reference internal image-reference" href="../_images/NOT.png"><img alt="../_images/NOT.png" src="../_images/NOT.png" style="width: 200px;" />
+</a>
 </figure>
 <ul class="simple">
 <li><p>The NOT gate can be observed to be a reversible gate, the input can always be recovered from the output, we can just flip the output to recover the original input, this is an important feature and we will come back to it later</p></li>
@@ -531,7 +547,8 @@ b --&gt; c
 <li><p>The second gate is a 2 bit gate called AND gate, it gives the output 1 when both the Inputs are 1 and it is 0 for all other cases.</p></li>
 </ul>
 <figure class="align-center">
-<a class="reference internal image-reference" href="../_images/and.png"><img alt="../_images/and.png" src="../_images/and.png" style="width: 300px;" /></a>
+<a class="reference internal image-reference" href="../_images/and.png"><img alt="../_images/and.png" src="../_images/and.png" style="width: 300px;" />
+</a>
 </figure>
 <ul class="simple">
 <li><p>We can notice that the AND gate unlike the NOT gate is not reversible we can\t recover both the input qubits from the output of the AND gates.</p></li>
@@ -583,13 +600,15 @@ b --&gt; c
 <li><p>We can define a circuit that performs the additon operation we had defined previously using only the gates that we have introduced previously</p></li>
 </ul>
 <figure class="align-center">
-<a class="reference internal image-reference" href="../_images/half_add.png"><img alt="../_images/half_add.png" src="../_images/half_add.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../_images/half_add.png"><img alt="../_images/half_add.png" src="../_images/half_add.png" style="width: 400px;" />
+</a>
 </figure>
 <ul class="simple">
 <li><p>Classical half-adder circuit shown above has the same input-output characteristics that we expected from the addition operations defined in the previous sections described by the truth table below.</p></li>
 </ul>
 <figure class="align-center">
-<a class="reference internal image-reference" href="../_images/add_truth.png"><img alt="../_images/add_truth.png" src="../_images/add_truth.png" style="width: 300px;" /></a>
+<a class="reference internal image-reference" href="../_images/add_truth.png"><img alt="../_images/add_truth.png" src="../_images/add_truth.png" style="width: 300px;" />
+</a>
 </figure>
 <ul class="simple">
 <li><p>It is important to notice another key feture of the above circuit, we were <strong>able to copy the inputs</strong> A and B, i.e the single wire carrying the signal A could be split into two wires both carrying the same bit A, this feature will introduce us to an important difference between classical and quantum information later in the lecture.</p></li>
@@ -631,7 +650,8 @@ b --&gt; c
 <h2>Photons as qubits<a class="headerlink" href="#photons-as-qubits" title="Link to this heading">#</a></h2>
 <p>Let’s begin by understanding what exactly is a photon, A photon is a single particle of light and we know that light is an electromagnetic wave and just like every wave has a direction of oscillation a Photon has a direction of Oscillation called it’s Polarization.</p>
 <figure class="align-center">
-<a class="reference internal image-reference" href="../_images/0_1_ket.png"><img alt="../_images/0_1_ket.png" src="../_images/0_1_ket.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../_images/0_1_ket.png"><img alt="../_images/0_1_ket.png" src="../_images/0_1_ket.png" style="width: 100%;" />
+</a>
 </figure>
 <ul class="simple">
 <li><p>The above two polarization states, the Vertical and Horizontal polarization states are labelled 0 and 1 and behave as the 2 independent states within Quantum Computation.</p></li>
@@ -643,7 +663,8 @@ b --&gt; c
 <h2>Quantum Superposition<a class="headerlink" href="#quantum-superposition" title="Link to this heading">#</a></h2>
 <p>Although Quantum states can exist in the two directions (Vertical and horizontal as mentioned in the previous section) it can in general be any arbitrary direction as shown below two diagonal Quantum states which are rotated at a 45 degree angle</p>
 <figure class="align-center" id="id1">
-<a class="reference internal image-reference" href="../_images/+_-.png"><img alt="../_images/%2B_-.png" src="../_images/%2B_-.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../_images/+_-.png"><img alt="../_images/%2B_-.png" src="../_images/%2B_-.png" style="width: 100%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 3 </span><span class="caption-text">–
 <strong>Superposition in light</strong></span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
@@ -658,7 +679,8 @@ b --&gt; c
 <p>If we have a one state going into the measurement device and that goes in. It’ll come out of the one state and a one will be measured.
 However, with a plus state. If that is measured. Sometimes this happens. A zero is measured and the zero set comes out. And if we measure at another time, what might happen is we might measure a one and a one state will come out. This is described in the image below</p>
 <figure class="align-center" id="id2">
-<a class="reference internal image-reference" href="../_images/measure.png"><img alt="../_images/measure.png" src="../_images/measure.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../_images/measure.png"><img alt="../_images/measure.png" src="../_images/measure.png" style="width: 100%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 4 </span><span class="caption-text">–
 <strong>Measurement example</strong></span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
@@ -673,7 +695,8 @@ However, with a plus state. If that is measured. Sometimes this happens. A zero 
 <h3>X gate<a class="headerlink" href="#x-gate" title="Link to this heading">#</a></h3>
 <p>This gate behaves similar to the NOT gate for the states <span class="math notranslate nohighlight">\(|0\rangle\)</span> and <span class="math notranslate nohighlight">\(|1\rangle\)</span>  causing the state to flip, the diagram below shows the action of the X gate on some Quantum states.</p>
 <figure class="align-center" id="id3">
-<a class="reference internal image-reference" href="../_images/xgate.png"><img alt="../_images/xgate.png" src="../_images/xgate.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../_images/xgate.png"><img alt="../_images/xgate.png" src="../_images/xgate.png" style="width: 100%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 5 </span><span class="caption-text">–
 <strong>X-Gate</strong></span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
@@ -784,8 +807,7 @@ However, with a plus state. If that is measured. Sometimes this happens. A zero 
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -867,8 +889,8 @@ By ICHEC Team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
